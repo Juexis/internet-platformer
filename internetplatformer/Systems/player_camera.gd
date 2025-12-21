@@ -1,0 +1,1 @@
+extends PhantomCamera2D

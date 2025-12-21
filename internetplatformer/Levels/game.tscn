@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://dk6ul1w3s20hg"]
+[gd_scene load_steps=7 format=4 uid="uid://dk6ul1w3s20hg"]
+
+[ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="1_6isyr"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uda3f"]
+[ext_resource type="Script" uid="uid://biwdjja5ldwni" path="res://Systems/player_camera.gd" id="3_jycte"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_uda3f"]
+[ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Sprites/Tilesets/window_tilemap.tscn" id="5_uda3f"]
+
+[sub_resource type="Resource" id="Resource_5ubxa"]
+script = ExtResource("3_uda3f")
 
 [node name="world" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6isyr")]
+position = Vector2(-89, -53)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_enabled = false
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_uda3f")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+script = ExtResource("3_jycte")
+priority_override = true
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_5ubxa")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Windows" parent="." instance=ExtResource("5_uda3f")]
+tile_map_data = PackedByteArray("AAD9/wAAAAADAAEAAAD+/wAAAAACAAEAAAD//wAAAAABAAEAAAD6/wAAAAACAAIAAAD5/wAAAAADAAIAAAD4/wAAAAAEAAIAAAD4/wEAAAADAAEAAAD5/wEAAAACAAEAAAD6/wEAAAABAAEAAAD/////AAACAAIAAAD+////AAADAAIAAAD9////AAAEAAIAAAAHAPv/AAAAAAEAAAAHAPz/AAAEAAAAAAAHAP3/AAAEAAAAAAAHAP7/AAAEAAAAAAAHAP//AAAEAAAAAAAHAAAAAAADAAAAAAAFAAMAAAAAAAMAAAAEAAMAAAABAAMAAAADAAMAAAABAAMAAAACAAMAAAACAAMAAAD3////AAADAAAAAAD3//7/AAAEAAAAAAD3//3/AAAEAAAAAAD3//z/AAAAAAEAAAA=")
