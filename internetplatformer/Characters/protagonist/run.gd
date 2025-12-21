@@ -1,6 +1,7 @@
 extends PlayerState
 
 @export var idle_state: State
+@export var jump_state: State
 
 var speed: float = 100
 var acceleration: float = 1750
@@ -11,6 +12,9 @@ func process_physics(delta: float) -> State:
 	
 	if !input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, 2000 * delta)
+	
+	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
+		return jump_state
 	
 	super(delta)
 	apply_gravity(delta)

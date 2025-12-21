@@ -1,3 +1,4 @@
+## Used for states specifically for the Player character
 @abstract class_name PlayerState
 extends State
 

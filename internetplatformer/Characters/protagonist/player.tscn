@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c47y71yslrhg2"]
+[gd_scene load_steps=9 format=3 uid="uid://c47y71yslrhg2"]
 
 [ext_resource type="Texture2D" uid="uid://d0x2fcu8po2to" path="res://Characters/protagonist/protag.png" id="1_cl76o"]
 [ext_resource type="Script" uid="uid://beypll7xx7iy2" path="res://Characters/protagonist/player.gd" id="1_yfxej"]
 [ext_resource type="Script" uid="uid://ckhx8ythaskmv" path="res://Systems/State Machine/state_machine.gd" id="3_dh2gx"]
 [ext_resource type="Script" uid="uid://cdfqd108sknkc" path="res://Characters/protagonist/idle.gd" id="4_ghbqd"]
 [ext_resource type="Script" uid="uid://6g11r1lsusbw" path="res://Characters/protagonist/run.gd" id="5_p7u2i"]
+[ext_resource type="Script" uid="uid://c6otjmf66kcks" path="res://Characters/protagonist/jump.gd" id="6_lqmhg"]
+[ext_resource type="Script" uid="uid://dgbtggvddjd07" path="res://Characters/protagonist/fall.gd" id="7_scpy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl76o"]
 size = Vector2(9, 20)
@@ -23,10 +25,22 @@ shape = SubResource("RectangleShape2D_cl76o")
 script = ExtResource("3_dh2gx")
 starting_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("run_state")]
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("run_state", "jump_state", "fall_state")]
 script = ExtResource("4_ghbqd")
 run_state = NodePath("../run")
+jump_state = NodePath("../jump")
+fall_state = NodePath("../fall")
 
-[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state")]
+[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "jump_state")]
 script = ExtResource("5_p7u2i")
 idle_state = NodePath("../idle")
+jump_state = NodePath("../jump")
+
+[node name="jump" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state")]
+script = ExtResource("6_lqmhg")
+fall_state = NodePath("../fall")
+
+[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "run_state")]
+script = ExtResource("7_scpy1")
+idle_state = NodePath("../idle")
+run_state = NodePath("../run")

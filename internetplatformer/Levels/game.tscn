@@ -26,9 +26,13 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 script = ExtResource("3_jycte")
 priority_override = true
-follow_mode = 2
+follow_mode = 5
 follow_target = NodePath("../Player")
 tween_resource = SubResource("Resource_5ubxa")
+follow_offset = Vector2(0.1, 10)
+follow_damping = true
+dead_zone_width = 0.07
+dead_zone_height = 0.25
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Windows" parent="." instance=ExtResource("5_uda3f")]
