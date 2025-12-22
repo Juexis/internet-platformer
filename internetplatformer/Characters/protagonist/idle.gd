@@ -5,10 +5,11 @@ extends PlayerState
 @export var fall_state: State
 
 func process_physics(delta: float) -> State:
+	input_axis = Input.get_axis("move_left", "move_right")
 	parent.velocity.x = move_toward(parent.velocity.x, 0, 5000 * delta)
+	
 	apply_gravity(delta)
 	super(delta)
-	print(parent.velocity.y)
 	
 	if input_axis:
 		return run_state

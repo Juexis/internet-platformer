@@ -5,12 +5,15 @@ extends PlayerState
 
 var air_speed = 75
 var air_accel = 600
-var air_res = 200
+var air_res = 600
 
 func process_physics(delta: float) -> State:
-	super(delta)
-	apply_gravity(delta)
+	input_axis = Input.get_axis("move_left", "move_right")
 	
+	apply_gravity(delta * 1.2)
+	super(delta)
+	
+	print(parent.velocity.y)
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, air_speed * input_axis, air_accel * delta)
 	else:
@@ -24,3 +27,6 @@ func process_physics(delta: float) -> State:
 		return run_state
 	else:
 		return null
+	
+	
+	

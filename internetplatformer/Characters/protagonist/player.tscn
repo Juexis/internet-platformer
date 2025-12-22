@@ -31,10 +31,11 @@ run_state = NodePath("../run")
 jump_state = NodePath("../jump")
 fall_state = NodePath("../fall")
 
-[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "jump_state")]
+[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
 script = ExtResource("5_p7u2i")
 idle_state = NodePath("../idle")
 jump_state = NodePath("../jump")
+fall_state = NodePath("../fall")
 
 [node name="jump" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state")]
 script = ExtResource("6_lqmhg")
