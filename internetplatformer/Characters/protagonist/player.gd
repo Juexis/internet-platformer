@@ -3,6 +3,8 @@ extends CharacterBody2D
 ## declare any onready var here
 
 @onready
+var sprite: Sprite2D = $Sprite2D
+@onready
 var state_machine = $state_machine
 
 func _ready() -> void:

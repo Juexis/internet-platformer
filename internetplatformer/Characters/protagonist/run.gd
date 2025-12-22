@@ -5,13 +5,14 @@ extends PlayerState
 @export var fall_state: State
 
 var speed: float = 100
-var acceleration: float = 1750
+var acceleration: float = 1250
 var friction: float = 1000
 
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, speed * input_axis, acceleration * delta)
+		parent.sprite.flip_h = input_axis < 0
 	
 	if !input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, friction * delta)

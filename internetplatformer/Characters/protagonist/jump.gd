@@ -3,9 +3,9 @@ extends PlayerState
 @export var fall_state: State
 
 var jump_vel = -225
-var air_speed = 75
+var air_speed = 100
 var air_accel = 600
-var air_res = 0
+var air_res = 200
 
 func enter() -> void:
 	parent.velocity.y += jump_vel
@@ -15,7 +15,7 @@ func process_physics(delta: float) -> State:
 	
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, air_speed * input_axis, air_accel * delta)
-	else:
+		parent.sprite.flip_h = input_axis < 0
 		parent.velocity.x = move_toward(parent.velocity.x, 0, air_res * delta)
 	
 	if Input.is_action_just_released("jump") and parent.velocity.y < jump_vel / 2:
