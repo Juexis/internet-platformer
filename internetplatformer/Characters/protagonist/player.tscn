@@ -41,7 +41,12 @@ fall_state = NodePath("../fall")
 script = ExtResource("6_lqmhg")
 fall_state = NodePath("../fall")
 
-[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "run_state")]
+[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state")]
 script = ExtResource("7_scpy1")
 idle_state = NodePath("../idle")
 run_state = NodePath("../run")
+jump_state = NodePath("../jump")
+
+[node name="JumpBuffer" type="Timer" parent="."]
+wait_time = 0.02
+one_shot = true

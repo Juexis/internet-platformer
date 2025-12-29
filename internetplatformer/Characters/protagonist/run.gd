@@ -5,7 +5,7 @@ extends PlayerState
 @export var fall_state: State
 
 var speed: float = 100
-var acceleration: float = 1250
+var acceleration: float = 1000
 var friction: float = 1000
 
 func process_physics(delta: float) -> State:
