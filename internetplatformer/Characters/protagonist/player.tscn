@@ -48,5 +48,9 @@ run_state = NodePath("../run")
 jump_state = NodePath("../jump")
 
 [node name="JumpBuffer" type="Timer" parent="."]
-wait_time = 0.02
+wait_time = 0.025
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.04
 one_shot = true

@@ -5,8 +5,9 @@ extends PlayerState
 @export var jump_state: State
 
 @onready var jump_buffer: Timer = $"../../JumpBuffer"
+@onready var coyote_timer: Timer = $"../../CoyoteTimer"
 
-var air_speed = 100
+var air_speed = 125
 var air_accel = 500
 var air_res = 250
 
@@ -34,6 +35,11 @@ func process_physics(delta: float) -> State:
 		print(jump_buffer.time_left)
 		return jump_state
 	
+	# coyote time implementation
+	if coyote_timer.time_left > 0 and Input.is_action_just_pressed("jump") and parent.velocity.y > 0:
+		print(coyote_timer.time_left)
+		return jump_state
+	
 	if parent.is_on_floor():
 		return idle_state
 	
@@ -41,6 +47,3 @@ func process_physics(delta: float) -> State:
 		return run_state
 	else:
 		return null
-	
-	
-	

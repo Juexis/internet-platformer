@@ -4,7 +4,9 @@ extends PlayerState
 @export var jump_state: State
 @export var fall_state: State
 
-var speed: float = 100
+@onready var coyote_timer: Timer = $"../../CoyoteTimer"
+
+var speed: float = 125
 var acceleration: float = 1000
 var friction: float = 1000
 
@@ -23,7 +25,8 @@ func process_physics(delta: float) -> State:
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
 		return jump_state
 	
-	if parent.velocity.y > 0 and !parent.is_on_floor(): 
+	if parent.velocity.y > 0 and !parent.is_on_floor():
+		coyote_timer.start()
 		return fall_state
 	
 	## transition back to idle
