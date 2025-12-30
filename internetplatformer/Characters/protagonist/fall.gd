@@ -36,7 +36,7 @@ func process_physics(delta: float) -> State:
 		return jump_state
 	
 	# coyote time implementation
-	if coyote_timer.time_left > 0 and Input.is_action_just_pressed("jump") and parent.velocity.y > 0:
+	if coyote_timer.time_left > 0 and Input.is_action_just_pressed("jump"):
 		print(coyote_timer.time_left)
 		return jump_state
 	
