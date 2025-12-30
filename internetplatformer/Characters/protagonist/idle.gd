@@ -8,7 +8,7 @@ extends PlayerState
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
 	if parent.velocity.x != 0:
-		parent.velocity.x = move_toward(parent.velocity.x, 0, 600 * delta)
+		parent.velocity.x = move_toward(parent.velocity.x, 0, 500 * delta)
 	
 	apply_gravity(delta)
 	super(delta)
