@@ -27,8 +27,10 @@ func process_physics(delta: float) -> State:
 	apply_gravity(delta)
 	super(delta)
 	
+	#region transitions
 	if parent.velocity.y > 0 and !parent.is_on_floor(): 
 		return fall_state
 	
+	#endregion
 	
 	return null

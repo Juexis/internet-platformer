@@ -26,6 +26,7 @@ func process_physics(delta: float) -> State:
 	if !input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, air_res * 0.4 * delta)
 	
+	#region transitions
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer.start()
 		print("jump pressed")
@@ -47,3 +48,5 @@ func process_physics(delta: float) -> State:
 		return run_state
 	else:
 		return null
+	
+	#endregion

@@ -20,6 +20,7 @@ func process_physics(delta: float) -> State:
 	# slide deceleration
 	parent.velocity.x = move_toward(parent.velocity.x, 0, 50 * delta)
 	
+	#region transitions
 	if Input.is_action_just_pressed("jump"):
 		parent.animations.play("normal")
 		return jump_state
@@ -35,5 +36,7 @@ func process_physics(delta: float) -> State:
 	if parent.velocity.y > 0 and !parent.is_on_floor():
 		parent.animations.play("normal")
 		return fall_state
+	
+	#endregion
 	
 	return null

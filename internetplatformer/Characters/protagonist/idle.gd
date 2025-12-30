@@ -13,6 +13,7 @@ func process_physics(delta: float) -> State:
 	apply_gravity(delta)
 	super(delta)
 	
+	#region transitions
 	if input_axis:
 		return run_state
 	
@@ -22,4 +23,5 @@ func process_physics(delta: float) -> State:
 	if parent.velocity.y > 0:
 		return fall_state
 	
+	#endregion
 	return null

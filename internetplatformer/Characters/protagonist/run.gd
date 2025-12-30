@@ -23,6 +23,7 @@ func process_physics(delta: float) -> State:
 	apply_gravity(delta)
 	super(delta)
 	
+	#region transitions
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
 		return jump_state
 	
@@ -37,5 +38,6 @@ func process_physics(delta: float) -> State:
 	if parent.velocity.x == 0 and input_axis == 0:
 		return idle_state
 	
+	#endregion
 	return null
 	
