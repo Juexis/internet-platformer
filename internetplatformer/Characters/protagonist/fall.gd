@@ -11,6 +11,12 @@ var air_speed = 125
 var air_accel = 500
 var air_res = 250
 
+func _ready() -> void:
+	ObjectsBus.speaker_entered.connect(speaker_entered)
+
+func enter() -> void:
+	parent.sprite.play("fall")
+
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
 	
@@ -29,16 +35,16 @@ func process_physics(delta: float) -> State:
 	#region transitions
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer.start()
-		print("jump pressed")
+		#print("jump pressed")
 		
 	# jump buffer implementation
 	if jump_buffer.time_left > 0 and parent.is_on_floor():
-		print(jump_buffer.time_left)
+		#print(jump_buffer.time_left)
 		return jump_state
 	
 	# coyote time implementation
 	if coyote_timer.time_left > 0 and Input.is_action_just_pressed("jump"):
-		print(coyote_timer.time_left)
+		#print(coyote_timer.time_left)
 		return jump_state
 	
 	if parent.is_on_floor():
@@ -50,3 +56,7 @@ func process_physics(delta: float) -> State:
 		return null
 	
 	#endregion
+	
+func speaker_entered():
+	jump_state.change_jump_vel(-325)
+	parent.state_machine.change_state(jump_state)

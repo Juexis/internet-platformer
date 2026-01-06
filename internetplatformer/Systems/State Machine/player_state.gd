@@ -6,6 +6,7 @@ var parent: CharacterBody2D
 ## Records player's left and right inputs, returns -1, 0, or 1
 var input_axis: float
 var x_speed: float
+var gravity_mult: float = 0.7
 
 func process_physics(delta: float) -> State:
 	parent.move_and_slide()

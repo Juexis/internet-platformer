@@ -4,6 +4,8 @@ extends PlayerState
 @export var jump_state: State
 @export var fall_state: State
 
+func enter() -> void:
+	parent.sprite.play("idle")
 
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")

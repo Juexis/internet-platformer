@@ -6,7 +6,7 @@ extends CharacterBody2D
 var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready
-var animations: AnimationPlayer = $AnimationPlayer
+var collision_box: AnimationPlayer = $AnimationPlayer
 
 @onready
 var state_machine = $state_machine
@@ -18,7 +18,7 @@ func _unhandled_input(input: InputEvent) -> void:
 	state_machine.process_input(input)
 
 func _physics_process(delta: float) -> void:
-	print(velocity.x)
+	#print(velocity.x)
 	state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
