@@ -18,3 +18,6 @@ func apply_gravity(delta):
 
 func get_xspeed() -> float:
 	return parent.velocity.x
+
+func enable_sprite_flip():
+	parent.sprite.flip_h = input_axis < 0

@@ -11,8 +11,13 @@ var collision_box: AnimationPlayer = $AnimationPlayer
 @onready
 var state_machine = $state_machine
 
+var this_jump_state: State
+
+
 func _ready() -> void:
 	state_machine.init(self)
+	this_jump_state = %jump
+	ObjectsBus.speaker_entered.connect(speaker_entered)
 
 func _unhandled_input(input: InputEvent) -> void:
 	state_machine.process_input(input)
@@ -23,3 +28,8 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+
+## in player.gd to prevent multiple triggers
+func speaker_entered():
+	this_jump_state.change_jump_vel(-400)
+	state_machine.change_state(%jump)

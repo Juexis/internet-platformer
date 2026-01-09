@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://kmyllii7qbg7" path="res://Objects/speaker.gd" id="1_a3xpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43lvd"]
-size = Vector2(14, 17)
+size = Vector2(18, 17)
 
 [node name="Speaker" type="StaticBody2D"]
 script = ExtResource("1_a3xpf")

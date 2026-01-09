@@ -11,9 +11,6 @@ var air_speed = 125
 var air_accel = 500
 var air_res = 250
 
-func _ready() -> void:
-	ObjectsBus.speaker_entered.connect(speaker_entered)
-
 func enter() -> void:
 	parent.sprite.play("fall")
 
@@ -26,7 +23,7 @@ func process_physics(delta: float) -> State:
 	#print(parent.velocity.y)
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, air_speed * input_axis, air_accel * delta)
-		parent.sprite.flip_h = input_axis < 0
+		enable_sprite_flip()
 		parent.velocity.x = move_toward(parent.velocity.x, 0, air_res * delta)
 	
 	if !input_axis:
@@ -56,7 +53,3 @@ func process_physics(delta: float) -> State:
 		return null
 	
 	#endregion
-	
-func speaker_entered():
-	jump_state.change_jump_vel(-325)
-	parent.state_machine.change_state(jump_state)

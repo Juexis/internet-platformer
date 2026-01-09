@@ -8,11 +8,9 @@ extends PlayerState
 @onready var coyote_timer: Timer = $"../../CoyoteTimer"
 
 var speed: float = 125
-var acceleration: float = 900
+var acceleration: float = 750
 var friction: float = 900
 
-func _ready() -> void:
-	ObjectsBus.speaker_entered.connect(speaker_entered)
 
 func enter() -> void:
 	parent.sprite.play("run")
@@ -21,7 +19,7 @@ func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, speed * input_axis, acceleration * delta)
-		parent.sprite.flip_h = input_axis < 0
+		enable_sprite_flip()
 	
 	if !input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, friction * delta)
@@ -46,7 +44,3 @@ func process_physics(delta: float) -> State:
 	
 	#endregion
 	return null
-
-func speaker_entered():
-	jump_state.change_jump_vel(-325)
-	parent.state_machine.change_state(jump_state)
