@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c47y71yslrhg2"]
+[gd_scene load_steps=32 format=3 uid="uid://c47y71yslrhg2"]
 
 [ext_resource type="Script" uid="uid://beypll7xx7iy2" path="res://Characters/protagonist/player.gd" id="1_yfxej"]
 [ext_resource type="Texture2D" uid="uid://drudmeinbfy1w" path="res://Characters/protagonist/protag_v2.png" id="2_nddkc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c6otjmf66kcks" path="res://Characters/protagonist/jump.gd" id="6_lqmhg"]
 [ext_resource type="Script" uid="uid://dgbtggvddjd07" path="res://Characters/protagonist/fall.gd" id="7_scpy1"]
 [ext_resource type="Script" uid="uid://ccj0gkyr68da8" path="res://Characters/protagonist/slide.gd" id="8_nddkc"]
+[ext_resource type="Script" uid="uid://db3s87tgf0na4" path="res://Characters/protagonist/knocked.gd" id="10_5n4a7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nddkc"]
 atlas = ExtResource("2_nddkc")
@@ -288,6 +289,8 @@ _data = {
 size = Vector2(9, 22)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_yfxej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -344,6 +347,10 @@ script = ExtResource("8_nddkc")
 run_state = NodePath("../run")
 idle_state = NodePath("../idle")
 jump_state = NodePath("../jump")
+fall_state = NodePath("../fall")
+
+[node name="knocked" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state")]
+script = ExtResource("10_5n4a7")
 fall_state = NodePath("../fall")
 
 [node name="JumpBuffer" type="Timer" parent="."]

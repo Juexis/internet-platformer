@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dk6ul1w3s20hg"]
+[gd_scene load_steps=11 format=4 uid="uid://dk6ul1w3s20hg"]
 
 [ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="1_6isyr"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uda3f"]
@@ -6,12 +6,15 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_uda3f"]
 [ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Sprites/Tilesets/window_tilemap.tscn" id="5_uda3f"]
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="6_jycte"]
+[ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="7_ev4ff"]
 
 [sub_resource type="Resource" id="Resource_5ubxa"]
 script = ExtResource("3_uda3f")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uda3f"]
+resource_name = "Objects"
 scenes/1/scene = ExtResource("6_jycte")
+scenes/2/scene = ExtResource("7_ev4ff")
 
 [sub_resource type="TileSet" id="TileSet_jycte"]
 tile_offset_axis = 1
@@ -24,6 +27,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
 position = Vector2(-155, -30)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-156, -30)
 limit_enabled = false
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -33,15 +37,17 @@ script = ExtResource("2_uda3f")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+position = Vector2(-156, -30)
 script = ExtResource("3_jycte")
 priority_override = true
 follow_mode = 5
 follow_target = NodePath("../Player")
 tween_resource = SubResource("Resource_5ubxa")
+tween_on_load = false
 follow_offset = Vector2(3, 10)
 follow_damping = true
 dead_zone_width = 0.075
-dead_zone_height = 0.5
+dead_zone_height = 0.45
 limit_top = -220
 limit_bottom = 300
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
@@ -52,5 +58,5 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 tile_map_data = PackedByteArray("AAD6/wAAAAACAAEAAAD5/wAAAAABAAEAAAD4/wAAAAABAAEAAAD3/wAAAAABAAEAAAD2/wAAAAABAAEAAAD1/wAAAAABAAEAAAD1/wEAAAABAAIAAAD2/wEAAAABAAIAAAD3/wEAAAABAAIAAAD1/wIAAAABAAMAAAD2/wIAAAABAAMAAAD3/wIAAAABAAMAAAD4/wIAAAABAAMAAAD5/wIAAAABAAMAAAD5/wEAAAABAAIAAAD4/wEAAAABAAIAAAD6/wEAAAACAAIAAAD6/wIAAAACAAMAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAMAAAD+/wAAAAABAAEAAAD+/wEAAAABAAMAAAD//wEAAAACAAMAAAD//wAAAAACAAEAAAADAP//AAAAAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAAGAP//AAACAAEAAAAGAAAAAAACAAIAAAAFAAAAAAABAAIAAAAEAAAAAAABAAIAAAADAAAAAAAAAAIAAAADAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAFAAEAAAABAAMAAAAGAAEAAAACAAMAAAAQAAQAAAAAAAMAAAARAAQAAAABAAMAAAARAAMAAAABAAEAAAARAP//AAABAAIAAAARAP7/AAABAAIAAAARAPz/AAABAAEAAAASAPz/AAACAAEAAAARAP3/AAABAAIAAAARAAAAAAABAAMAAAASAP3/AAACAAIAAAASAP7/AAACAAIAAAASAP//AAACAAIAAAASAAAAAAACAAMAAAASAAMAAAACAAEAAAAQAAMAAAAAAAEAAAASAAQAAAACAAMAAAD0/wAAAAABAAEAAADz/wAAAAAAAAEAAADz/wEAAAAAAAIAAAD0/wEAAAABAAIAAAD0/wIAAAABAAMAAADz/wIAAAAAAAMAAAD+//r/AAAAAAIAAAD+//v/AAAAAAMAAAD///r/AAACAAIAAAD///v/AAACAAMAAAD+//n/AAAAAAIAAAD///n/AAACAAIAAAD///j/AAACAAEAAAD+//j/AAAAAAEAAAAMAAIAAAAAAAEAAAAMAAMAAAAAAAMAAAAKAAQAAAAEAAIAAAAKAAUAAAAEAAUAAAAIAAIAAAAEAAIAAAAIAAMAAAAEAAQAAAAIAAQAAAAEAAMAAAAIAAUAAAAEAAQAAAAIAAYAAAAEAAUAAAALAP3/AAAAAAEAAAALAP7/AAAAAAIAAAALAP//AAAAAAMAAAANAAMAAAACAAMAAAANAAIAAAACAAEAAAAUAPz/AAAEAAIAAAAUAP3/AAAEAAMAAAAUAP7/AAAEAAMAAAAUAP//AAAEAAQAAAAUAAAAAAAEAAUAAAAWAPz/AAAEAAIAAAAWAP3/AAAEAAQAAAAWAP7/AAAEAAQAAAAWAP//AAAEAAMAAAAWAAAAAAAEAAUAAAAYAPz/AAAEAAIAAAAYAP3/AAAEAAQAAAAYAP7/AAAEAAMAAAAYAP//AAAEAAMAAAAYAAAAAAAEAAUAAAAaAPz/AAAAAAEAAAAaAP3/AAAAAAIAAAAaAP7/AAAAAAIAAAAaAP//AAAAAAIAAAAaAAAAAAAAAAMAAAAbAAAAAAABAAMAAAAcAAAAAAACAAMAAAAcAP//AAACAAIAAAAcAP7/AAACAAIAAAAcAP3/AAACAAIAAAAcAPz/AAACAAEAAAAbAPz/AAABAAEAAAAbAP7/AAABAAIAAAAbAP//AAABAAIAAAAbAP3/AAABAAIAAAAQAPz/AAAAAAEAAAAQAP3/AAAAAAIAAAAQAP7/AAAAAAIAAAAQAP//AAAAAAIAAAAQAAAAAAAAAAMAAAAbAAQAAAABAAEAAAAZAAUAAAAAAAMAAAAaAAUAAAABAAMAAAAbAAUAAAABAAMAAAAcAAQAAAACAAEAAAAcAAUAAAACAAMAAAAaAAQAAAABAAEAAAAZAAQAAAAAAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAIAAAAMAP//AAABAAMAAAANAP3/AAACAAEAAAANAP7/AAACAAIAAAANAP//AAACAAMAAAA=")
 
 [node name="Objects" type="TileMapLayer" parent="Tilemaps"]
-tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQD5//3/AAAAAAAAAgDy/wAAAAAAAAAAAgDx/wAAAAAAAAAAAgDw/wAAAAAAAAAAAgAEAPf/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_jycte")

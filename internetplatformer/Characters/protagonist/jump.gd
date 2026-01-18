@@ -19,7 +19,6 @@ func enter() -> void:
 
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
-	print(is_speaker_jump)
 	
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, air_speed * input_axis, air_accel * delta)
