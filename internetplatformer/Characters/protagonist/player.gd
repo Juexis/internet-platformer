@@ -36,6 +36,7 @@ func speaker_entered():
 	state_machine.change_state(%jump)
 
 func caution_entered(force: Vector2):
+	state_machine.change_state(%knocked)
 	velocity.x -= clampf(force.x * 2200, -200, 200)
 	velocity.y -= clampf(force.y * 2200, -200, 200)
 	print(velocity)

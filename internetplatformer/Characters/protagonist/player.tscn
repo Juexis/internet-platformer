@@ -350,6 +350,7 @@ jump_state = NodePath("../jump")
 fall_state = NodePath("../fall")
 
 [node name="knocked" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state")]
+unique_name_in_owner = true
 script = ExtResource("10_5n4a7")
 fall_state = NodePath("../fall")
 
@@ -359,4 +360,8 @@ one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.04
+one_shot = true
+
+[node name="KnockedTimer" type="Timer" parent="."]
+wait_time = 0.4
 one_shot = true
