@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c47y71yslrhg2"]
+[gd_scene load_steps=36 format=3 uid="uid://c47y71yslrhg2"]
 
 [ext_resource type="Script" uid="uid://beypll7xx7iy2" path="res://Characters/protagonist/player.gd" id="1_yfxej"]
 [ext_resource type="Texture2D" uid="uid://drudmeinbfy1w" path="res://Characters/protagonist/protag_v2.png" id="2_nddkc"]
@@ -149,6 +149,82 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_kb4cm"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(2),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_787f0"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(2.5491216, 5.2780304, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-1.175, 1.065), Vector2(2.47, 0), Vector2(0.12, -0.93), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03333333),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.7615944, 0.0004338013, 0.167815, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cawhb"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(0, 0.5, 1, 1, 0.5),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-1.175, 1.065), Vector2(2.47, 0), Vector2(0.12, -0.93), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cawhb"]
+_data = {
+&"RESET": SubResource("Animation_kb4cm"),
+&"death": SubResource("Animation_787f0"),
+&"hit": SubResource("Animation_cawhb")
+}
+
 [sub_resource type="Animation" id="Animation_5n4a7"]
 length = 0.001
 tracks/0/type = "value"
@@ -289,24 +365,31 @@ _data = {
 size = Vector2(9, 22)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(-0.411, -0.297)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_yfxej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.6562176, 0.31595707)
 sprite_frames = SubResource("SpriteFrames_ng7ve")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(-0.5076933, 0)
 metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="SpriteAnimations" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_cawhb")
+}
+
+[node name="CollisionChanges" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_kb4cm")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.16, 1.807)
 shape = SubResource("RectangleShape2D_cl76o")
 
@@ -359,9 +442,97 @@ wait_time = 0.03
 one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.04
+wait_time = 0.05
 one_shot = true
 
 [node name="KnockedTimer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="DeathAnimTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DeathParticles" type="Node2D" parent="."]
+position = Vector2(-1.1742744, 0.07828522)
+
+[node name="cyan" type="CPUParticles2D" parent="DeathParticles"]
+z_index = 1
+emitting = false
+amount = 4
+lifetime = 3.0
+one_shot = true
+speed_scale = 0.8
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.45
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 3)
+initial_velocity_min = 25.2
+initial_velocity_max = 144.01
+linear_accel_max = 67.57
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.5803922, 0.99215686, 1, 1)
+
+[node name="green" type="CPUParticles2D" parent="DeathParticles"]
+z_index = 1
+emitting = false
+amount = 4
+lifetime = 3.0
+one_shot = true
+speed_scale = 0.8
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.45
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 3)
+initial_velocity_min = 25.2
+initial_velocity_max = 144.01
+linear_accel_max = 67.57
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.3529412, 0.77254903, 0.30980393, 1)
+
+[node name="white" type="CPUParticles2D" parent="DeathParticles"]
+z_index = 1
+emitting = false
+amount = 16
+lifetime = 3.0
+one_shot = true
+speed_scale = 0.8
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.45
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 3)
+initial_velocity_min = 25.2
+initial_velocity_max = 144.01
+linear_accel_max = 67.57
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="blue" type="CPUParticles2D" parent="DeathParticles"]
+z_index = 1
+emitting = false
+amount = 32
+lifetime = 3.0
+one_shot = true
+speed_scale = 0.8
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.45
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 3)
+initial_velocity_min = 25.2
+initial_velocity_max = 144.01
+linear_accel_max = 67.57
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.011764706, 0.09803922, 0.24705882, 1)
+
+[connection signal="timeout" from="DeathAnimTimer" to="." method="_on_death_anim_timer_timeout"]

@@ -29,4 +29,4 @@ shape = SubResource("RectangleShape2D_43lvd")
 debug_color = Color(0, 0.63066095, 0.47351313, 0.41960785)
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_speaker_entered"]

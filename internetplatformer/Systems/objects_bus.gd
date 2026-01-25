@@ -1,3 +1,4 @@
 extends Node
 signal speaker_entered
 signal caution_entered
+signal danger_entered

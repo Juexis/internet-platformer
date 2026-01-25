@@ -2,7 +2,8 @@ extends PlayerState
 
 @export var fall_state: State
 
-var jump_vel = -250
+var current_jump_vel
+var standard_jump_vel = -235
 var air_speed = 125
 var air_accel = 500
 var air_res = 250
@@ -12,10 +13,10 @@ var is_speaker_jump: bool = false
 func enter() -> void:
 	parent.collision_box.play("normal")
 	if Input.is_action_just_pressed("jump"):
-		change_jump_vel(-235)
-	clamp(parent.velocity.y, 0, jump_vel)
+		change_jump_vel(standard_jump_vel)
+	clamp(parent.velocity.y, 0, current_jump_vel)
 	parent.sprite.play("jump")
-	parent.velocity.y += jump_vel
+	parent.velocity.y += current_jump_vel
 
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
@@ -29,8 +30,8 @@ func process_physics(delta: float) -> State:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, air_res * 0.4 * delta)
 	
 	# variable jump height
-	if Input.is_action_just_released("jump") and parent.velocity.y < jump_vel / 2 and not is_speaker_jump:
-			parent.velocity.y = jump_vel / 2
+	if Input.is_action_just_released("jump") and parent.velocity.y < current_jump_vel / 2 and not is_speaker_jump:
+			parent.velocity.y = current_jump_vel / 2
 	
 	apply_gravity(delta)
 	super(delta)
@@ -44,8 +45,8 @@ func process_physics(delta: float) -> State:
 
 func change_jump_vel(value: float):
 	# disables jump cancelling (variable jump height: 33-34)
-	if value < -235:
+	if value < standard_jump_vel:
 		is_speaker_jump = true
 	else:
 		is_speaker_jump = false
-	jump_vel = value
+	current_jump_vel = value

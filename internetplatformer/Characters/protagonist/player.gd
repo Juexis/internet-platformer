@@ -6,29 +6,42 @@ extends CharacterBody2D
 var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready
-var collision_box: AnimationPlayer = $AnimationPlayer
+var collision_box: AnimationPlayer = $CollisionChanges
+
+@onready
+var sprite_animations: AnimationPlayer = $SpriteAnimations
 
 @onready
 var state_machine = $state_machine
 
-var this_jump_state: State
+## death variables
+@onready
+var death_particles: Node = $DeathParticles
+@onready 
+var death_anim_timer: Timer = $DeathAnimTimer
 
+var this_jump_state: State
+var max_knock: float = 200
+var min_knock: float = -200
 
 func _ready() -> void:
 	state_machine.init(self)
 	this_jump_state = %jump
 	ObjectsBus.speaker_entered.connect(speaker_entered)
 	ObjectsBus.caution_entered.connect(caution_entered)
+	GameManager.gamestate.game_over.connect(game_over)
 
 func _unhandled_input(input: InputEvent) -> void:
-	state_machine.process_input(input)
+	if GameManager.is_game_active:
+		state_machine.process_input(input)
 
 func _physics_process(delta: float) -> void:
-	#print(velocity.x)
-	state_machine.process_physics(delta)
+	if GameManager.is_game_active:
+		state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+	print(death_anim_timer.time_left)
 
 ## in player.gd to prevent multiple triggers
 func speaker_entered():
@@ -37,6 +50,17 @@ func speaker_entered():
 
 func caution_entered(force: Vector2):
 	state_machine.change_state(%knocked)
-	velocity.x -= clampf(force.x * 2200, -200, 200)
-	velocity.y -= clampf(force.y * 2200, -200, 200)
+	# multiply force to force consistant knockback values
+	velocity.x -= clampf(force.x * 2200, min_knock, max_knock)
+	velocity.y -= clampf(force.y * 2200, min_knock, max_knock)
 	print(velocity)
+
+func game_over():
+	sprite_animations.play("death")
+	death_anim_timer.start()
+
+
+func _on_death_anim_timer_timeout() -> void:
+	for particles in death_particles.get_children():
+		particles.emitting = true
+	sprite.hide()
