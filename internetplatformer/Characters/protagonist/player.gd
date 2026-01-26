@@ -56,6 +56,7 @@ func caution_entered(force: Vector2):
 	print(velocity)
 
 func game_over():
+	sprite.play("knocked")
 	sprite_animations.play("death")
 	death_anim_timer.start()
 

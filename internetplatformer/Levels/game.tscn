@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://dk6ul1w3s20hg"]
+[gd_scene format=4 uid="uid://dk6ul1w3s20hg"]
 
 [ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="1_6isyr"]
+[ext_resource type="Script" uid="uid://7k0l8gswqmpp" path="res://Systems/world.gd" id="1_fiyor"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uda3f"]
 [ext_resource type="Script" uid="uid://biwdjja5ldwni" path="res://Systems/player_camera.gd" id="3_jycte"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_uda3f"]
@@ -8,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="6_jycte"]
 [ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="7_ev4ff"]
 [ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="8_xfsjo"]
-[ext_resource type="PackedScene" uid="uid://d3lqgmd5qe4e1" path="res://Systems/ui.tscn" id="9_qe8hq"]
+[ext_resource type="PackedScene" uid="uid://d3lqgmd5qe4e1" path="res://Systems/UI/ui.tscn" id="9_qe8hq"]
 
 [sub_resource type="Resource" id="Resource_5ubxa"]
 script = ExtResource("3_uda3f")
@@ -24,22 +25,23 @@ tile_offset_axis = 1
 tile_size = Vector2i(16, 14)
 sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" unique_id=971698201]
+script = ExtResource("1_fiyor")
 
-[node name="Player" parent="." instance=ExtResource("1_6isyr")]
+[node name="Player" parent="." unique_id=1333374516 instance=ExtResource("1_6isyr")]
 position = Vector2(-155, -30)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1482318228]
 position = Vector2(-156, -30)
 limit_enabled = false
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1062013280]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_uda3f")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1858087800 node_paths=PackedStringArray("follow_target")]
 position = Vector2(-156, -30)
 script = ExtResource("3_jycte")
 priority_override = true
@@ -56,13 +58,13 @@ limit_top = -220
 limit_bottom = 300
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Tilemaps" type="Node" parent="."]
+[node name="Tilemaps" type="Node" parent="." unique_id=777770434]
 
-[node name="Windows" parent="Tilemaps" instance=ExtResource("5_uda3f")]
+[node name="Windows" parent="Tilemaps" unique_id=141754045 instance=ExtResource("5_uda3f")]
 tile_map_data = PackedByteArray("AAD6/wAAAAACAAEAAAD5/wAAAAABAAEAAAD4/wAAAAABAAEAAAD3/wAAAAABAAEAAAD2/wAAAAABAAEAAAD1/wAAAAABAAEAAAD1/wEAAAABAAIAAAD2/wEAAAABAAIAAAD3/wEAAAABAAIAAAD1/wIAAAABAAMAAAD2/wIAAAABAAMAAAD3/wIAAAABAAMAAAD4/wIAAAABAAMAAAD5/wIAAAABAAMAAAD5/wEAAAABAAIAAAD4/wEAAAABAAIAAAD6/wEAAAACAAIAAAD6/wIAAAACAAMAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAMAAAD+/wAAAAABAAEAAAD+/wEAAAABAAMAAAD//wEAAAACAAMAAAD//wAAAAACAAEAAAADAP//AAAAAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAAGAP//AAACAAEAAAAGAAAAAAACAAIAAAAFAAAAAAABAAIAAAAEAAAAAAABAAIAAAADAAAAAAAAAAIAAAADAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAFAAEAAAABAAMAAAAGAAEAAAACAAMAAAAQAAQAAAAAAAMAAAARAAQAAAABAAMAAAARAAMAAAABAAEAAAARAP//AAABAAIAAAARAP7/AAABAAIAAAARAPz/AAABAAEAAAASAPz/AAACAAEAAAARAP3/AAABAAIAAAARAAAAAAABAAMAAAASAP3/AAACAAIAAAASAP7/AAACAAIAAAASAP//AAACAAIAAAASAAAAAAACAAMAAAASAAMAAAACAAEAAAAQAAMAAAAAAAEAAAASAAQAAAACAAMAAAD0/wAAAAABAAEAAADz/wAAAAAAAAEAAADz/wEAAAAAAAIAAAD0/wEAAAABAAIAAAD0/wIAAAABAAMAAADz/wIAAAAAAAMAAAD+//r/AAAAAAIAAAD+//v/AAAAAAMAAAD///r/AAACAAIAAAD///v/AAACAAMAAAD+//n/AAAAAAIAAAD///n/AAACAAIAAAD///j/AAACAAEAAAD+//j/AAAAAAEAAAAMAAIAAAAAAAEAAAAMAAMAAAAAAAMAAAAKAAQAAAAEAAIAAAAKAAUAAAAEAAUAAAAIAAIAAAAEAAIAAAAIAAMAAAAEAAQAAAAIAAQAAAAEAAMAAAAIAAUAAAAEAAQAAAAIAAYAAAAEAAUAAAALAP3/AAAAAAEAAAALAP7/AAAAAAIAAAALAP//AAAAAAMAAAANAAMAAAACAAMAAAANAAIAAAACAAEAAAAUAPz/AAAEAAIAAAAUAP3/AAAEAAMAAAAUAP7/AAAEAAMAAAAUAP//AAAEAAQAAAAUAAAAAAAEAAUAAAAWAPz/AAAEAAIAAAAWAP3/AAAEAAQAAAAWAP7/AAAEAAQAAAAWAP//AAAEAAMAAAAWAAAAAAAEAAUAAAAYAPz/AAAEAAIAAAAYAP3/AAAEAAQAAAAYAP7/AAAEAAMAAAAYAP//AAAEAAMAAAAYAAAAAAAEAAUAAAAaAPz/AAAAAAEAAAAaAP3/AAAAAAIAAAAaAP7/AAAAAAIAAAAaAP//AAAAAAIAAAAaAAAAAAAAAAMAAAAbAAAAAAABAAMAAAAcAAAAAAACAAMAAAAcAP//AAACAAIAAAAcAP7/AAACAAIAAAAcAP3/AAACAAIAAAAcAPz/AAACAAEAAAAbAPz/AAABAAEAAAAbAP7/AAABAAIAAAAbAP//AAABAAIAAAAbAP3/AAABAAIAAAAQAPz/AAAAAAEAAAAQAP3/AAAAAAIAAAAQAP7/AAAAAAIAAAAQAP//AAAAAAIAAAAQAAAAAAAAAAMAAAAbAAQAAAABAAEAAAAZAAUAAAAAAAMAAAAaAAUAAAABAAMAAAAbAAUAAAABAAMAAAAcAAQAAAACAAEAAAAcAAUAAAACAAMAAAAaAAQAAAABAAEAAAAZAAQAAAAAAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAIAAAAMAP//AAABAAMAAAANAP3/AAACAAEAAAANAP7/AAACAAIAAAANAP//AAACAAMAAAA=")
 
-[node name="Objects" type="TileMapLayer" parent="Tilemaps"]
+[node name="Objects" type="TileMapLayer" parent="Tilemaps" unique_id=1855894398]
 tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQD5//3/AAAAAAAAAgDy/wAAAAAAAAAAAgDx/wAAAAAAAAAAAgDw/wAAAAAAAAAAAgAEAPf/AAAAAAAAAgALAPv/AAAAAAAAAwD8////AAAAAAAAAwDv/xcAAAAAAAAAAwDw/xcAAAAAAAAAAwDx/xcAAAAAAAAAAwDy/xcAAAAAAAAAAwDz/xcAAAAAAAAAAwD0/xcAAAAAAAAAAwD1/xcAAAAAAAAAAwD2/xcAAAAAAAAAAwD3/xcAAAAAAAAAAwD4/xcAAAAAAAAAAwD5/xcAAAAAAAAAAwD6/xcAAAAAAAAAAwD7/xcAAAAAAAAAAwD8/xcAAAAAAAAAAwD9/xcAAAAAAAAAAwD+/xcAAAAAAAAAAwD//xcAAAAAAAAAAwAAABcAAAAAAAAAAwABABcAAAAAAAAAAwACABcAAAAAAAAAAwADABcAAAAAAAAAAwAEABcAAAAAAAAAAwAFABcAAAAAAAAAAwAGABcAAAAAAAAAAwAHABcAAAAAAAAAAwAIABcAAAAAAAAAAwAJABcAAAAAAAAAAwAKABcAAAAAAAAAAwALABcAAAAAAAAAAwAMABcAAAAAAAAAAwANABcAAAAAAAAAAwAOABcAAAAAAAAAAwAPABcAAAAAAAAAAwAQABcAAAAAAAAAAwARABcAAAAAAAAAAwASABcAAAAAAAAAAwATABcAAAAAAAAAAwAUABcAAAAAAAAAAwAVABcAAAAAAAAAAwAWABcAAAAAAAAAAwAXABcAAAAAAAAAAwAYABcAAAAAAAAAAwAZABcAAAAAAAAAAwAaABcAAAAAAAAAAwAbABcAAAAAAAAAAwAcABcAAAAAAAAAAwAdABcAAAAAAAAAAwAeABcAAAAAAAAAAwAfABcAAAAAAAAAAwAgABcAAAAAAAAAAwDu/xcAAAAAAAAAAwDt/xcAAAAAAAAAAwDs/xcAAAAAAAAAAwDr/xcAAAAAAAAAAwDq/xcAAAAAAAAAAwDp/xcAAAAAAAAAAwDo/xcAAAAAAAAAAwDn/xcAAAAAAAAAAwA=")
 tile_set = SubResource("TileSet_jycte")
 
-[node name="UI" parent="." instance=ExtResource("9_qe8hq")]
+[node name="UI" parent="." unique_id=1317021621 instance=ExtResource("9_qe8hq")]

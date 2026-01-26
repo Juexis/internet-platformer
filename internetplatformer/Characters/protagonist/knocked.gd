@@ -6,6 +6,7 @@ extends PlayerState
 
 func enter() -> void:
 	knocked_timer.start()
+	parent.sprite.play("knocked")
 	parent.sprite_animations.play("hit")
 
 func process_physics(delta: float) -> State:
