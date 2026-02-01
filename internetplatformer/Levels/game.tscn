@@ -68,3 +68,5 @@ tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQD5//3/AAAAAAAAAgDy/wAAAAAAAAA
 tile_set = SubResource("TileSet_jycte")
 
 [node name="UI" parent="." unique_id=1317021621 instance=ExtResource("9_qe8hq")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1304624707]

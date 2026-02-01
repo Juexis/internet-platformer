@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
-	print(death_anim_timer.time_left)
 
 ## in player.gd to prevent multiple triggers
 func speaker_entered():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnu0ly4kii26p"]
+[gd_scene format=3 uid="uid://cnu0ly4kii26p"]
 
 [ext_resource type="Texture2D" uid="uid://kral5gxibmk5" path="res://Sprites/Tilesets/volume.png" id="1_43lvd"]
 [ext_resource type="Script" uid="uid://kmyllii7qbg7" path="res://Objects/speaker.gd" id="1_a3xpf"]
@@ -6,27 +6,28 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43lvd"]
 size = Vector2(18, 17)
 
-[node name="Speaker" type="StaticBody2D"]
+[node name="Speaker" type="StaticBody2D" unique_id=1857445700]
 script = ExtResource("1_a3xpf")
+interaction_path = NodePath("interaction_area")
 
-[node name="speaker_sprite" type="Sprite2D" parent="."]
+[node name="speaker_sprite" type="Sprite2D" parent="." unique_id=1618835051]
 texture = ExtResource("1_43lvd")
 vframes = 2
 frame = 1
 
-[node name="waves_sprite" type="Sprite2D" parent="."]
+[node name="waves_sprite" type="Sprite2D" parent="." unique_id=1313617139]
 position = Vector2(0, -8)
 texture = ExtResource("1_43lvd")
 vframes = 2
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interaction_area" type="Area2D" parent="." unique_id=1091218876]
 collision_layer = 4
 collision_mask = 2
 
-[node name="area_of_effect" type="CollisionShape2D" parent="Area2D"]
+[node name="area_of_effect" type="CollisionShape2D" parent="interaction_area" unique_id=630464661]
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_43lvd")
 debug_color = Color(0, 0.63066095, 0.47351313, 0.41960785)
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_speaker_entered"]
+[connection signal="body_entered" from="interaction_area" to="." method="_on_speaker_entered"]
