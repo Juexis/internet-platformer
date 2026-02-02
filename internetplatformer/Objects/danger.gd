@@ -1,6 +1,7 @@
-extends StaticBody2D
+extends Interactable
 
-func _on_danger_entered(body: Node2D) -> void:
-	GameManager.gamestate.game_over.emit()
-	GameManager.is_game_active = false
-	print("game over")
+func _physics_process(delta: float) -> void:
+	if _is_inside and not _logic_triggered:
+		GameManager.gamestate.game_over.emit()
+	
+	super(delta)

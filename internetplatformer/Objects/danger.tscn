@@ -1,21 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dywtet7pb6d8m"]
+[gd_scene format=3 uid="uid://dywtet7pb6d8m"]
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_mpa7b"]
 [ext_resource type="Script" uid="uid://daktwbuvj8bgu" path="res://Objects/danger.gd" id="2_haub7"]
 [ext_resource type="Texture2D" uid="uid://m7gy4x02mayb" path="res://Sprites/Tilesets/danger.png" id="2_wfa5t"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_haub7"]
-radius = 7.071068
-
-[node name="Danger" instance=ExtResource("1_mpa7b")]
+[node name="Danger" unique_id=210674244 instance=ExtResource("1_mpa7b")]
 z_index = -1
 script = ExtResource("2_haub7")
+interaction_path = NodePath("interaction_area")
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="0" unique_id=1644634061]
 texture = ExtResource("2_wfa5t")
 
-[node name="area_of_effect" parent="Area2D" index="0"]
+[node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
 position = Vector2(0, 0)
-shape = SubResource("CircleShape2D_haub7")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_danger_entered"]

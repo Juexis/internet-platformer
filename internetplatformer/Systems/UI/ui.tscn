@@ -1,22 +1,26 @@
 [gd_scene format=3 uid="uid://d3lqgmd5qe4e1"]
 
-[ext_resource type="FontFile" uid="uid://pbol0503ygj1" path="res://Sprites/Silver.ttf" id="1_571bw"]
+[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Sprites/monogram.ttf" id="1_31fyy"]
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="2_0275g"]
+[ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="3_31fyy"]
 
 [node name="UI" type="CanvasLayer" unique_id=1468181501]
 
 [node name="TimerContainer" type="MarginContainer" parent="." unique_id=1716035317]
 offset_right = 19.0
-offset_bottom = 16.0
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 1
+offset_bottom = 23.0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = -10
 
 [node name="TimeLabel" type="Label" parent="TimerContainer" unique_id=498187500]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_571bw")
-theme_override_font_sizes/font_size = 12
-text = "Time:"
+theme_override_colors/font_outline_color = Color(0.2202617, 0.3070916, 0.4461769, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_31fyy")
+theme_override_font_sizes/font_size = 11
+text = "0:00
+"
 script = ExtResource("2_0275g")
 metadata/_edit_use_anchors_ = true
 
@@ -24,21 +28,22 @@ metadata/_edit_use_anchors_ = true
 autostart = true
 
 [node name="RetryButton" type="Button" parent="." unique_id=93056306]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.5
+offset_left = -16.0
 offset_top = -11.0
-offset_right = 15.5
+offset_right = 16.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_571bw")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("1_31fyy")
+theme_override_font_sizes/font_size = 11
 text = "Retry?"
+script = ExtResource("3_31fyy")
 
 [connection signal="timeout" from="TimerContainer/TimeLabel/Timer" to="TimerContainer/TimeLabel" method="_on_timer_timeout"]
+[connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_pressed"]

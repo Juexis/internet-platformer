@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://duralolh2mgd6"]
+[gd_scene format=3 uid="uid://duralolh2mgd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jti6"]
 size = Vector2(16, 16)
 
-[node name="BaseObject" type="StaticBody2D"]
+[node name="BaseObject" type="StaticBody2D" unique_id=2116232511]
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1644634061]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="interaction_area" type="Area2D" parent="." unique_id=1279845139]
 collision_layer = 4
 collision_mask = 2
 
-[node name="area_of_effect" type="CollisionShape2D" parent="Area2D"]
+[node name="area_of_effect" type="CollisionShape2D" parent="interaction_area" unique_id=195230144]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_4jti6")
 debug_color = Color(0, 0.63066095, 0.47351313, 0.41960785)

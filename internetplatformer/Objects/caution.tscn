@@ -1,21 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://toamyasb2lad"]
+[gd_scene format=3 uid="uid://toamyasb2lad"]
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_eysqj"]
 [ext_resource type="Script" uid="uid://dv60nx42epc1s" path="res://Objects/caution.gd" id="2_4p7eh"]
 [ext_resource type="Texture2D" uid="uid://kfa8vd4te6il" path="res://Sprites/Tilesets/caution.png" id="2_sxs14"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4p7eh"]
-points = PackedVector2Array(6, 6.5, -1, -8.5, -8, 6.5)
-
-[node name="Caution" instance=ExtResource("1_eysqj")]
+[node name="Caution" unique_id=1876429500 instance=ExtResource("1_eysqj")]
 script = ExtResource("2_4p7eh")
+interaction_path = NodePath("interaction_area")
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="0" unique_id=1644634061]
 texture = ExtResource("2_sxs14")
 hframes = 2
 
-[node name="area_of_effect" parent="Area2D" index="0"]
-position = Vector2(1, 0.5)
-shape = SubResource("ConvexPolygonShape2D_4p7eh")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_caution_entered"]
+[node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
+position = Vector2(0, 0)

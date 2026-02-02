@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	minutes = total_seconds / 60
 	seconds = total_seconds % 60
 	if GameManager.is_game_active:
-		text = "Time:" + "%2d:%02d" % [minutes, seconds]
+		text = "%2d:%02d" % [minutes, seconds]
 
 func _on_timer_timeout() -> void:
 	total_seconds += 1

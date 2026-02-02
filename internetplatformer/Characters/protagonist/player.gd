@@ -55,10 +55,11 @@ func caution_entered(force: Vector2):
 	print(velocity)
 
 func game_over():
+	GameManager.is_game_active = false
+	GameManager.player_died = true
 	sprite.play("knocked")
 	sprite_animations.play("death")
 	death_anim_timer.start()
-
 
 func _on_death_anim_timer_timeout() -> void:
 	for particles in death_particles.get_children():
