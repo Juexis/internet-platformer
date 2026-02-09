@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bv16i4ec2ff6n"]
 
-[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_7qfpv"]
-[ext_resource type="Script" uid="uid://3kx80jk1doav" path="res://Systems/UI/end_window.gd" id="2_m8w27"]
-[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="3_vg46w"]
-[ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="4_4xdd4"]
-[ext_resource type="Texture2D" uid="uid://76ujnahbeby6" path="res://Visuals/x_ui.png" id="5_j1ox4"]
-[ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="6_g40l0"]
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_pjqcs"]
+[ext_resource type="Script" uid="uid://3kx80jk1doav" path="res://Systems/UI/end_window.gd" id="2_r0ryy"]
+[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="3_uw854"]
+[ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="4_k6wsp"]
+[ext_resource type="Texture2D" uid="uid://76ujnahbeby6" path="res://Visuals/x_ui.png" id="5_jvs6u"]
+[ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="6_m8rdo"]
 
 [sub_resource type="Animation" id="Animation_7qfpv"]
 length = 0.001
@@ -19,7 +19,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_m8w27"]
@@ -36,28 +48,72 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334),
+"transitions": PackedFloat32Array(0.076946765, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pjqcs"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.6666667),
+"transitions": PackedFloat32Array(0.12940824, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666666, 0.43333334),
+"transitions": PackedFloat32Array(0.094732374, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hb0y1"]
 _data = {
 &"RESET": SubResource("Animation_7qfpv"),
-&"fade_in": SubResource("Animation_m8w27")
+&"fade_in": SubResource("Animation_m8w27"),
+&"fade_out": SubResource("Animation_pjqcs")
 }
 
-[node name="WindowBody" type="PanelContainer" unique_id=19765220 node_paths=PackedStringArray("_focus_button")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -40.0
-offset_right = 36.0
-offset_bottom = 41.5
+[node name="End_window" type="PanelContainer" unique_id=19765220 node_paths=PackedStringArray("_focus_button")]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.35375002
+anchor_top = 0.29
+anchor_right = 0.64625
+anchor_bottom = 0.71000004
+offset_left = -3.9000015
+offset_top = -4.199997
+offset_right = 3.899994
+offset_bottom = 4.199997
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_7qfpv")
-script = ExtResource("2_m8w27")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme = ExtResource("1_pjqcs")
+script = ExtResource("2_r0ryy")
 _focus_button = NodePath("OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs/RetryButton")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2071553278]
 libraries/ = SubResource("AnimationLibrary_hb0y1")
@@ -100,7 +156,7 @@ color = Color(0.57254905, 0.6313726, 0.7254902, 1)
 [node name="BodyContainer" type="PanelContainer" parent="OutlineMargin/VBoxContainer" unique_id=1819484783]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_7qfpv")
+theme = ExtResource("1_pjqcs")
 theme_type_variation = &"WindowBody"
 
 [node name="BodyMargin" type="MarginContainer" parent="OutlineMargin/VBoxContainer/BodyContainer" unique_id=1567553267]
@@ -138,11 +194,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.14331397, 0.15895447, 0.30267066, 1)
 theme_override_constants/line_spacing = 3
-theme_override_fonts/font = ExtResource("3_vg46w")
+theme_override_fonts/font = ExtResource("3_uw854")
 theme_override_font_sizes/font_size = 11
 text = "0:00"
 horizontal_alignment = 1
-script = ExtResource("4_4xdd4")
+script = ExtResource("4_k6wsp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" unique_id=1186233727]
@@ -156,12 +212,12 @@ theme_override_constants/margin_bottom = 6
 [node name="X_Icon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=1196840617]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_j1ox4")
+texture = ExtResource("5_jvs6u")
 stretch_mode = 3
 
 [node name="ButtonHBoxs" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=250411936]
 layout_mode = 2
-theme_override_constants/separation = -14
+theme_override_constants/separation = -1
 
 [node name="RetryButton" type="Button" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs" unique_id=661643453]
 layout_mode = 2
@@ -169,11 +225,11 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 focus_neighbor_left = NodePath(".")
 focus_previous = NodePath(".")
-theme = ExtResource("1_7qfpv")
+theme = ExtResource("1_pjqcs")
 theme_type_variation = &"RestartButton"
-theme_override_fonts/font = ExtResource("3_vg46w")
+theme_override_fonts/font = ExtResource("3_uw854")
 theme_override_font_sizes/font_size = 11
-script = ExtResource("6_g40l0")
+script = ExtResource("6_m8rdo")
 
 [node name="MenuButton" type="Button" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs" unique_id=1088448154]
 layout_mode = 2
@@ -181,7 +237,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 8
 focus_neighbor_right = NodePath(".")
 focus_next = NodePath(".")
-theme = ExtResource("1_7qfpv")
+theme = ExtResource("1_pjqcs")
 theme_type_variation = &"Menu"
 
 [connection signal="timeout" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel/Timer" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" method="_on_timer_timeout"]

@@ -3,36 +3,38 @@
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="1_31fyy"]
 [ext_resource type="Theme" uid="uid://brqova8kpckmg" path="res://Visuals/Themes/titlebar.tres" id="1_g01m3"]
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="2_0275g"]
-[ext_resource type="PackedScene" uid="uid://bv16i4ec2ff6n" path="res://Systems/UI/window_body.tscn" id="5_o4wqe"]
+[ext_resource type="PackedScene" uid="uid://bv16i4ec2ff6n" path="res://Systems/UI/end_window.tscn" id="5_o4wqe"]
 
 [node name="UI" type="CanvasLayer" unique_id=1468181501]
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1090259207]
-anchors_preset = 10
+[node name="TitleBarPanel" type="PanelContainer" parent="." unique_id=1090259207]
+anchors_preset = -1
 anchor_right = 1.0
-offset_bottom = 14.0
+anchor_bottom = 0.072222225
 grow_horizontal = 2
 theme = ExtResource("1_g01m3")
+metadata/_edit_use_anchors_ = true
 
-[node name="TitleBar Margin" type="MarginContainer" parent="PanelContainer" unique_id=1716035317]
+[node name="TitleBar Margin" type="MarginContainer" parent="TitleBarPanel" unique_id=1716035317]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TitleBar Margin" unique_id=256439510]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleBarPanel/TitleBar Margin" unique_id=256439510]
 layout_mode = 2
 
-[node name="LevelLabel" type="Label" parent="PanelContainer/TitleBar Margin/HBoxContainer" unique_id=989269689]
+[node name="LevelLabel" type="Label" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=989269689]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("1_31fyy")
 theme_override_font_sizes/font_size = 11
 text = "Test Level"
 
-[node name="TimeLabel" type="Label" parent="PanelContainer/TitleBar Margin/HBoxContainer" unique_id=498187500]
+[node name="TimeLabel" type="Label" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=498187500]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.14331397, 0.15895447, 0.30267066, 1)
@@ -43,15 +45,19 @@ text = "0:00"
 script = ExtResource("2_0275g")
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="PanelContainer/TitleBar Margin/HBoxContainer/TimeLabel" unique_id=1235666452]
+[node name="Timer" type="Timer" parent="TitleBarPanel/TitleBar Margin/HBoxContainer/TimeLabel" unique_id=1235666452]
 autostart = true
 
-[node name="WindowBody" parent="." unique_id=19765220 instance=ExtResource("5_o4wqe")]
-offset_left = -28.0
-offset_top = -35.673058
-offset_right = 28.0
-offset_bottom = 35.673058
+[node name="End_window" parent="." unique_id=19765220 instance=ExtResource("5_o4wqe")]
+anchor_left = 0.3375
+anchor_top = 0.26666668
+anchor_right = 0.6625
+anchor_bottom = 0.73333335
+offset_left = 0.0
+offset_top = -3.8146973e-06
+offset_right = 0.0
+offset_bottom = 0.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[connection signal="timeout" from="PanelContainer/TitleBar Margin/HBoxContainer/TimeLabel/Timer" to="PanelContainer/TitleBar Margin/HBoxContainer/TimeLabel" method="_on_timer_timeout"]
+[connection signal="timeout" from="TitleBarPanel/TitleBar Margin/HBoxContainer/TimeLabel/Timer" to="TitleBarPanel/TitleBar Margin/HBoxContainer/TimeLabel" method="_on_timer_timeout"]
