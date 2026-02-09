@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kral5gxibmk5"
-path="res://.godot/imported/volume.png-0940ed065fa9b889e0113fb9aa3992f0.ctex"
+uid="uid://m7gy4x02mayb"
+path="res://.godot/imported/danger.png-ac1359e20860c6448206f65e9bde9c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/volume.png"
-dest_files=["res://.godot/imported/volume.png-0940ed065fa9b889e0113fb9aa3992f0.ctex"]
+source_file="res://Visuals/Sprites/Tilesets/danger.png"
+dest_files=["res://.godot/imported/danger.png-ac1359e20860c6448206f65e9bde9c9d.ctex"]
 
 [params]
 

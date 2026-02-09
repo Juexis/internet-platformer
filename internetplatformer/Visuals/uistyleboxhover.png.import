@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m7gy4x02mayb"
-path="res://.godot/imported/danger.png-eea3073a48efa3ffdd61823e3ab4b639.ctex"
+uid="uid://dpc316t3s3y5p"
+path="res://.godot/imported/uistyleboxhover.png-b52174b00a068c251b73afc7322dc38c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/danger.png"
-dest_files=["res://.godot/imported/danger.png-eea3073a48efa3ffdd61823e3ab4b639.ctex"]
+source_file="res://Visuals/uistyleboxhover.png"
+dest_files=["res://.godot/imported/uistyleboxhover.png-b52174b00a068c251b73afc7322dc38c.ctex"]
 
 [params]
 

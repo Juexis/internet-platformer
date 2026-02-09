@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_mpa7b"]
 [ext_resource type="Script" uid="uid://daktwbuvj8bgu" path="res://Objects/danger.gd" id="2_haub7"]
-[ext_resource type="Texture2D" uid="uid://m7gy4x02mayb" path="res://Sprites/Tilesets/danger.png" id="2_wfa5t"]
+[ext_resource type="Texture2D" uid="uid://m7gy4x02mayb" path="res://Visuals/Sprites/Tilesets/danger.png" id="2_wfa5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfa5t"]
+radius = 7.0
 
 [node name="Danger" unique_id=210674244 instance=ExtResource("1_mpa7b")]
 z_index = -1
@@ -14,3 +17,4 @@ texture = ExtResource("2_wfa5t")
 
 [node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
 position = Vector2(0, 0)
+shape = SubResource("CircleShape2D_wfa5t")

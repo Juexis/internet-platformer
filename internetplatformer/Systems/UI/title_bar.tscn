@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bialnx78iy2lq"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_3wnxi"]
+
+[node name="TitleBar" type="PanelContainer" unique_id=2009584394]
+offset_right = 35.0
+offset_bottom = 10.0
+theme = ExtResource("1_3wnxi")
+theme_type_variation = &"TitleBar"

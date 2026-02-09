@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uda3f"]
 [ext_resource type="Script" uid="uid://biwdjja5ldwni" path="res://Systems/player_camera.gd" id="3_jycte"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_uda3f"]
-[ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Sprites/Tilesets/window_tilemap.tscn" id="5_uda3f"]
+[ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Visuals/Sprites/Tilesets/window_tilemap.tscn" id="5_uda3f"]
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="6_jycte"]
 [ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="7_ev4ff"]
 [ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="8_xfsjo"]
@@ -32,7 +32,7 @@ script = ExtResource("1_fiyor")
 position = Vector2(-170, -13)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1482318228]
-position = Vector2(-155, -35)
+position = Vector2(-170, -35)
 limit_enabled = false
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1062013280]
@@ -42,7 +42,7 @@ script = ExtResource("2_uda3f")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1858087800 node_paths=PackedStringArray("follow_target")]
-position = Vector2(-158, -35)
+position = Vector2(-170, -35)
 script = ExtResource("3_jycte")
 priority_override = true
 follow_mode = 5

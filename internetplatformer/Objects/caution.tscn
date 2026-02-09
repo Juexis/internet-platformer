@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_eysqj"]
 [ext_resource type="Script" uid="uid://dv60nx42epc1s" path="res://Objects/caution.gd" id="2_4p7eh"]
-[ext_resource type="Texture2D" uid="uid://kfa8vd4te6il" path="res://Sprites/Tilesets/caution.png" id="2_sxs14"]
+[ext_resource type="Texture2D" uid="uid://kfa8vd4te6il" path="res://Visuals/Sprites/Tilesets/caution.png" id="2_sxs14"]
 
 [node name="Caution" unique_id=1876429500 instance=ExtResource("1_eysqj")]
+position = Vector2(1, 0)
 script = ExtResource("2_4p7eh")
 interaction_path = NodePath("interaction_area")
 

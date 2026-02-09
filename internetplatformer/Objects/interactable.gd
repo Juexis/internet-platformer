@@ -9,7 +9,7 @@ var _is_inside: bool = false
 var _was_inside: bool = false
 var _logic_triggered = false ## flag for if the object has already done its thing
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	_is_inside = false # set back to false if not inside
 	
 	_check_player_inside()
@@ -40,7 +40,7 @@ func detect_player() -> bool:
 			break
 	return false
 
-## checks for if the player is in the interaction area if so then _is_inside is true
+## checks for if the player is in the interaction area if so then [member Interactable._is_inside] is [code]true[/code]
 func _check_player_inside():
 	if detect_player():
 		_is_inside = true

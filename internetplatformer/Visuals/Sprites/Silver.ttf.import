@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ck864o2wnt8bf"
-path="res://.godot/imported/monogram.ttf-347c7aac4ea0a39c7ddc635b6885ed4a.fontdata"
+uid="uid://pbol0503ygj1"
+path="res://.godot/imported/Silver.ttf-4145e55a07a2f375363966322b9a9f10.fontdata"
 
 [deps]
 
-source_file="res://Sprites/monogram.ttf"
-dest_files=["res://.godot/imported/monogram.ttf-347c7aac4ea0a39c7ddc635b6885ed4a.fontdata"]
+source_file="res://Visuals/Sprites/Silver.ttf"
+dest_files=["res://.godot/imported/Silver.ttf-4145e55a07a2f375363966322b9a9f10.fontdata"]
 
 [params]
 
@@ -34,8 +34,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
+"size": Vector2i(16, 0)
 }]
 language_support={}
 script_support={}

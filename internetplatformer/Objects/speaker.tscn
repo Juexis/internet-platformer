@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnu0ly4kii26p"]
 
-[ext_resource type="Texture2D" uid="uid://kral5gxibmk5" path="res://Sprites/Tilesets/volume.png" id="1_43lvd"]
+[ext_resource type="Texture2D" uid="uid://kral5gxibmk5" path="res://Visuals/Sprites/Tilesets/volume.png" id="1_43lvd"]
 [ext_resource type="Script" uid="uid://kmyllii7qbg7" path="res://Objects/speaker.gd" id="1_a3xpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43lvd"]
