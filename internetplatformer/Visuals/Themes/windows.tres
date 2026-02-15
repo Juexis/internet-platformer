@@ -7,6 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://dt7l1mv5t1cum" path="res://Visuals/UI/uistylebox.png" id="4_iiird"]
 [ext_resource type="Texture2D" uid="uid://cwewsywpr1b7a" path="res://Visuals/UI/uistyleboxpressed.png" id="5_ak7bv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh6n4"]
+bg_color = Color(0.7809276, 0.3820407, 0.8438047, 0.3647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8njp5"]
+bg_color = Color(0.95686275, 0.3019608, 0.70980394, 0.25490198)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao8kh"]
+bg_color = Color(0.6848725, 0.46550888, 0.9829729, 0.5137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nfam"]
+bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmffa"]
+bg_color = Color(0.972549, 0.31764707, 0.59607846, 0.3529412)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ak7bv"]
 texture = ExtResource("3_rkc2l")
 texture_margin_left = 3.0
@@ -63,7 +78,18 @@ bg_color = Color(1, 1, 1, 1)
 
 [resource]
 default_font = ExtResource("1_g3ncb")
-default_font_size = 11
+default_font_size = 14
+ItemList/colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
+ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0.25)
+ItemList/constants/h_separation = 30
+ItemList/constants/v_separation = 3
+ItemList/fonts/font = ExtResource("1_g3ncb")
+ItemList/styles/cursor = SubResource("StyleBoxFlat_dh6n4")
+ItemList/styles/focus = SubResource("StyleBoxFlat_8njp5")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_ao8kh")
+ItemList/styles/panel = SubResource("StyleBoxFlat_6nfam")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_kmffa")
+Label/colors/font_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
 Label/fonts/font = ExtResource("1_g3ncb")
 Menu/base_type = &"Button"
 Menu/icons/icon = ExtResource("2_py76f")
