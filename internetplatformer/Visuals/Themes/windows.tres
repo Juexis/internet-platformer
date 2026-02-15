@@ -1,26 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://dc67giobqnoxl"]
 
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="1_g3ncb"]
+[ext_resource type="StyleBox" uid="uid://b8sgh01h5a6fw" path="res://Systems/UI/level_selected_stylebox.tres" id="2_ak7bv"]
 [ext_resource type="Texture2D" uid="uid://b0ttg0jgx7hhi" path="res://Visuals/UI/menuicon.png" id="2_py76f"]
 [ext_resource type="Texture2D" uid="uid://bhy1j1ubetxfu" path="res://Visuals/UI/retryarrow.png" id="3_iiird"]
 [ext_resource type="Texture2D" uid="uid://dpc316t3s3y5p" path="res://Visuals/UI/uistyleboxhover.png" id="3_rkc2l"]
 [ext_resource type="Texture2D" uid="uid://dt7l1mv5t1cum" path="res://Visuals/UI/uistylebox.png" id="4_iiird"]
 [ext_resource type="Texture2D" uid="uid://cwewsywpr1b7a" path="res://Visuals/UI/uistyleboxpressed.png" id="5_ak7bv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh6n4"]
-bg_color = Color(0.7809276, 0.3820407, 0.8438047, 0.3647059)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8njp5"]
-bg_color = Color(0.95686275, 0.3019608, 0.70980394, 0.25490198)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao8kh"]
-bg_color = Color(0.6848725, 0.46550888, 0.9829729, 0.5137255)
+[ext_resource type="StyleBox" uid="uid://jqeghe3bt8rk" path="res://Systems/UI/ls_grabber.tres" id="8_hhtjo"]
+[ext_resource type="StyleBox" uid="uid://o66tk3g1d4tb" path="res://Systems/UI/ls_scroll_bg.tres" id="9_8njp5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nfam"]
 bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmffa"]
-bg_color = Color(0.972549, 0.31764707, 0.59607846, 0.3529412)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ak7bv"]
 texture = ExtResource("3_rkc2l")
@@ -70,6 +61,19 @@ texture_margin_top = 4.0
 texture_margin_right = 3.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="ImageTexture" id="ImageTexture_ak7bv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh6n4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.57254905, 0.6313726, 0.7254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.39607844, 0.4509804, 0.57254905, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhtjo"]
 bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
 
@@ -81,14 +85,14 @@ default_font = ExtResource("1_g3ncb")
 default_font_size = 14
 ItemList/colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
 ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0.25)
-ItemList/constants/h_separation = 30
+ItemList/constants/h_separation = 6
 ItemList/constants/v_separation = 3
 ItemList/fonts/font = ExtResource("1_g3ncb")
-ItemList/styles/cursor = SubResource("StyleBoxFlat_dh6n4")
-ItemList/styles/focus = SubResource("StyleBoxFlat_8njp5")
-ItemList/styles/hovered = SubResource("StyleBoxFlat_ao8kh")
+ItemList/styles/hovered = ExtResource("2_ak7bv")
+ItemList/styles/hovered_selected = ExtResource("2_ak7bv")
 ItemList/styles/panel = SubResource("StyleBoxFlat_6nfam")
-ItemList/styles/selected_focus = SubResource("StyleBoxFlat_kmffa")
+ItemList/styles/selected = ExtResource("2_ak7bv")
+ItemList/styles/selected_focus = ExtResource("2_ak7bv")
 Label/colors/font_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
 Label/fonts/font = ExtResource("1_g3ncb")
 Menu/base_type = &"Button"
@@ -105,6 +109,18 @@ RestartButton/styles/focus = SubResource("StyleBoxTexture_vn132")
 RestartButton/styles/hover = SubResource("StyleBoxTexture_vn132")
 RestartButton/styles/normal = SubResource("StyleBoxTexture_py76f")
 RestartButton/styles/pressed = SubResource("StyleBoxTexture_8njp5")
+VScrollBar/constants/padding_left = 0
+VScrollBar/constants/padding_right = 0
+VScrollBar/icons/decrement = SubResource("ImageTexture_ak7bv")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_ak7bv")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_ak7bv")
+VScrollBar/icons/increment = SubResource("ImageTexture_ak7bv")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_ak7bv")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_ak7bv")
+VScrollBar/styles/grabber = ExtResource("8_hhtjo")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_dh6n4")
+VScrollBar/styles/grabber_pressed = ExtResource("8_hhtjo")
+VScrollBar/styles/scroll = ExtResource("9_8njp5")
 WindowBody/base_type = &"PanelContainer"
 WindowBody/styles/panel = SubResource("StyleBoxFlat_hhtjo")
 WindowHeader/base_type = &"PanelContainer"
