@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://donlvjwti2hdd"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_naaou"]
+[ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="2_p0662"]
+
+[sub_resource type="Animation" id="Animation_7qfpv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pjqcs"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.6666667),
+"transitions": PackedFloat32Array(0.12940824, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666666, 0.43333334),
+"transitions": PackedFloat32Array(0.094732374, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ecvb"]
+_data = {
+&"RESET": SubResource("Animation_7qfpv"),
+&"fade_out": SubResource("Animation_pjqcs"),
+&"pop_in": ExtResource("2_p0662")
+}
+
+[node name="Window" type="Panel" unique_id=506431065]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(75, 80)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -40.0
+offset_right = 37.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37.5, 40)
+theme = ExtResource("1_naaou")
+
+[node name="WindowAnimations" type="AnimationPlayer" parent="." unique_id=2125014371]
+libraries/ = SubResource("AnimationLibrary_3ecvb")
+autoplay = &"pop_in"
+
+[node name="OutlineMargin" type="MarginContainer" parent="." unique_id=1845570605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBox" type="VBoxContainer" parent="OutlineMargin" unique_id=56674526]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HeaderContainer" type="PanelContainer" parent="OutlineMargin/VBox" unique_id=801279200]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme = ExtResource("1_naaou")
+theme_type_variation = &"WindowHeader"
+
+[node name="ColorRect" type="ColorRect" parent="OutlineMargin/VBox" unique_id=1567260077]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.39607844, 0.4509804, 0.57254905, 1)
+
+[node name="BodyContainer" type="PanelContainer" parent="OutlineMargin/VBox" unique_id=1690431037]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_naaou")
+theme_type_variation = &"WindowBody"

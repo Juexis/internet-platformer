@@ -43,8 +43,10 @@ enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons
 
 folder_colors={
 "res://Characters/": "red",
-"res://Levels/": "green",
-"res://Objects/": "blue"
+"res://Objects/": "blue",
+"res://Scenes/": "green",
+"res://Systems/": "teal",
+"res://Visuals/": "purple"
 }
 
 [gui]

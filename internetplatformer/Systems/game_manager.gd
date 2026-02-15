@@ -20,4 +20,4 @@ func restart_level():
 		is_game_active = true
 		player_died = false
 		print("reset")
-		get_tree().change_scene_to_file("res://Levels/game.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/game.tscn")

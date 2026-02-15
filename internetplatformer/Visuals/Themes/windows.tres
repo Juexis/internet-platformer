@@ -1,11 +1,11 @@
 [gd_resource type="Theme" format=3 uid="uid://dc67giobqnoxl"]
 
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="1_g3ncb"]
-[ext_resource type="Texture2D" uid="uid://b0ttg0jgx7hhi" path="res://Visuals/menuicon.png" id="2_py76f"]
-[ext_resource type="Texture2D" uid="uid://bhy1j1ubetxfu" path="res://Visuals/retryarrow.png" id="3_iiird"]
-[ext_resource type="Texture2D" uid="uid://dpc316t3s3y5p" path="res://Visuals/uistyleboxhover.png" id="3_rkc2l"]
-[ext_resource type="Texture2D" uid="uid://dt7l1mv5t1cum" path="res://Visuals/uistylebox.png" id="4_iiird"]
-[ext_resource type="Texture2D" uid="uid://cwewsywpr1b7a" path="res://Visuals/uistyleboxpressed.png" id="5_ak7bv"]
+[ext_resource type="Texture2D" uid="uid://b0ttg0jgx7hhi" path="res://Visuals/UI/menuicon.png" id="2_py76f"]
+[ext_resource type="Texture2D" uid="uid://bhy1j1ubetxfu" path="res://Visuals/UI/retryarrow.png" id="3_iiird"]
+[ext_resource type="Texture2D" uid="uid://dpc316t3s3y5p" path="res://Visuals/UI/uistyleboxhover.png" id="3_rkc2l"]
+[ext_resource type="Texture2D" uid="uid://dt7l1mv5t1cum" path="res://Visuals/UI/uistylebox.png" id="4_iiird"]
+[ext_resource type="Texture2D" uid="uid://cwewsywpr1b7a" path="res://Visuals/UI/uistyleboxpressed.png" id="5_ak7bv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ak7bv"]
 texture = ExtResource("3_rkc2l")

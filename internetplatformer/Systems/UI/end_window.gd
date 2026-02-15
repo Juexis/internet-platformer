@@ -1,5 +1,5 @@
 extends PanelContainer
-@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var animation: AnimationPlayer = $WindowAnimations
 @export var _focus_button: Button
 
 func _ready() -> void:
@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 func show_stuff():
 	await get_tree().create_timer(1).timeout
 	show()
-	animation.play("fade_in")
+	animation.play("pop_in")
 	_focus_button.grab_focus()

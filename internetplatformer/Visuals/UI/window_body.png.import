@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpc316t3s3y5p"
-path="res://.godot/imported/uistyleboxhover.png-b52174b00a068c251b73afc7322dc38c.ctex"
+uid="uid://blsn0s8sn4yhk"
+path="res://.godot/imported/window_body.png-656ade51e77f40da3d2b800ef18c3251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visuals/uistyleboxhover.png"
-dest_files=["res://.godot/imported/uistyleboxhover.png-b52174b00a068c251b73afc7322dc38c.ctex"]
+source_file="res://Visuals/UI/window_body.png"
+dest_files=["res://.godot/imported/window_body.png-656ade51e77f40da3d2b800ef18c3251.ctex"]
 
 [params]
 

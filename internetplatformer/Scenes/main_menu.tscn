@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c25ktv7xd8ocs"]
+
+[node name="MainMenu" type="Node2D" unique_id=447150897]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1352772168]
+
+[node name="Window" type="PanelContainer" parent="CanvasLayer" unique_id=330521602]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=375437638]
+offset_right = 40.0
+offset_bottom = 40.0
