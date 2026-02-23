@@ -1,9 +1,76 @@
 [gd_scene format=3 uid="uid://c25ktv7xd8ocs"]
 
+[ext_resource type="PackedScene" uid="uid://dmiyq43iealqx" path="res://Systems/UI/title.tscn" id="1_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://dha4ix54miqdo" path="res://Systems/UI/level_select.tscn" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="4_ce3w2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
+border_width_top = 1
+border_color = Color(1, 1, 1, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=447150897]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1352772168]
 
-[node name="Window" parent="CanvasLayer" unique_id=506431065 instance=ExtResource("1_28flt")]
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer" unique_id=1909824462]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120, 70)
+theme_override_constants/separation = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleMargin" type="MarginContainer" parent="CanvasLayer/VBox" unique_id=1566538337]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = -2
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBox/TitleMargin" unique_id=1661015092]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitlePanel" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=566474631 instance=ExtResource("1_1ehe0")]
+layout_mode = 2
+
+[node name="Window" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=506431065 instance=ExtResource("1_28flt")]
+custom_minimum_size = Vector2(125, 115)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="WindowAnimations" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/Window" index="0" unique_id=2125014371]
+autoplay = &"intro_pop_in"
+
+[node name="BottomBarPanel" type="PanelContainer" parent="CanvasLayer/VBox" unique_id=367782687]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ce3w2")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBox/BottomBarPanel" unique_id=1821993965]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = 1
+
+[node name="name" type="Label" parent="CanvasLayer/VBox/BottomBarPanel/MarginContainer" unique_id=1813787941]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
+theme_override_fonts/font = ExtResource("4_ce3w2")
+theme_override_font_sizes/font_size = 8
+text = "Juexis"
+
+[node name="year" type="Label" parent="CanvasLayer/VBox/BottomBarPanel/MarginContainer" unique_id=150617781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.02745098, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("4_ce3w2")
+theme_override_font_sizes/font_size = 8
+text = "@2026"
+horizontal_alignment = 2
+vertical_alignment = 3
+
+[editable path="CanvasLayer/VBox/TitleMargin/VBoxContainer/Window"]

@@ -62,10 +62,39 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(0.9, 0.9)]
 }
 
+[sub_resource type="Animation" id="Animation_ms8do"]
+resource_name = "intro_pop_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.8, 3.7666667),
+"transitions": PackedFloat32Array(0.02915735, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.8, 3.3333333),
+"transitions": PackedFloat32Array(0.07694675, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3ecvb"]
 _data = {
 &"RESET": SubResource("Animation_7qfpv"),
 &"fade_out": SubResource("Animation_pjqcs"),
+&"intro_pop_in": SubResource("Animation_ms8do"),
 &"pop_in": ExtResource("2_spig8")
 }
 
