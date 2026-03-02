@@ -24,17 +24,20 @@ func process_physics(delta: float) -> State:
 	super(delta)
 	
 	#region transitions
+	# jump transition
 	if Input.is_action_just_pressed("jump") and not crouch_roof.is_colliding() and parent.is_on_floor():
 		parent.collision_box.play("normal")
 		return jump_state
 	
-	if Input.is_action_just_released("press_down"):
-		if input_axis and not crouch_roof.is_colliding():
-			parent.collision_box.play("normal")
-			return run_state
-		elif not input_axis and not crouch_roof.is_colliding():
+	# on down release transitions
+	# using not .is_action_pressed instead of just_released to auto release slide when out of tunnel
+	if not Input.is_action_pressed("press_down"):
+		if not crouch_roof.is_colliding():
 			parent.collision_box.play("normal")
 			return idle_state
+		elif input_axis and not crouch_roof.is_colliding():
+			parent.collision_box.play("normal")
+			return run_state
 	
 	## test if this is better off
 	#if parent.velocity.y > 0 and !parent.is_on_floor():

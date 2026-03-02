@@ -14,3 +14,4 @@ func _ready() -> void:
 
 func _on_level_selected(index: int) -> void:
 	get_tree().change_scene_to_packed(levels.get(index))
+	GameManager.current_level = index

@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="1_31fyy"]
 [ext_resource type="Theme" uid="uid://brqova8kpckmg" path="res://Visuals/Themes/titlebar.tres" id="1_g01m3"]
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="2_0275g"]
+[ext_resource type="Script" uid="uid://btom1m2jr4vhr" path="res://Systems/UI/level_name_label.gd" id="3_mumph"]
 [ext_resource type="PackedScene" uid="uid://bv16i4ec2ff6n" path="res://Systems/UI/end_window.tscn" id="5_o4wqe"]
 
 [node name="UI" type="CanvasLayer" unique_id=1468181501]
@@ -32,7 +33,8 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
 theme_override_fonts/font = ExtResource("1_31fyy")
 theme_override_font_sizes/font_size = 11
-text = "Test.lvl"
+text = "LEVEL NAME GOES HERE"
+script = ExtResource("3_mumph")
 
 [node name="TimeLabel" type="Label" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=498187500]
 layout_mode = 2

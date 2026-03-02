@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://c8b67kqcothmw" path="res://Systems/UI/level_select.gd" id="2_pptw7"]
 [ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="2_spig8"]
 [ext_resource type="Texture2D" uid="uid://bo45hpp2f62l2" path="res://Visuals/UI/easy.png" id="3_2rub3"]
-[ext_resource type="PackedScene" uid="uid://dk6ul1w3s20hg" path="res://Scenes/Levels/game.tscn" id="3_ms8do"]
+[ext_resource type="PackedScene" uid="uid://dk6ul1w3s20hg" path="res://Scenes/Levels/test.tscn" id="3_ms8do"]
 [ext_resource type="Texture2D" uid="uid://cq0xsapwkyqv2" path="res://Visuals/UI/normal.png" id="4_pptw7"]
+[ext_resource type="PackedScene" uid="uid://csqanqoc8yp0m" path="res://Scenes/Levels/hello_world!.tscn" id="4_walhu"]
 [ext_resource type="Texture2D" uid="uid://bto2nvyuo4fxa" path="res://Visuals/UI/hard.png" id="5_ms8do"]
 
 [sub_resource type="Animation" id="Animation_7qfpv"]
@@ -112,7 +113,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 10
 theme = ExtResource("1_nii1e")
 script = ExtResource("2_pptw7")
-levels = Array[PackedScene]([ExtResource("3_ms8do"), null, null, null, null, null, null, null, null, null])
+levels = Array[PackedScene]([ExtResource("3_ms8do"), ExtResource("4_walhu"), null, null, null, null, null, null, null, null])
 metadata/_edit_use_anchors_ = true
 
 [node name="WindowAnimations" type="AnimationPlayer" parent="." unique_id=2125014371]
@@ -179,7 +180,7 @@ item_count = 10
 same_column_width = true
 item_0/text = "Test.lvl"
 item_0/icon = ExtResource("3_2rub3")
-item_1/text = "Level 2"
+item_1/text = "Hello World!"
 item_1/icon = ExtResource("3_2rub3")
 item_2/text = "Level 3"
 item_2/icon = ExtResource("3_2rub3")

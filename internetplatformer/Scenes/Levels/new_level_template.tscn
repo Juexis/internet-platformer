@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bpg3iymtsn0yx"]
+
+[ext_resource type="Script" uid="uid://7k0l8gswqmpp" path="res://Systems/world.gd" id="1_l2lgq"]
+[ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="2_fh60a"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_4g6p2"]
+[ext_resource type="Script" uid="uid://biwdjja5ldwni" path="res://Systems/player_camera.gd" id="4_g687g"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_pcufi"]
+[ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Visuals/Sprites/Tilesets/window_tilemap.tscn" id="6_snm08"]
+[ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="7_epavg"]
+[ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="8_8j0gb"]
+[ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="9_dbpib"]
+[ext_resource type="PackedScene" uid="uid://d3lqgmd5qe4e1" path="res://Systems/UI/ui.tscn" id="10_u62ps"]
+
+[sub_resource type="Resource" id="Resource_5ubxa"]
+script = ExtResource("5_pcufi")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uda3f"]
+resource_name = "Objects"
+scenes/1/scene = ExtResource("7_epavg")
+scenes/2/scene = ExtResource("8_8j0gb")
+scenes/3/scene = ExtResource("9_dbpib")
+
+[sub_resource type="TileSet" id="TileSet_jycte"]
+tile_offset_axis = 1
+tile_size = Vector2i(16, 14)
+sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
+
+[node name="world" type="Node2D" unique_id=971698201]
+script = ExtResource("1_l2lgq")
+
+[node name="Player" parent="." unique_id=1333374516 instance=ExtResource("2_fh60a")]
+position = Vector2(-170, -13)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1482318228]
+position = Vector2(-170, -35)
+limit_enabled = false
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1062013280]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_4g6p2")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=692615249 node_paths=PackedStringArray("follow_target")]
+position = Vector2(-170, -35)
+script = ExtResource("4_g687g")
+priority_override = true
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_5ubxa")
+tween_on_load = false
+follow_offset = Vector2(3, 0)
+follow_damping = true
+dead_zone_width = 0.075
+dead_zone_height = 0.45
+limit_top = -220
+limit_bottom = 300
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Tilemaps" type="Node" parent="." unique_id=777770434]
+
+[node name="Windows" parent="Tilemaps" unique_id=141754045 instance=ExtResource("6_snm08")]
+
+[node name="Objects" type="TileMapLayer" parent="Tilemaps" unique_id=1855894398]
+tile_set = SubResource("TileSet_jycte")
+
+[node name="UI" parent="." unique_id=1317021621 instance=ExtResource("10_u62ps")]
