@@ -109,8 +109,8 @@ theme_type_variation = &"WindowHeader"
 
 [node name="TitleBoxMargin" type="MarginContainer" parent="OutlineMargin/VBoxContainer/HeaderContainer" unique_id=704751288]
 layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_right = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 1
 
 [node name="TitleBox" type="Label" parent="OutlineMargin/VBoxContainer/HeaderContainer/TitleBoxMargin" unique_id=869849473]
@@ -188,7 +188,7 @@ stretch_mode = 3
 
 [node name="ButtonHBoxs" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=250411936]
 layout_mode = 2
-theme_override_constants/separation = -1
+theme_override_constants/separation = -16
 
 [node name="RetryButton" type="Button" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs" unique_id=661643453]
 layout_mode = 2
