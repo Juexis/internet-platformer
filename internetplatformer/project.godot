@@ -25,6 +25,7 @@ config/icon="uid://d0x2fcu8po2to"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 GameManager="*res://Systems/game_manager.gd"
 ObjectsBus="*res://Systems/objects_bus.gd"
+SceneLoader="*uid://rmemke1jdapb"
 
 [display]
 
