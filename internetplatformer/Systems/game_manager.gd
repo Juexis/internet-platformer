@@ -1,6 +1,6 @@
 extends Node
 var gamestate = GameState.new()
-
+var levels_resource = preload("res://Systems/level_list.tres")
 var current_level: int
 
 ## when not active, player movement and timer is paused/disabled
@@ -19,10 +19,9 @@ func _process(delta: float) -> void:
 	if Input.is_physical_key_pressed(KEY_R):
 		restart_level()
 
-# TODO use current level index to restart level based on index number
 func restart_level():
 		# await the load scene before setting game to active
-		await SceneLoader.load_scene("res://Scenes/Levels/test.tscn")
+		await SceneLoader.load_scene(levels_resource.levels[current_level].resource_path)
 		is_game_active = true
 		player_died = false
 		print("reset")
