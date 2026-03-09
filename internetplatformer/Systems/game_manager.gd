@@ -21,7 +21,9 @@ func _process(delta: float) -> void:
 
 # TODO use current level index to restart level based on index number
 func restart_level():
+		# await the load scene before setting game to active
+		await SceneLoader.load_scene("res://Scenes/Levels/test.tscn")
 		is_game_active = true
 		player_died = false
 		print("reset")
-		get_tree().change_scene_to_packed(get_tree().current_scene.current_level)
+		

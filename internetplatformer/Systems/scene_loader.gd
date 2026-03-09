@@ -4,7 +4,7 @@ extends Node
 signal progress_changed(progress)
 signal load_finished
 
-var loading_screen: PackedScene = null
+var loading_screen: PackedScene = preload("uid://d2ojawwg4skv0") # uid for loading screen
 var loaded_resource: PackedScene
 var scene_path: String 
 var progress: Array = [] # ResourceLoader uses arrays
@@ -21,7 +21,7 @@ func load_scene(_scene_path: String) -> void:
 	add_child(new_loading_screen)
 	# connecting the progress from the loading screens to the scene loader
 	progress_changed.connect(new_loading_screen._on_progress_changed)
-	progress_changed.connect(new_loading_screen._on_loading_finished)
+	load_finished.connect(new_loading_screen._on_loading_finished)
 	
 	await new_loading_screen.loading_screen_ready
 	
@@ -37,7 +37,7 @@ func start_load() -> void:
 func _process(delta: float) -> void:
 	# 2nd parameter is a variable that returns the progress in an array, useful for loading bars!
 	var load_status = ResourceLoader.load_threaded_get_status(scene_path, progress)
-	progress_changed.emit([0])
+	progress_changed.emit(progress[0])
 	match load_status:
 		# check: load failed
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED:

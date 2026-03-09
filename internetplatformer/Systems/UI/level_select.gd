@@ -13,5 +13,5 @@ func _ready() -> void:
 		_level_list.set_item_tooltip_enabled(level, false)
 
 func _on_level_selected(index: int) -> void:
-	get_tree().change_scene_to_packed(levels.get(index))
+	SceneLoader.load_scene("res://Scenes/Levels/test.tscn")
 	GameManager.current_level = index

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2ojawwg4skv0"]
 
 [ext_resource type="Texture2D" uid="uid://d1cxtdwtdelue" path="res://Visuals/UI/throbber.png" id="1_3rgau"]
+[ext_resource type="Script" uid="uid://wc0h2m0ahbjw" path="res://Systems/UI/loading_screen.gd" id="1_l14wg"]
 [ext_resource type="Script" uid="uid://cfrquqmc7opey" path="res://Systems/animated_texture_rect.gd" id="2_7j17h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j4v2"]
@@ -8,6 +9,48 @@ bg_color = Color(0.57254905, 0.6313726, 0.7254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j17h"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j17h"]
+atlas = ExtResource("1_3rgau")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="Animation" id="Animation_l14wg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hqt51"]
+resource_name = "throbber"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0or4i"]
+_data = {
+&"RESET": SubResource("Animation_l14wg"),
+&"throbber": SubResource("Animation_hqt51")
+}
 
 [sub_resource type="Animation" id="Animation_3rgau"]
 length = 0.001
@@ -34,6 +77,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0or4i"]
+resource_name = "close_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BorderPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(0.2332585, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("BorderPanel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(0.12940818, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_7j17h"]
@@ -66,14 +136,14 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l14wg"]
 _data = {
 &"RESET": SubResource("Animation_3rgau"),
+&"close_out": SubResource("Animation_0or4i"),
 &"pop_in": SubResource("Animation_7j17h")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l14wg"]
-atlas = ExtResource("1_3rgau")
-region = Rect2(0, 0, 26, 26)
-
-[node name="CanvasLayer" type="CanvasLayer" unique_id=529877512]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=529877512 node_paths=PackedStringArray("animation")]
+layer = 2
+script = ExtResource("1_l14wg")
+animation = NodePath("AnimationPlayer")
 
 [node name="BorderPanel" type="Panel" parent="." unique_id=14410285]
 anchors_preset = 15
@@ -101,11 +171,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7j17h")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1151491628]
-libraries/ = SubResource("AnimationLibrary_l14wg")
-autoplay = &"pop_in"
-
-[node name="AnimatedTextureRect" type="TextureRect" parent="." unique_id=1068785992]
+[node name="Throbber" type="TextureRect" parent="BorderPanel" unique_id=1068785992]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -117,7 +184,15 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_l14wg")
+texture = SubResource("AtlasTexture_7j17h")
 script = ExtResource("2_7j17h")
 animation_texture = ExtResource("1_3rgau")
 h_frames = 8
+
+[node name="ThrobberAnimation" type="AnimationPlayer" parent="BorderPanel/Throbber" unique_id=102930694]
+libraries/ = SubResource("AnimationLibrary_0or4i")
+autoplay = &"throbber"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1151491628]
+libraries/ = SubResource("AnimationLibrary_l14wg")
+autoplay = &"pop_in"
