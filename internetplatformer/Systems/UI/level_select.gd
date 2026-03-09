@@ -1,6 +1,6 @@
 extends Panel
 @onready var _level_list: ItemList = $OutlineMargin/VBox/BodyContainer/LevelsMargin/LevelList
-## Set levels here
+# from game_manager.gd -> levels_resource.tres -> levels array in levels_resource.tres
 var levels: Array[PackedScene] = GameManager.levels_resource.levels
 
 func _ready() -> void:
