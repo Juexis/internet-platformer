@@ -32,12 +32,10 @@ func _physics_process(_delta: float) -> void:
 	
 	_was_inside = _is_inside # _was_inside acts as memory of the previous state 
 
-# TODO refactor player detection
 func detect_player() -> bool:
 	for body in interaction_area.get_overlapping_bodies():
 		if body.name == "Player":
 			return true
-			break
 	return false
 
 ## checks for if the player is in the interaction area if so then [member Interactable._is_inside] is [code]true[/code]

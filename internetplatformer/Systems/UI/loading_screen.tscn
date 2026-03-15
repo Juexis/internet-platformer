@@ -10,7 +10,7 @@ bg_color = Color(0.57254905, 0.6313726, 0.7254902, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j17h"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7j17h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14wg"]
 atlas = ExtResource("1_3rgau")
 region = Rect2(0, 0, 26, 26)
 
@@ -130,7 +130,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.73333335),
 "transitions": PackedFloat32Array(0.12940818, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
+"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l14wg"]
@@ -143,7 +143,7 @@ _data = {
 [node name="CanvasLayer" type="CanvasLayer" unique_id=529877512 node_paths=PackedStringArray("animation")]
 layer = 2
 script = ExtResource("1_l14wg")
-animation = NodePath("AnimationPlayer")
+animation = NodePath("LoadingAnimation")
 
 [node name="BorderPanel" type="Panel" parent="." unique_id=14410285]
 anchors_preset = 15
@@ -184,7 +184,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_7j17h")
+texture = SubResource("AtlasTexture_l14wg")
 script = ExtResource("2_7j17h")
 animation_texture = ExtResource("1_3rgau")
 h_frames = 8
@@ -193,6 +193,6 @@ h_frames = 8
 libraries/ = SubResource("AnimationLibrary_0or4i")
 autoplay = &"throbber"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1151491628]
+[node name="LoadingAnimation" type="AnimationPlayer" parent="." unique_id=1151491628]
 libraries/ = SubResource("AnimationLibrary_l14wg")
 autoplay = &"pop_in"
