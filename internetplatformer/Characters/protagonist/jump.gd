@@ -19,6 +19,7 @@ func enter() -> void:
 	parent.velocity.y += current_jump_vel
 
 func process_physics(delta: float) -> State:
+	#region horizontal movement
 	input_axis = Input.get_axis("move_left", "move_right")
 	
 	if input_axis:
@@ -29,6 +30,7 @@ func process_physics(delta: float) -> State:
 	if !input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, air_res * 0.4 * delta)
 	
+	#endregion
 	# variable jump height
 	if Input.is_action_just_released("jump") and parent.velocity.y < current_jump_vel / 2 and not is_speaker_jump:
 			parent.velocity.y = current_jump_vel / 2

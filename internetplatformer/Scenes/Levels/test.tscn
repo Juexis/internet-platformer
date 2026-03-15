@@ -26,11 +26,11 @@ tile_offset_axis = 1
 tile_size = Vector2i(16, 14)
 sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27pap"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2bnbj"]
 normal = Vector2(0, 1)
 distance = -287.69
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i4cts"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27pap"]
 distance = -500.0
 
 [node name="world" type="Node2D" unique_id=971698201]
@@ -75,20 +75,20 @@ tile_map_data = PackedByteArray("AAD6/wAAAAACAAEAAAD5/wAAAAABAAEAAAD4/wAAAAABAAE
 tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQAEAPf/AAAAAAAAAgD8////AAAAAAAAAwD5//3/AAAAAAAAAgDw/wAAAAAAAAAAAgDx/wAAAAAAAAAAAgDy/wAAAAAAAAAAAgA=")
 tile_set = SubResource("TileSet_jycte")
 
-[node name="Bounds" type="Area2D" parent="LevelElements" unique_id=1016631684]
+[node name="Bounds" type="Area2D" parent="LevelElements" unique_id=1413856803]
 collision_mask = 2
 script = ExtResource("10_2bnbj")
 
-[node name="TopBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=448702004]
-shape = SubResource("WorldBoundaryShape2D_27pap")
+[node name="TopBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=1880805196]
+shape = SubResource("WorldBoundaryShape2D_2bnbj")
 debug_color = Color(0.8573357, 0.158422, 0.19692409, 0.41960785)
 
-[node name="BottomBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=1277556664]
-shape = SubResource("WorldBoundaryShape2D_i4cts")
+[node name="BottomBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=927410487]
+shape = SubResource("WorldBoundaryShape2D_27pap")
 debug_color = Color(0.8573357, 0.158422, 0.19692409, 0.41960785)
 
 [node name="UI" parent="." unique_id=1317021621 instance=ExtResource("10_b125x")]
 
-[connection signal="body_entered" from="LevelElements/Bounds" to="LevelElements/Bounds" method="_on_body_entered"]
+[connection signal="body_entered" from="LevelElements/Bounds" to="LevelElements/Bounds" method="_on_out_of_bounds"]
 
 [editable path="UI"]
