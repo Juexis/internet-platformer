@@ -97,7 +97,7 @@ _data = {
 &"pop_in": ExtResource("2_spig8")
 }
 
-[node name="Window" type="Panel" unique_id=506431065]
+[node name="LevelSelectWindow" type="Panel" unique_id=506431065]
 custom_minimum_size = Vector2(125, 125)
 anchors_preset = -1
 anchor_left = 0.23958333
@@ -107,8 +107,8 @@ anchor_bottom = 0.8472222
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(62.5, 62.5)
-size_flags_horizontal = 6
-size_flags_vertical = 10
+size_flags_horizontal = 4
+size_flags_vertical = 3
 theme = ExtResource("1_nii1e")
 script = ExtResource("2_pptw7")
 metadata/_edit_use_anchors_ = true

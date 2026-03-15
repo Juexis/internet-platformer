@@ -7,6 +7,8 @@ var total_time
 
 func _ready() -> void:
 	GameManager.current_level = level_index
+	GameManager.is_game_active = true
+	GameManager.player_died = false
 
 func _process(delta: float) -> void:
 	total_time = Time.get_ticks_msec()

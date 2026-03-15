@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="4_k6wsp"]
 [ext_resource type="Texture2D" uid="uid://76ujnahbeby6" path="res://Visuals/UI/x_ui.png" id="5_jvs6u"]
 [ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="6_m8rdo"]
+[ext_resource type="Script" uid="uid://1md0xfojrh55" path="res://Systems/UI/menu_button.gd" id="8_uw854"]
 
 [sub_resource type="Animation" id="Animation_7qfpv"]
 length = 0.001
@@ -210,6 +211,8 @@ focus_neighbor_right = NodePath(".")
 focus_next = NodePath(".")
 theme = ExtResource("1_pjqcs")
 theme_type_variation = &"Menu"
+script = ExtResource("8_uw854")
 
 [connection signal="timeout" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel/Timer" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" method="_on_timer_timeout"]
 [connection signal="pressed" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs/RetryButton" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs/RetryButton" method="_on_pressed"]
+[connection signal="pressed" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs/MenuButton" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxs/MenuButton" method="_on_pressed"]

@@ -41,7 +41,6 @@ layout_mode = 2
 [node name="Window" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=506431065 instance=ExtResource("1_28flt")]
 custom_minimum_size = Vector2(125, 115)
 layout_mode = 2
-size_flags_vertical = 4
 
 [node name="WindowAnimations" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/Window" index="0" unique_id=2125014371]
 autoplay = &"intro_pop_in"

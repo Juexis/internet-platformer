@@ -51,15 +51,15 @@ metadata/_edit_use_anchors_ = true
 autostart = true
 
 [node name="End_window" parent="." unique_id=19765220 instance=ExtResource("5_o4wqe")]
-anchor_left = 0.3375
-anchor_top = 0.26666668
-anchor_right = 0.6625
-anchor_bottom = 0.73333335
+anchor_left = 0.29583332
+anchor_top = 0.25555557
+anchor_right = 0.70416665
+anchor_bottom = 0.74444443
 offset_left = 0.0
 offset_top = -3.8146973e-06
 offset_right = 0.0
 offset_bottom = 0.0
-size_flags_horizontal = 8
 size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="TitleBarPanel/TitleBar Margin/HBoxContainer/TimeLabel/Timer" to="TitleBarPanel/TitleBar Margin/HBoxContainer/TimeLabel" method="_on_timer_timeout"]
