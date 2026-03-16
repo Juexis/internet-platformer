@@ -10,7 +10,7 @@ border_color = Color(0.101960786, 0.09803922, 0.19607843, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31fyy"]
 bg_color = Color(1, 1, 1, 1)
 border_width_bottom = 2
-border_color = Color(0.36315107, 0.47707343, 0.6211607, 1)
+border_color = Color(0.39607844, 0.4509804, 0.57254905, 1)
 
 [resource]
 Panel/styles/panel = SubResource("StyleBoxFlat_0jo5p")

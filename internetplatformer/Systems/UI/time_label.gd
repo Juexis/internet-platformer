@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 		text = "%2d:%02d" % [minutes, seconds]
 
 func _on_timer_timeout() -> void:
-	total_seconds += 1
+	if GameManager.is_game_active:
+		total_seconds += 1

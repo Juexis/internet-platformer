@@ -12,5 +12,3 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	total_time = Time.get_ticks_msec()
-
-#func get_scene_path() -> 

@@ -13,4 +13,6 @@ func _ready() -> void:
 		_level_list.set_item_tooltip_enabled(level, false)
 
 func _on_level_selected(index: int) -> void:
+	if GameManager.is_loading:
+		return
 	SceneLoader.load_scene(GameManager.levels_resource.levels[index].resource_path)

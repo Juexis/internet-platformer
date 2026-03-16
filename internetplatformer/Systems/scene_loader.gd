@@ -14,6 +14,7 @@ func _ready() -> void:
 	set_process(false)
 
 func load_scene(_scene_path: String) -> void:
+	GameManager.is_loading = true
 	scene_path = _scene_path
 	
 	# instantiate a new loading screen and add it to the tree
@@ -46,3 +47,4 @@ func _process(delta: float) -> void:
 			loaded_resource = ResourceLoader.load_threaded_get(scene_path) # returns the scene requested from line 32
 			get_tree().change_scene_to_packed(loaded_resource)
 			load_finished.emit()
+			GameManager.is_loading = false
