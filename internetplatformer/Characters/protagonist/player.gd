@@ -30,6 +30,7 @@ func _ready() -> void:
 	ObjectsBus.speaker_entered.connect(speaker_entered)
 	ObjectsBus.caution_entered.connect(caution_entered)
 	GameManager.gamestate.game_over.connect(game_over)
+	GameManager.gamestate.paused.connect(_on_paused)
 
 func _unhandled_input(input: InputEvent) -> void:
 	if GameManager.is_game_active:
@@ -65,3 +66,6 @@ func _on_death_anim_timer_timeout() -> void:
 	for particles in death_particles.get_children():
 		particles.emitting = true
 	sprite.hide()
+
+func _on_paused():
+	sprite.pause()

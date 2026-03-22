@@ -12,4 +12,6 @@ tile_map_data = PackedByteArray("AAD1/wEAAAABAAIAAAD1/wIAAAABAAIAAAD0/wIAAAABAAI
 [node name="Objects" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="1" unique_id=1855894398]
 tile_map_data = PackedByteArray("AADz/wYAAAAAAAAAAwD0/wYAAAAAAAAAAwD1/wYAAAAAAAAAAwD2/wYAAAAAAAAAAwD3/wYAAAAAAAAAAwD4/wYAAAAAAAAAAwD5/wYAAAAAAAAAAwD6/wYAAAAAAAAAAwD7/wYAAAAAAAAAAwD8/wYAAAAAAAAAAwD9/wYAAAAAAAAAAwA=")
 
+[node name="PauseWindow" parent="UI" parent_id_path=PackedInt32Array(1317021621) index="2" unique_id=506431065 instance_placeholder="res://Systems/UI/pause_window.tscn"]
+
 [editable path="UI"]

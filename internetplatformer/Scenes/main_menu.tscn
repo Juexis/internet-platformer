@@ -11,7 +11,6 @@ border_width_top = 1
 border_color = Color(1, 1, 1, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=447150897]
-position = Vector2(0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1352772168]
 

@@ -12,15 +12,16 @@ var is_loading: bool = false
 
 class GameState:
 	signal game_over
+	signal paused
 	signal unpaused
 
 func _process(delta: float) -> void:
-	# TODO pause system
 	
 	if not is_game_active:
 		get_viewport().gui_disable_input = false
 	
 	if Input.is_action_just_pressed("pause") and is_game_active and not player_died:
+		gamestate.paused.emit()
 		is_game_active = false
 		var pause_instance = pause_screen.instantiate()
 		get_node("/root/world/UI").add_child(pause_instance)
