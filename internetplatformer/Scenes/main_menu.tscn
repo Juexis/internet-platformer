@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dmiyq43iealqx" path="res://Systems/UI/title.tscn" id="1_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://dha4ix54miqdo" path="res://Systems/UI/level_select.tscn" id="1_28flt"]
+[ext_resource type="Script" uid="uid://q4166smmv38t" path="res://Scenes/main_menu.gd" id="1_n45e2"]
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dnjgxeishty00" path="res://Systems/UI/portrait.tscn" id="4_n45e2"]
 
@@ -11,6 +12,7 @@ border_width_top = 1
 border_color = Color(1, 1, 1, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=447150897]
+script = ExtResource("1_n45e2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1352772168]
 

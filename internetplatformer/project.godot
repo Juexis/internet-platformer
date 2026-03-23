@@ -22,7 +22,7 @@ config/icon="uid://d0x2fcu8po2to"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://bvmwriqxftedl"
 
 [autoload]
 
@@ -49,10 +49,11 @@ enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons
 [file_customization]
 
 folder_colors={
+"res://Audio/": "pink",
 "res://Characters/": "red",
 "res://Objects/": "blue",
 "res://Scenes/": "green",
-"res://Systems/": "teal",
+"res://Systems/": "gray",
 "res://Visuals/": "purple"
 }
 

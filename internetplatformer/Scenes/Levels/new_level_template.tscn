@@ -26,10 +26,6 @@ tile_offset_axis = 1
 tile_size = Vector2i(16, 14)
 sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l2lgq"]
-normal = Vector2(0, 1)
-distance = -287.69
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fh60a"]
 distance = -500.0
 
@@ -75,10 +71,6 @@ tile_set = SubResource("TileSet_jycte")
 [node name="Bounds" type="Area2D" parent="LevelElements" unique_id=1183210083]
 collision_mask = 2
 script = ExtResource("10_fh60a")
-
-[node name="TopBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=1003637943]
-shape = SubResource("WorldBoundaryShape2D_l2lgq")
-debug_color = Color(0.8573357, 0.158422, 0.19692409, 0.41960785)
 
 [node name="BottomBounds" type="CollisionShape2D" parent="LevelElements/Bounds" unique_id=809052923]
 shape = SubResource("WorldBoundaryShape2D_fh60a")

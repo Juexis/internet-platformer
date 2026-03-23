@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://cswa002qhdmsl"]
 
-[ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/jump_01.mp3" id="1_aieic"]
+[ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/SFX/jump_01.mp3" id="1_aieic"]
 [ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Systems/audio_controller.gd" id="1_xoy2a"]
+[ext_resource type="AudioStream" uid="uid://1w8vq6u5ymtp" path="res://Audio/SFX/startup.mp3" id="3_0gm4s"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("1_aieic")
 
 [node name="AudioController" type="Node" unique_id=803826643]
 script = ExtResource("1_xoy2a")
 
-[node name="PlayerJump" type="AudioStreamPlayer" parent="." unique_id=459630325]
-stream = ExtResource("1_aieic")
-volume_db = -7.784
-pitch_scale = 2.52
-bus = &"Sounds"
+[node name="PlayerSFX" type="Node" parent="." unique_id=1349473159]
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=459630325]
+stream = SubResource("AudioStreamRandomizer_fuvku")
+volume_db = -5.163
+pitch_scale = 1.42
+bus = &"SFX"
+
+[node name="UISFX" type="Node" parent="." unique_id=1922860144]
+
+[node name="Startup" type="AudioStreamPlayer" parent="UISFX" unique_id=1764944235]
+stream = ExtResource("3_0gm4s")
+bus = &"SFX"
