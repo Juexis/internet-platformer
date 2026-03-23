@@ -20,6 +20,10 @@ run/main_scene="uid://dk6ul1w3s20hg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://d0x2fcu8po2to"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
@@ -27,6 +31,7 @@ GameManager="*res://Systems/game_manager.gd"
 ObjectsBus="*res://Systems/objects_bus.gd"
 SceneLoader="*uid://rmemke1jdapb"
 PlayerGlobal="*uid://cgbsedutb8ehn"
+AudioController="*uid://cswa002qhdmsl"
 
 [display]
 

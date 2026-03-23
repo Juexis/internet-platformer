@@ -12,6 +12,10 @@ var collision_box: AnimationPlayer = $CollisionChanges
 var sprite_animations: AnimationPlayer = $SpriteAnimations
 
 @onready
+var sfx: AudioStreamPlayer = $AudioStreamPlayer
+
+
+@onready
 var state_machine = $state_machine
 
 ## death variables

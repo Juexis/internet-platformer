@@ -14,6 +14,7 @@ func enter() -> void:
 	parent.collision_box.play("normal")
 	if Input.is_action_just_pressed("jump"):
 		change_jump_vel(standard_jump_vel)
+		AudioController.play_player_jump()
 	clamp(parent.velocity.y, 0, current_jump_vel)
 	parent.sprite.play("jump")
 	parent.velocity.y += current_jump_vel

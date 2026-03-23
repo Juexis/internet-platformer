@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cswa002qhdmsl"]
+
+[ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/jump_01.mp3" id="1_aieic"]
+[ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Systems/audio_controller.gd" id="1_xoy2a"]
+
+[node name="AudioController" type="Node" unique_id=803826643]
+script = ExtResource("1_xoy2a")
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="." unique_id=459630325]
+stream = ExtResource("1_aieic")
+volume_db = -7.784
+pitch_scale = 2.52
+bus = &"Sounds"
