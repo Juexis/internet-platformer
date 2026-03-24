@@ -4,16 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="2_2bnbj"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_27pap"]
 [ext_resource type="Script" uid="uid://biwdjja5ldwni" path="res://Systems/player_camera.gd" id="4_i4cts"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_etx6e"]
 [ext_resource type="PackedScene" uid="uid://ckjyjrimp517b" path="res://Visuals/Sprites/Tilesets/window_tilemap.tscn" id="6_tolk3"]
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="7_ffkd8"]
 [ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="8_r158q"]
 [ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="9_abyvx"]
 [ext_resource type="Script" uid="uid://h0weyogn717s" path="res://Objects/bounds.gd" id="10_2bnbj"]
 [ext_resource type="PackedScene" uid="uid://d3lqgmd5qe4e1" path="res://Systems/UI/ui.tscn" id="10_b125x"]
-
-[sub_resource type="Resource" id="Resource_5ubxa"]
-script = ExtResource("5_etx6e")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uda3f"]
 resource_name = "Objects"
@@ -37,7 +33,10 @@ level_name = "Test.lvl"
 position = Vector2(-170, -13)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1482318228]
-position = Vector2(-170, -35)
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(-170, -13)
+process_callback = 0
 limit_enabled = false
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1062013280]
@@ -46,20 +45,23 @@ process_physics_priority = 300
 script = ExtResource("3_27pap")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=692615249 node_paths=PackedStringArray("follow_target")]
-position = Vector2(-170, -35)
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=826299626 node_paths=PackedStringArray("follow_target")]
+position = Vector2(-171, -19)
 script = ExtResource("4_i4cts")
-priority_override = true
 follow_mode = 5
 follow_target = NodePath("../Player")
-tween_resource = SubResource("Resource_5ubxa")
 tween_on_load = false
-follow_offset = Vector2(3, 0)
+follow_offset = Vector2(0, -1.2)
 follow_damping = true
-dead_zone_width = 0.075
-dead_zone_height = 0.45
-limit_top = -220
-limit_bottom = 300
+lookahead = true
+lookahead_acceleration = 0.099
+lookahead_deceleration = 0.115
+lookahead_max = true
+lookahead_max_value = Vector2(30, 30)
+dead_zone_width = 0.149
+dead_zone_height = 0.426
+limit_top = -200
+limit_bottom = 350
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="LevelElements" type="Node" parent="." unique_id=777770434]

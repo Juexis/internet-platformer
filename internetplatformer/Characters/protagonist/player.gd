@@ -65,6 +65,7 @@ func game_over():
 	death_anim_timer.start()
 
 func _on_death_anim_timer_timeout() -> void:
+	GameManager.gamestate.death_boom.emit()
 	for particles in death_particles.get_children():
 		particles.emitting = true
 	AudioController.explosion()

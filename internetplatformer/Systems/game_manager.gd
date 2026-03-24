@@ -14,6 +14,7 @@ class GameState:
 	signal game_over
 	signal paused
 	signal unpaused
+	signal death_boom
 
 func _process(delta: float) -> void:
 	
