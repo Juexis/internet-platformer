@@ -3,6 +3,9 @@
 [ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/SFX/jump_01.mp3" id="1_aieic"]
 [ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Systems/audio_controller.gd" id="1_xoy2a"]
 [ext_resource type="AudioStream" uid="uid://1w8vq6u5ymtp" path="res://Audio/SFX/startup.mp3" id="3_0gm4s"]
+[ext_resource type="AudioStream" uid="uid://cu25vjyg5rres" path="res://Audio/SFX/knocked.wav" id="3_fuvku"]
+[ext_resource type="AudioStream" uid="uid://cb07x8uhjcqar" path="res://Audio/SFX/explosion.wav" id="3_ig3pv"]
+[ext_resource type="AudioStream" uid="uid://ccye3uv5tvx71" path="res://Audio/SFX/bass.wav" id="4_fewgg"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
 playback_mode = 1
@@ -20,8 +23,27 @@ volume_db = -5.163
 pitch_scale = 1.42
 bus = &"SFX"
 
+[node name="Explosion" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=363529349]
+stream = ExtResource("3_ig3pv")
+volume_db = -5.659
+pitch_scale = 1.62
+bus = &"SFX"
+
+[node name="Bass" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=197483745]
+stream = ExtResource("4_fewgg")
+volume_db = -14.857
+bus = &"SFX"
+
+[node name="ObjectSFX" type="Node" parent="." unique_id=1447341353]
+
+[node name="Hit" type="AudioStreamPlayer" parent="ObjectSFX" unique_id=1229672615]
+stream = ExtResource("3_fuvku")
+volume_db = -8.49
+bus = &"SFX"
+
 [node name="UISFX" type="Node" parent="." unique_id=1922860144]
 
 [node name="Startup" type="AudioStreamPlayer" parent="UISFX" unique_id=1764944235]
 stream = ExtResource("3_0gm4s")
-bus = &"SFX"
+volume_db = -2.122
+bus = &"Music"

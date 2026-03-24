@@ -12,10 +12,6 @@ var collision_box: AnimationPlayer = $CollisionChanges
 var sprite_animations: AnimationPlayer = $SpriteAnimations
 
 @onready
-var sfx: AudioStreamPlayer = $AudioStreamPlayer
-
-
-@onready
 var state_machine = $state_machine
 
 ## death variables
@@ -54,6 +50,7 @@ func speaker_entered():
 
 func caution_entered(force: Vector2):
 	state_machine.change_state(%knocked)
+	AudioController.hit()
 	# multiply force to force consistant knockback values
 	velocity.x -= clampf(force.x * 2200, min_knock, max_knock)
 	velocity.y -= clampf(force.y * 2200, min_knock, max_knock)
@@ -62,6 +59,7 @@ func caution_entered(force: Vector2):
 func game_over():
 	GameManager.is_game_active = false
 	GameManager.player_died = true
+	AudioController.hit()
 	sprite.play("knocked")
 	sprite_animations.play("death")
 	death_anim_timer.start()
@@ -69,6 +67,7 @@ func game_over():
 func _on_death_anim_timer_timeout() -> void:
 	for particles in death_particles.get_children():
 		particles.emitting = true
+	AudioController.explosion()
 	sprite.hide()
 
 func _on_paused():
