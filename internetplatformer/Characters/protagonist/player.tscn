@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://dgbtggvddjd07" path="res://Characters/protagonist/fall.gd" id="7_scpy1"]
 [ext_resource type="Script" uid="uid://ccj0gkyr68da8" path="res://Characters/protagonist/slide.gd" id="8_nddkc"]
 [ext_resource type="Script" uid="uid://db3s87tgf0na4" path="res://Characters/protagonist/knocked.gd" id="10_5n4a7"]
+[ext_resource type="Script" uid="uid://bhd4nuiu23e7l" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="12_cawhb"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="13_t6gdw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nddkc"]
 atlas = ExtResource("2_nddkc")
@@ -384,6 +386,14 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl76o"]
 size = Vector2(9, 22)
 
+[sub_resource type="Resource" id="Resource_jhp7d"]
+script = ExtResource("13_t6gdw")
+amplitude = 4.0
+frequency = 10.0
+noise_seed = 936
+positional_multiplier_y = 0.2
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
 [node name="Player" type="CharacterBody2D" unique_id=932010332]
 collision_layer = 2
 collision_mask = 5
@@ -549,5 +559,11 @@ linear_accel_max = 67.57
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 color = Color(0.011764706, 0.09803922, 0.24705882, 1)
+
+[node name="DeathShake" type="Node2D" parent="." unique_id=621735853]
+script = ExtResource("12_cawhb")
+noise = SubResource("Resource_jhp7d")
+duration = 0.289
+metadata/_custom_type_script = "uid://bhd4nuiu23e7l"
 
 [connection signal="timeout" from="DeathAnimTimer" to="." method="_on_death_anim_timer_timeout"]

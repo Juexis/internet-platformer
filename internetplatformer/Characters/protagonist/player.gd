@@ -19,6 +19,8 @@ var state_machine = $state_machine
 var death_particles: Node = $DeathParticles
 @onready 
 var death_anim_timer: Timer = $DeathAnimTimer
+@onready
+var death_shake: PhantomCameraNoiseEmitter2D = $DeathShake
 
 var this_jump_state: State
 var max_knock: float = 200
@@ -65,7 +67,7 @@ func game_over():
 	death_anim_timer.start()
 
 func _on_death_anim_timer_timeout() -> void:
-	GameManager.gamestate.death_boom.emit()
+	death_shake.emit()
 	for particles in death_particles.get_children():
 		particles.emitting = true
 	AudioController.explosion()

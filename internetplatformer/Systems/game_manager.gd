@@ -9,12 +9,10 @@ var is_game_active: bool = true
 var player_died: bool = false
 var is_loading: bool = false
 
-
 class GameState:
 	signal game_over
 	signal paused
 	signal unpaused
-	signal death_boom
 
 func _process(delta: float) -> void:
 	
@@ -38,4 +36,3 @@ func restart_level():
 		is_game_active = true
 		player_died = false
 		print("reset")
-		

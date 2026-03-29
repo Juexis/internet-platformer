@@ -8,7 +8,7 @@ extends Node
 @onready var _startup: AudioStreamPlayer = $UISFX/Startup
 
 func player_jump():
-	_player_jump.pitch_scale = randf_range(2.00, 2.50)
+	_player_jump.pitch_scale = randf_range(0.90, 1.00)
 	_player_jump.play()
 
 func hit():

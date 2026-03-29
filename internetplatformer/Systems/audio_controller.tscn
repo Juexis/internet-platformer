@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cswa002qhdmsl"]
 
-[ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/SFX/jump_01.mp3" id="1_aieic"]
 [ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Systems/audio_controller.gd" id="1_xoy2a"]
+[ext_resource type="AudioStream" uid="uid://v4t2ff8pidud" path="res://Audio/SFX/jump_v2.mp3" id="2_fewgg"]
 [ext_resource type="AudioStream" uid="uid://1w8vq6u5ymtp" path="res://Audio/SFX/startup.mp3" id="3_0gm4s"]
 [ext_resource type="AudioStream" uid="uid://cu25vjyg5rres" path="res://Audio/SFX/knocked.wav" id="3_fuvku"]
 [ext_resource type="AudioStream" uid="uid://cb07x8uhjcqar" path="res://Audio/SFX/explosion.wav" id="3_ig3pv"]
@@ -10,7 +10,7 @@
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
 playback_mode = 1
 streams_count = 1
-stream_0/stream = ExtResource("1_aieic")
+stream_0/stream = ExtResource("2_fewgg")
 
 [node name="AudioController" type="Node" unique_id=803826643]
 script = ExtResource("1_xoy2a")
@@ -19,19 +19,17 @@ script = ExtResource("1_xoy2a")
 
 [node name="PlayerJump" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=459630325]
 stream = SubResource("AudioStreamRandomizer_fuvku")
-volume_db = -5.163
-pitch_scale = 1.42
 bus = &"SFX"
 
 [node name="Explosion" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=363529349]
 stream = ExtResource("3_ig3pv")
-volume_db = -5.659
+volume_db = -11.32
 pitch_scale = 1.62
 bus = &"SFX"
 
 [node name="Bass" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=197483745]
 stream = ExtResource("4_fewgg")
-volume_db = -14.857
+volume_db = -13.442
 bus = &"SFX"
 
 [node name="ObjectSFX" type="Node" parent="." unique_id=1447341353]
