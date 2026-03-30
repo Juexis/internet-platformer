@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 ## change reset animation modulate alpha value to edit 
 func show_stuff():
 	await get_tree().create_timer(1).timeout
-	show()
+	show() 
+	AudioController.fail_screen() ## TODO create flag for win/lose to play and show appropriate screen
 	animation.play("pop_in")
 	_focus_button.grab_focus()
