@@ -36,8 +36,8 @@ bus = &"SFX"
 
 [node name="Slide" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=1718878631]
 stream = ExtResource("5_qlpi7")
-volume_db = -12.027
-pitch_scale = 0.92
+volume_db = -17.687
+bus = &"SFX"
 
 [node name="ObjectSFX" type="Node" parent="." unique_id=1447341353]
 

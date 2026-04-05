@@ -18,6 +18,7 @@ func slide():
 	# prevents from playing repeatedly
 	if _slide.playing:
 		return
+	_slide.pitch_scale = randf_range(0.9, 1.1)
 	_slide.play()
 
 func stop_slide():
@@ -37,7 +38,7 @@ func explosion():
 	_bass.play()
 
 func speaker():
-	_bass.pitch_scale = 3.0
+	_bass.pitch_scale = 2.0
 	_bass.play()
 
 func startup():
