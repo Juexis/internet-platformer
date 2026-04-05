@@ -15,6 +15,10 @@ func enter() -> void:
 	if Input.is_action_just_pressed("jump"):
 		change_jump_vel(standard_jump_vel)
 		AudioController.player_jump()
+	
+	elif is_speaker_jump:
+		AudioController.speaker()
+	
 	clamp(parent.velocity.y, 0, current_jump_vel)
 	parent.sprite.play("jump")
 	parent.velocity.y += current_jump_vel
@@ -47,7 +51,7 @@ func process_physics(delta: float) -> State:
 	return null
 
 func change_jump_vel(value: float):
-	# disables jump cancelling (variable jump height: 33-34)
+	# disables jump cancelling (variable jump height)
 	if value < standard_jump_vel:
 		is_speaker_jump = true
 	else:

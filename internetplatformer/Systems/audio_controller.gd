@@ -4,6 +4,7 @@ extends Node
 @onready var _hit: AudioStreamPlayer = $ObjectSFX/Hit
 @onready var _explosion: AudioStreamPlayer = $PlayerSFX/Explosion
 @onready var _bass: AudioStreamPlayer = $PlayerSFX/Bass
+@onready var _slide: AudioStreamPlayer = $PlayerSFX/Slide
 
 # ui sfx
 @onready var _startup: AudioStreamPlayer = $UISFX/Startup
@@ -12,6 +13,15 @@ extends Node
 func player_jump():
 	_player_jump.pitch_scale = randf_range(0.90, 1.00)
 	_player_jump.play()
+
+func slide():
+	# prevents from playing repeatedly
+	if _slide.playing:
+		return
+	_slide.play()
+
+func stop_slide():
+	_slide.stop()
 
 func hit():
 	# death hit
@@ -23,6 +33,11 @@ func hit():
 
 func explosion():
 	_explosion.play()
+	_bass.pitch_scale = 1.0
+	_bass.play()
+
+func speaker():
+	_bass.pitch_scale = 3.0
 	_bass.play()
 
 func startup():

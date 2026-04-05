@@ -14,4 +14,4 @@ texture = ExtResource("2_sxs14")
 hframes = 2
 
 [node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
-position = Vector2(0, 0)
+position = Vector2(0, 0.5)

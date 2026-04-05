@@ -14,7 +14,18 @@ func enter() -> void:
 	
 	parent.velocity.x += input_axis * 15
 
+func exit() -> void:
+	AudioController.stop_slide()
+
 func process_physics(delta: float) -> State:
+	
+	#region sfx
+	if parent.is_on_floor():
+		AudioController.slide()
+	else: # disables sound midair
+		AudioController.stop_slide()
+	#endregion
+	
 	input_axis = Input.get_axis("move_left", "move_right")
 	
 	# slide deceleration

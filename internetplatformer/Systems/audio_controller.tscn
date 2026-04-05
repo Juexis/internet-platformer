@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cu25vjyg5rres" path="res://Audio/SFX/knocked.wav" id="3_fuvku"]
 [ext_resource type="AudioStream" uid="uid://cb07x8uhjcqar" path="res://Audio/SFX/explosion.wav" id="3_ig3pv"]
 [ext_resource type="AudioStream" uid="uid://ccye3uv5tvx71" path="res://Audio/SFX/bass.wav" id="4_fewgg"]
+[ext_resource type="AudioStream" uid="uid://c8n8kcavefx17" path="res://Audio/SFX/slide.mp3" id="5_qlpi7"]
 [ext_resource type="AudioStream" uid="uid://clt4grkj6jgf3" path="res://Audio/SFX/endfail.wav" id="7_2uuxa"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
@@ -33,11 +34,16 @@ stream = ExtResource("4_fewgg")
 volume_db = -13.442
 bus = &"SFX"
 
+[node name="Slide" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=1718878631]
+stream = ExtResource("5_qlpi7")
+volume_db = -12.027
+pitch_scale = 0.92
+
 [node name="ObjectSFX" type="Node" parent="." unique_id=1447341353]
 
 [node name="Hit" type="AudioStreamPlayer" parent="ObjectSFX" unique_id=1229672615]
 stream = ExtResource("3_fuvku")
-volume_db = -9.197
+volume_db = -9.904
 pitch_scale = 0.9
 bus = &"SFX"
 
