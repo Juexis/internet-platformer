@@ -44,8 +44,6 @@ top_level = true
 position = Vector2(-180, -14.2)
 process_callback = 0
 limit_enabled = false
-limit_top = -200
-limit_bottom = 350
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1062013280]
 process_priority = 300

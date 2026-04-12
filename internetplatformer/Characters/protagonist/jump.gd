@@ -3,7 +3,7 @@ extends PlayerState
 @export var fall_state: State
 
 var current_jump_vel
-var standard_jump_vel = -235
+var standard_jump_vel = -240
 var air_speed = 125
 var air_accel = 500
 var air_res = 250
