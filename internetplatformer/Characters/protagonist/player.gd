@@ -75,3 +75,8 @@ func _on_death_anim_timer_timeout() -> void:
 
 func _on_paused():
 	sprite.pause()
+
+
+func _on_tile_entered(body: Node2D) -> void:
+	if body == TileData:
+		print("yes")

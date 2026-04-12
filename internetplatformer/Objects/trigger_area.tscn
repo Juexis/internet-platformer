@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dgowpyyeynrs2"]
+
+[sub_resource type="GDScript" id="GDScript_qwlo1"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlo1"]
+
+[node name="TriggerArea" type="Area2D" unique_id=553125013]
+script = SubResource("GDScript_qwlo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269958917]
+shape = SubResource("RectangleShape2D_qwlo1")
+debug_color = Color(0.6083677, 0.18173644, 0.9999986, 0.56078434)
