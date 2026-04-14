@@ -10,6 +10,5 @@ func _ready() -> void:
 func unpaused():
 	_animations.play("fade_out")
 	get_viewport().gui_release_focus() # function to unfocus all gui
-	GameManager.is_game_active = true
 	await _animations.animation_finished
 	queue_free()

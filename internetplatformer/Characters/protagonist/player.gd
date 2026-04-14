@@ -43,7 +43,8 @@ func _physics_process(delta: float) -> void:
 		state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
-	state_machine.process_frame(delta)
+	if GameManager.is_game_active:
+		state_machine.process_frame(delta)
 
 ## in player.gd to prevent multiple triggers
 func speaker_entered():

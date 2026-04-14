@@ -19,12 +19,14 @@ func _process(delta: float) -> void:
 	if not is_game_active:
 		get_viewport().gui_disable_input = false
 	
+	## PAUSING
 	if Input.is_action_just_pressed("pause") and is_game_active and not player_died:
 		gamestate.paused.emit()
 		is_game_active = false
 		var pause_instance = pause_screen.instantiate()
 		get_node("/root/world/UI").add_child(pause_instance)
 	elif Input.is_action_just_pressed("pause") and not is_game_active and not player_died:
+		GameManager.is_game_active = true
 		gamestate.unpaused.emit()
 	
 	if Input.is_physical_key_pressed(KEY_R):
