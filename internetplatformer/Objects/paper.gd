@@ -4,13 +4,17 @@ extends Interactable
 @onready var particle: CPUParticles2D = $PaperBallParticle
 
 func _ready() -> void:
-	GameManager.gamestate.paused.connect(paused)
+	# runs when signal is emitted, overrides the pause
+	# allows it to run
+	GameManager.gamestate.paused.connect(paused) 
 
 func _physics_process(delta: float) -> void:
-	print(paper_anims.is_animation_active())
-	if is_inside and not logic_triggered:
+	if not GameManager.is_game_active: # this + signal fixed it
+		return
+	
+	if is_inside and was_inside and not logic_triggered:
 		paper_anims.play("crumple")
-		await paper_anims.animation_finished and particle.finished
+		await paper_anims.animation_finished and particle.finished # TODO fix particle being cut off
 		queue_free()
 	
 	super(delta)

@@ -10,7 +10,7 @@ var was_inside: bool = false
 var logic_triggered = false ## flag for if the object has already done its thing
 
 func _physics_process(_delta: float) -> void:
-	if not GameManager.is_game_active and not GameManager.player_died:
+	if not GameManager.is_game_active:
 		return
 	
 	is_inside = false # set back to false if not inside
