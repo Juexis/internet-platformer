@@ -10,8 +10,6 @@ var was_inside: bool = false
 var logic_triggered = false ## flag for if the object has already done its thing
 
 func _physics_process(_delta: float) -> void:
-	if not GameManager.is_game_active:
-		return
 	
 	is_inside = false # set back to false if not inside
 	
@@ -36,6 +34,8 @@ func _physics_process(_delta: float) -> void:
 	was_inside = is_inside # was_inside acts as memory of the previous state 
 
 func detect_player() -> bool:
+	if not interaction_area.monitoring: # for paper when stepped on, monitoring is turned off
+		return false
 	for body in interaction_area.get_overlapping_bodies():
 		if body.name == "Player":
 			return true

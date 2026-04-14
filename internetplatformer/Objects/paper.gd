@@ -14,7 +14,9 @@ func _physics_process(delta: float) -> void:
 	
 	if is_inside and was_inside and not logic_triggered:
 		paper_anims.play("crumple")
-		await paper_anims.animation_finished and particle.finished # TODO fix particle being cut off
+		logic_triggered = true # flags crumple as done, wont activate anymore
+		interaction_area.monitoring = false # turns off monitoring so it wont get retriggered upon re-entry
+		await get_tree().create_timer(3).timeout # timer to allow for particle to spawn, paper is functionally useless at this point
 		queue_free()
 	
 	super(delta)
