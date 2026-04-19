@@ -14,6 +14,9 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_process(false)
 
+## the functions occur in chronological order
+## also interacts with the loading_screen.gd during the process
+
 func load_scene(_scene_path: String) -> void:
 	GameManager.is_loading = true
 	scene_path = _scene_path
