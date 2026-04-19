@@ -188,5 +188,5 @@ angular_velocity_min = -293.04
 angular_velocity_max = 286.04
 
 [node name="DisappearTimer" type="Timer" parent="." index="5" unique_id=2083484719]
-wait_time = 3.0
+wait_time = 2.8
 one_shot = true
