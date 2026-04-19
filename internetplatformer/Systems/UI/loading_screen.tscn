@@ -141,6 +141,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=529877512 node_paths=PackedStringArray("animation")]
+process_mode = 3
 layer = 2
 script = ExtResource("1_l14wg")
 animation = NodePath("LoadingAnimation")

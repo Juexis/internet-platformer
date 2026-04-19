@@ -125,6 +125,7 @@ _data = {
 }
 
 [node name="PauseWindow" type="Panel" unique_id=506431065]
+process_mode = 3
 custom_minimum_size = Vector2(60, 70)
 anchors_preset = -1
 anchor_right = 0.25

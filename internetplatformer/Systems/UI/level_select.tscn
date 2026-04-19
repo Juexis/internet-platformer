@@ -98,6 +98,7 @@ _data = {
 }
 
 [node name="LevelSelectWindow" type="Panel" unique_id=506431065]
+process_mode = 3
 custom_minimum_size = Vector2(125, 125)
 anchors_preset = -1
 anchor_left = 0.23958333
