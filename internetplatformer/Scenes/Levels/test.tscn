@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tg2r1kwwtm5e" path="res://Visuals/Sprites/Tilesets/window_tilemap.tscn" id="6_tolk3"]
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="7_ffkd8"]
 [ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="8_r158q"]
+[ext_resource type="PackedScene" uid="uid://b7o3d78041tni" path="res://Objects/win_disc.tscn" id="8_tolk3"]
 [ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="9_abyvx"]
 [ext_resource type="Script" uid="uid://h0weyogn717s" path="res://Objects/bounds.gd" id="10_2bnbj"]
 [ext_resource type="PackedScene" uid="uid://dgowpyyeynrs2" path="res://Objects/trigger_area.tscn" id="10_27pap"]
@@ -25,6 +26,7 @@ scenes/2/scene = ExtResource("8_r158q")
 scenes/3/scene = ExtResource("9_abyvx")
 scenes/4/scene = ExtResource("10_27pap")
 scenes/5/scene = ExtResource("11_i4cts")
+scenes/10/scene = ExtResource("8_tolk3")
 
 [sub_resource type="TileSet" id="TileSet_jycte"]
 tile_offset_axis = 1
@@ -137,7 +139,7 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9/wEAAAAAAAIAAAD+/wAAAAABAAA
 
 [node name="Objects" type="TileMapLayer" parent="LevelElements" unique_id=1855894398]
 process_mode = 1
-tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQAEAPf/AAAAAAAAAgD8////AAAAAAAAAwDy/wAAAAAAAAAABQDx/wAAAAAAAAAABQDw/wAAAAAAAAAABQD1//z/AAAAAAAABAD3//3/AAAAAAAAAQD5//3/AAAAAAAAAgABAP//AAAAAAAABQA=")
+tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQAEAPf/AAAAAAAAAgD8////AAAAAAAAAwDy/wAAAAAAAAAABQDx/wAAAAAAAAAABQDw/wAAAAAAAAAABQD1//z/AAAAAAAABAD3//3/AAAAAAAAAQD5//3/AAAAAAAAAgABAP//AAAAAAAABQD6////AAAAAAAACgA=")
 tile_set = SubResource("TileSet_jycte")
 
 [node name="Decorations" type="TileMapLayer" parent="LevelElements" unique_id=1516718547]
