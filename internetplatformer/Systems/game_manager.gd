@@ -43,3 +43,6 @@ func restart_level():
 		is_game_active = true
 		player_died = false
 		print("reset")
+
+func next_level():
+	SceneLoader.load_scene(levels_resource.levels[current_level + 1].resource_path)

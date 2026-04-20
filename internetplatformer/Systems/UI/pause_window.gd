@@ -1,7 +1,10 @@
-extends Panel
+extends PanelContainer
 @onready var _animations: AnimationPlayer = $WindowAnimations
+@onready var _next_button: Button = $OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/NextButton
 @onready var _retry_button: Button = $OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton
 @onready var _menu_button: Button = $OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/MenuButton
+
+@export var _default_focus_button: Button
 
 func _ready() -> void:
 	_retry_button.grab_focus()
