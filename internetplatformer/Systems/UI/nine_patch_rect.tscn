@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bn5wi81w72c5d"]
+
+[ext_resource type="Texture2D" uid="uid://d2shb8ufqw8of" path="res://Visuals/UI/9slicespeechtest.png" id="1_kggil"]
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="2_fogcb"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=527376475]
+texture_filter = 1
+anchors_preset = -1
+anchor_right = 0.27916667
+anchor_bottom = 0.10555556
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_kggil")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 8
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1317801559]
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 7.0
+
+[node name="AspectRatioContainer" type="MarginContainer" parent="CenterContainer" unique_id=715835020]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="CenterContainer/AspectRatioContainer" unique_id=402326462]
+custom_minimum_size = Vector2(60, 10)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_fogcb")
+theme_override_font_sizes/font_size = 8
+text = "adadaadaadadadadadad"
+autowrap_mode = 1

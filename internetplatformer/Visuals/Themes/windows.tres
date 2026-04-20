@@ -9,6 +9,59 @@
 [ext_resource type="Texture2D" uid="uid://cwewsywpr1b7a" path="res://Visuals/UI/uistyleboxpressed.png" id="5_ak7bv"]
 [ext_resource type="StyleBox" uid="uid://jqeghe3bt8rk" path="res://Systems/UI/ls_grabber.tres" id="8_hhtjo"]
 [ext_resource type="StyleBox" uid="uid://o66tk3g1d4tb" path="res://Systems/UI/ls_scroll_bg.tres" id="9_8njp5"]
+[ext_resource type="Texture2D" uid="uid://48guwjm78coo" path="res://Visuals/UI/9slicebuttons.png" id="10_8njp5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ao8kh"]
+texture = ExtResource("10_8njp5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dh6n4"]
+texture = ExtResource("10_8njp5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmffa"]
+texture = ExtResource("10_8njp5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nfam"]
+texture = ExtResource("10_8njp5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(16, 16, 16, 16)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nfam"]
 bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
@@ -53,6 +106,9 @@ texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 3.0
 texture_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 5, 5)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8njp5"]
 texture = ExtResource("5_ak7bv")
@@ -83,6 +139,30 @@ bg_color = Color(1, 1, 1, 1)
 [resource]
 default_font = ExtResource("1_g3ncb")
 default_font_size = 14
+9SliceButton/base_type = &"Button"
+9SliceButton/colors/font_color = Color(0, 0, 0, 1)
+9SliceButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+9SliceButton/colors/font_focus_color = Color(0.25882354, 0.29803923, 0.43137255, 1)
+9SliceButton/colors/font_hover_color = Color(0.25882354, 0.29803923, 0.43137255, 1)
+9SliceButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+9SliceButton/colors/font_outline_color = Color(0, 0, 0, 1)
+9SliceButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+9SliceButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+9SliceButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+9SliceButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+9SliceButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+9SliceButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+9SliceButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+9SliceButton/constants/align_to_largest_stylebox = 0
+9SliceButton/constants/h_separation = 0
+9SliceButton/constants/icon_max_width = 0
+9SliceButton/constants/outline_size = 0
+9SliceButton/font_sizes/font_size = 11
+9SliceButton/fonts/font = ExtResource("1_g3ncb")
+9SliceButton/styles/focus = SubResource("StyleBoxTexture_ao8kh")
+9SliceButton/styles/hover = SubResource("StyleBoxTexture_dh6n4")
+9SliceButton/styles/normal = SubResource("StyleBoxTexture_kmffa")
+9SliceButton/styles/pressed = SubResource("StyleBoxTexture_6nfam")
 ItemList/colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
 ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0.25)
 ItemList/constants/h_separation = 6

@@ -194,15 +194,17 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="RetryButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=822113353]
+custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 focus_neighbor_right = NodePath("../MenuButton")
 focus_next = NodePath("../MenuButton")
 theme = ExtResource("1_po3qs")
-theme_type_variation = &"RestartButton"
+theme_type_variation = &"9SliceButton"
 theme_override_fonts/font = ExtResource("3_gfej6")
 theme_override_font_sizes/font_size = 11
+text = "Retry"
 script = ExtResource("4_4h7rj")
 
 [node name="MenuButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1935149769]
@@ -212,7 +214,9 @@ size_flags_vertical = 8
 focus_neighbor_left = NodePath("../RetryButton")
 focus_next = NodePath("../RetryButton")
 theme = ExtResource("1_po3qs")
-theme_type_variation = &"Menu"
+theme_type_variation = &"9SliceButton"
+theme_override_font_sizes/font_size = 11
+text = "Menu"
 script = ExtResource("5_hl41l")
 
 [connection signal="pressed" from="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton" to="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton" method="_on_pressed"]
