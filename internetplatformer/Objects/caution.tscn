@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://kfa8vd4te6il" path="res://Visuals/Sprites/Tilesets/caution.png" id="2_sxs14"]
 
 [node name="Caution" unique_id=1876429500 instance=ExtResource("1_eysqj")]
-position = Vector2(1, 0)
 script = ExtResource("2_4p7eh")
 interaction_path = NodePath("interaction_area")
 

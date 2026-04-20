@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		disappear_timer.start()
 		await disappear_timer.timeout # timer to allow for particle to spawn, paper is functionally useless at this point
 		queue_free()
-	print(disappear_timer.time_left)
+	#print(disappear_timer.time_left)
 	super(delta)
 
 func paused():
