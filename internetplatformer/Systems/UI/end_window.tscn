@@ -5,7 +5,8 @@
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="3_uw854"]
 [ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="4_jvs6u"]
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="4_k6wsp"]
-[ext_resource type="Texture2D" uid="uid://76ujnahbeby6" path="res://Visuals/UI/x_ui.png" id="5_jvs6u"]
+[ext_resource type="Texture2D" uid="uid://1d433w7nb3iy" path="res://Visuals/UI/x.png" id="5_k6wsp"]
+[ext_resource type="Texture2D" uid="uid://05gjad20od4k" path="res://Visuals/UI/check.png" id="6_k6wsp"]
 [ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="6_m8rdo"]
 [ext_resource type="Script" uid="uid://1md0xfojrh55" path="res://Systems/UI/menu_button.gd" id="8_uw854"]
 
@@ -182,21 +183,37 @@ layout_mode = 2
 theme_override_constants/margin_top = -3
 theme_override_constants/margin_bottom = 6
 
-[node name="X_Icon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=1196840617]
+[node name="XIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=1196840617]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_jvs6u")
+texture = ExtResource("5_k6wsp")
+stretch_mode = 3
+
+[node name="CheckIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=911818747]
+layout_mode = 2
+texture = ExtResource("6_k6wsp")
 stretch_mode = 3
 
 [node name="ButtonHBoxes" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=250411936]
 layout_mode = 2
-theme_override_constants/separation = -16
+theme_override_constants/separation = 2
+
+[node name="NextButton" type="Button" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes" unique_id=717536049]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_right = NodePath("../RetryButton")
+theme = ExtResource("1_pjqcs")
+theme_type_variation = &"9SliceButton"
+text = "Next"
 
 [node name="RetryButton" type="Button" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes" unique_id=661643453]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-focus_neighbor_left = NodePath(".")
+focus_neighbor_left = NodePath("../NextButton")
 focus_previous = NodePath(".")
 theme = ExtResource("1_pjqcs")
 theme_type_variation = &"9SliceButton"
