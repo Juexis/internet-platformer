@@ -31,7 +31,7 @@ func _ready() -> void:
 	this_jump_state = %jump
 	ObjectsBus.speaker_entered.connect(speaker_entered)
 	ObjectsBus.caution_entered.connect(caution_entered)
-	GameManager.gamestate.game_over.connect(game_over)
+	GameManager.gamestate.game_over.connect(death)
 	GameManager.gamestate.paused.connect(_on_paused)
 
 func _unhandled_input(input: InputEvent) -> void:
@@ -59,7 +59,7 @@ func caution_entered(force: Vector2):
 	velocity.y -= clampf(force.y * 2200, min_knock, max_knock)
 	print(velocity)
 
-func game_over():
+func death():
 	GameManager.is_game_active = false
 	GameManager.player_died = true
 	AudioController.hit()

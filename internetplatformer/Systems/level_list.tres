@@ -7,3 +7,4 @@
 [resource]
 script = ExtResource("1_7b62d")
 levels = Array[PackedScene]([ExtResource("1_xj4qu"), ExtResource("2_d2weq"), null, null, null, null, null, null, null, null])
+flag_completed = Array[bool]([false, false, false, false, false, false, false, false, false, false])

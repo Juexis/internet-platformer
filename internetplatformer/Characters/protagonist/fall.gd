@@ -37,6 +37,7 @@ func process_physics(delta: float) -> State:
 	# jump buffer implementation
 	if jump_buffer.time_left > 0 and parent.is_on_floor():
 		#print(jump_buffer.time_left)
+		AudioController.player_jump()
 		return jump_state
 	
 	# coyote time implementation

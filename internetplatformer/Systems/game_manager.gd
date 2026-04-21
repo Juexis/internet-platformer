@@ -7,6 +7,7 @@ var pause_screen: PackedScene = preload("res://Systems/UI/pause_window.tscn")
 ## when not active, player movement and timer is paused/disabled
 var is_game_active: bool = true
 var player_died: bool = false
+var player_win: bool = false
 var is_loading: bool = false
 
 class GameState:
