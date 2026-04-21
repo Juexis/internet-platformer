@@ -141,7 +141,7 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9/wEAAAAAAAIAAAD+/wAAAAABAAA
 
 [node name="Objects" type="TileMapLayer" parent="LevelElements" unique_id=1855894398]
 process_mode = 1
-tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQAEAPf/AAAAAAAAAgD8////AAAAAAAAAwDy/wAAAAAAAAAABQDx/wAAAAAAAAAABQDw/wAAAAAAAAAABQD1//z/AAAAAAAABAD3//3/AAAAAAAAAQD5//3/AAAAAAAAAgABAP//AAAAAAAABQD6////AAAAAAAACgA=")
+tile_map_data = PackedByteArray("AAAGAP7/AAAAAAAAAQAEAPf/AAAAAAAAAgD8////AAAAAAAAAwDy/wAAAAAAAAAABQDx/wAAAAAAAAAABQDw/wAAAAAAAAAABQD1//z/AAAAAAAABAD3//3/AAAAAAAAAQABAP//AAAAAAAABQD6////AAAAAAAACgD8//v/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_jycte")
 
 [node name="Decorations" type="TileMapLayer" parent="LevelElements" unique_id=1516718547]

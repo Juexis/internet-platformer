@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://b7o3d78041tni"]
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_a1x50"]
+[ext_resource type="Script" uid="uid://dny5malpe20ru" path="res://Objects/win_disc.gd" id="2_hfa6u"]
 [ext_resource type="Texture2D" uid="uid://b43bwnx8usocj" path="res://Visuals/Sprites/Tilesets/windisk.png" id="2_n5p10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5p10"]
 size = Vector2(14, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfa6u"]
+size = Vector2(12, 5)
+
 [node name="WinDisc" unique_id=2116232511 instance=ExtResource("1_a1x50")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_hfa6u")
+interaction_path = NodePath("interaction_area")
 
 [node name="Sprite" parent="." index="0" unique_id=1644634061]
 z_index = -1
@@ -19,4 +27,5 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_n5p10")
 
 [node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
-position = Vector2(0, -1.5)
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_hfa6u")

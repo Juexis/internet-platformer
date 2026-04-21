@@ -2,8 +2,9 @@ extends PanelContainer
 @onready var _animation: AnimationPlayer = $WindowAnimations
 @export var _default_focus_button: Button
 
-@onready var _x_icon: TextureRect = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer/XIcon
-@onready var _check_icon: TextureRect = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer/CheckIcon
+@onready var _title_box: Label = %TitleBox
+@onready var _x_icon: TextureRect = %XIcon
+@onready var _check_icon: TextureRect = %CheckIcon
 @onready var _next_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/NextButton
 @onready var _retry_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton
 
@@ -29,6 +30,7 @@ func show_endscreen():
 func show_win():
 	_x_icon.hide()
 	
+	_title_box.text = "Victory!"
 	_default_focus_button = _next_button
 	_check_icon.show()
 	_next_button.show()
@@ -36,6 +38,7 @@ func show_win():
 func show_lose():
 	_check_icon.hide()
 	
+	_title_box.text = "ERR_CHAR_NOT_FOUND"
 	_default_focus_button = _retry_button
 	AudioController.fail_screen()
 	_x_icon.show()

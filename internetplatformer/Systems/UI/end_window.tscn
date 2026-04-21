@@ -65,11 +65,39 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(0.9, 0.9)]
 }
 
+[sub_resource type="Animation" id="Animation_jvs6u"]
+resource_name = "win_pop_in_"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(0.02915735, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334),
+"transitions": PackedFloat32Array(0.076946765, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hb0y1"]
 _data = {
 &"RESET": SubResource("Animation_7qfpv"),
 &"fade_out": SubResource("Animation_pjqcs"),
-&"pop_in": ExtResource("4_jvs6u")
+&"pop_in": ExtResource("4_jvs6u"),
+&"win_pop_in_": SubResource("Animation_jvs6u")
 }
 
 [node name="End_window" type="PanelContainer" unique_id=19765220 node_paths=PackedStringArray("_default_focus_button")]
@@ -117,13 +145,18 @@ theme_override_constants/margin_left = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 1
 
-[node name="TitleBox" type="Label" parent="OutlineMargin/VBoxContainer/HeaderContainer/TitleBoxMargin" unique_id=869849473]
+[node name="CenterContainer" type="CenterContainer" parent="OutlineMargin/VBoxContainer/HeaderContainer/TitleBoxMargin" unique_id=328632056]
+layout_mode = 2
+
+[node name="TitleBox" type="Label" parent="OutlineMargin/VBoxContainer/HeaderContainer/TitleBoxMargin/CenterContainer" unique_id=869849473]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_pjqcs")
 theme_override_colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
-text = "ERR_CHAR_NOT_FOUND"
+text = "END TEXT GOES HERE"
+horizontal_alignment = 1
 
 [node name="HeaderDivider" type="ColorRect" parent="OutlineMargin/VBoxContainer" unique_id=55993825]
 custom_minimum_size = Vector2(0, 2)
@@ -179,19 +212,21 @@ metadata/_edit_use_anchors_ = true
 [node name="Timer" type="Timer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" unique_id=1186233727]
 autostart = true
 
-[node name="MarginContainer" type="MarginContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=967118346]
+[node name="Icons" type="MarginContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=967118346]
 layout_mode = 2
 theme_override_constants/margin_top = -3
 theme_override_constants/margin_bottom = 6
 
-[node name="XIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=1196840617]
+[node name="XIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/Icons" unique_id=1196840617]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_k6wsp")
 stretch_mode = 3
 
-[node name="CheckIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/MarginContainer" unique_id=911818747]
+[node name="CheckIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/Icons" unique_id=911818747]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("6_k6wsp")
 stretch_mode = 3

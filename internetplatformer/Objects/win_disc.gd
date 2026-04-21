@@ -2,8 +2,6 @@ extends Interactable
 
 func _physics_process(delta: float) -> void:
 	if is_inside and not logic_triggered:
-		GameManager.player_died = true
-		GameManager.is_game_active = false
+		GameManager.player_win = true
 		GameManager.gamestate.game_over.emit()
-	
 	super(delta)

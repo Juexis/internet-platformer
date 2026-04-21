@@ -13,6 +13,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	GameManager.current_level = level_index
 	GameManager.is_game_active = true
+	GameManager.player_win = false
 	GameManager.player_died = false
 
 
