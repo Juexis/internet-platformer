@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://csqanqoc8yp0m"]
 
 [ext_resource type="PackedScene" uid="uid://bpg3iymtsn0yx" path="res://Scenes/Levels/new_level_template.tscn" id="1_oyyxr"]
+[ext_resource type="PackedScene" uid="uid://cg05yh2gk5dn6" path="res://Systems/UI/pause_window.tscn" id="2_5seph"]
 
 [node name="world" unique_id=971698201 instance=ExtResource("1_oyyxr")]
 process_mode = 1
@@ -28,6 +29,10 @@ tile_map_data = PackedByteArray("AAAfAPz/AAAAAAAAAgAWAPr/AAAAAAAAAgA=")
 [node name="Decorations" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="2" unique_id=1933574536]
 tile_map_data = PackedByteArray("AABVAPX/AAAGAAEAAABNABIAAAAFAAIAAADm//j/AAAGAAIAAAA=")
 
-[node name="PauseWindow" parent="UI" parent_id_path=PackedInt32Array(1317021621) index="2" unique_id=506431065 instance_placeholder="res://Systems/UI/pause_window.tscn"]
+[node name="End_window" parent="UI" parent_id_path=PackedInt32Array(1317021621) index="1" unique_id=19765220]
+anchor_top = 0.24444444
+anchor_bottom = 0.75555557
+
+[node name="PauseWindow" parent="UI" parent_id_path=PackedInt32Array(1317021621) index="2" unique_id=506431065 instance=ExtResource("2_5seph")]
 
 [editable path="UI"]

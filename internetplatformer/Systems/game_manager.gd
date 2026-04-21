@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 		get_node("/root/world").get_tree().paused = true
 		var pause_instance = pause_screen.instantiate()
 		get_node("/root/world/UI").add_child(pause_instance)
-	elif Input.is_action_just_pressed("pause") and not is_game_active and not player_died:
+	elif Input.is_action_just_pressed("pause") and not is_game_active and not player_died and not player_win:
 		GameManager.is_game_active = true
 		get_node("/root/world").get_tree().paused = false
 		gamestate.unpaused.emit()

@@ -160,6 +160,9 @@ debug_color = Color(0.8573357, 0.158422, 0.19692409, 0.41960785)
 
 [node name="UI" parent="." unique_id=1317021621 instance=ExtResource("10_b125x")]
 
+[node name="End_window" parent="UI" index="1" unique_id=19765220]
+anchors_preset = -1
+
 [connection signal="body_entered" from="LevelElements/Bounds" to="LevelElements/Bounds" method="_on_out_of_bounds"]
 
 [editable path="UI"]

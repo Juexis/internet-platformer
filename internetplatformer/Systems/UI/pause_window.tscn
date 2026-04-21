@@ -125,18 +125,18 @@ _data = {
 &"slide_in": SubResource("Animation_po3qs")
 }
 
-[node name="PauseWindow" type="PanelContainer" unique_id=2138031366]
+[node name="PauseWindow" type="PanelContainer" unique_id=2138031366 node_paths=PackedStringArray("_default_focus_button")]
 process_mode = 3
-custom_minimum_size = Vector2(60, 70)
-anchors_preset = -1
-anchor_right = 0.25
-anchor_bottom = 0.41666666
+custom_minimum_size = Vector2(60, 30)
+offset_right = 60.0
+offset_bottom = 75.0
 pivot_offset = Vector2(30, 35)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_po3qs")
 theme_override_styles/panel = SubResource("StyleBoxFlat_po3qs")
 script = ExtResource("2_4h7rj")
+_default_focus_button = NodePath("OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton")
 
 [node name="WindowAnimations" type="AnimationPlayer" parent="." unique_id=2125014371]
 libraries/ = SubResource("AnimationLibrary_3ecvb")
@@ -197,7 +197,6 @@ text = "Next"
 script = ExtResource("4_hl41l")
 
 [node name="RetryButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=822113353]
-custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
