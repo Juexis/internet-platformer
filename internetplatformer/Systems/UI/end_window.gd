@@ -39,7 +39,12 @@ func show_lose():
 	_check_icon.hide()
 	
 	_title_box.text = "ERR_CHAR_NOT_FOUND"
-	_default_focus_button = _retry_button
+	
+	# Only show and focus next button if the next level has been unlocked
+	if GameManager.is_next_level_unlocked():
+		_default_focus_button = _next_button
+		_next_button.show()
+	else:
+		_next_button.hide()
 	AudioController.fail_screen()
 	_x_icon.show()
-	_next_button.hide()

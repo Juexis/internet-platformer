@@ -127,12 +127,13 @@ _data = {
 
 [node name="PauseWindow" type="PanelContainer" unique_id=2138031366 node_paths=PackedStringArray("_default_focus_button")]
 process_mode = 3
-custom_minimum_size = Vector2(60, 30)
+anchors_preset = -1
+anchor_bottom = 0.12200001
 offset_right = 60.0
-offset_bottom = 75.0
+offset_bottom = 34.04
 pivot_offset = Vector2(30, 35)
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("1_po3qs")
 theme_override_styles/panel = SubResource("StyleBoxFlat_po3qs")
 script = ExtResource("2_4h7rj")
@@ -188,6 +189,7 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="NextButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1393635122]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
