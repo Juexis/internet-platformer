@@ -47,3 +47,6 @@ func restart_level():
 
 func next_level():
 	SceneLoader.load_scene(levels_resource.levels[current_level + 1].resource_path)
+
+func is_next_level_unlocked() -> bool:
+	return GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1]
