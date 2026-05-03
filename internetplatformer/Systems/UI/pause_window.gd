@@ -15,9 +15,9 @@ func _ready() -> void:
 		size = Vector2(60, 56)
 		_next_button.hide()
 	
-	print("Anchors on ready: ", anchor_left, anchor_top, anchor_right, anchor_bottom)
-	print("Size on ready: ", size)
-	print("Position on ready: ", position)
+	#print("Anchors on ready: ", anchor_left, anchor_top, anchor_right, anchor_bottom)
+	#print("Size on ready: ", size)
+	#print("Position on ready: ", position)
 	_retry_button.grab_focus()
 	GameManager.gamestate.unpaused.connect(unpaused)
 

@@ -17,9 +17,24 @@ class GameState:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	if FileAccess.file_exists("user://savedata.tres"):
+		load_game()
+	else:
+		save_game()
 
 func _process(delta: float) -> void:
+	#region debug
+	if Input.is_action_just_pressed("debug_save"):
+		save_game()
 	
+	if Input.is_action_just_pressed("debug_load"):
+		load_game()
+		
+	if Input.is_physical_key_pressed(KEY_R):
+		restart_level()
+	
+	#endregion
 	if not is_game_active:
 		get_viewport().gui_disable_input = false
 	
@@ -34,9 +49,9 @@ func _process(delta: float) -> void:
 		GameManager.is_game_active = true
 		get_node("/root/world").get_tree().paused = false
 		gamestate.unpaused.emit()
-	
-	if Input.is_physical_key_pressed(KEY_R):
-		restart_level()
+
+func _exit_tree() -> void:
+	save_game()
 
 func restart_level():
 		# await the load scene before setting game to active
@@ -50,3 +65,21 @@ func next_level():
 
 func is_next_level_unlocked() -> bool:
 	return GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1]
+
+func save_game():
+	# creates a new SaveFile resource
+	var save: SaveFile = SaveFile.new()
+	
+	# sets the current levels unlocked to the file
+	save.levels_unlocked = levels_resource.flag_unlocked
+	
+	# saves the file in "savedata.tres"
+	ResourceSaver.save(save, "user://savedata.tres")
+	print("game saved!")
+
+func load_game():
+	var save: SaveFile = load("user://savedata.tres")
+	
+	# loads the data from "savedata.tres"
+	levels_resource.flag_unlocked = save.levels_unlocked
+	print("game loaded!")
