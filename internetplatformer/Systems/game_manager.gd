@@ -10,18 +10,32 @@ var player_died: bool = false
 var player_win: bool = false
 var is_loading: bool = false
 
+# debug
+@export var default_save_file: bool = false:
+	set(v): default_save()
+
+@export var unlock_all_levels: bool = false:
+	set(v): unlock_all()
+
 class GameState:
 	signal game_over
 	signal paused
 	signal unpaused
 
 func _ready() -> void:
+	get_tree().auto_accept_quit = false
+	
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	if FileAccess.file_exists("user://savedata.tres"):
 		load_game()
 	else:
 		save_game()
+
+# triggers on game exit
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		game_exit()
 
 func _process(delta: float) -> void:
 	#region debug
@@ -66,6 +80,10 @@ func next_level():
 func is_next_level_unlocked() -> bool:
 	return GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1]
 
+func unlock_next_level():
+	if current_level <= 9 and not is_next_level_unlocked():
+		GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1] = true
+
 func save_game():
 	# creates a new SaveFile resource
 	var save: SaveFile = SaveFile.new()
@@ -83,3 +101,17 @@ func load_game():
 	# loads the data from "savedata.tres"
 	levels_resource.flag_unlocked = save.levels_unlocked
 	print("game loaded!")
+
+func game_exit():
+	save_game()
+	get_tree().quit()
+
+#region debug functions
+func unlock_all():
+	for i in levels_resource.flag_unlocked:
+		levels_resource.flag_unlocked.fill(true)
+
+func default_save():
+	for i in levels_resource.flag_unlocked:
+		levels_resource.flag_unlocked.fill(false)
+	levels_resource.flag_unlocked[0] = true

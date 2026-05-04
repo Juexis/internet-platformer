@@ -125,7 +125,7 @@ _data = {
 &"slide_in": SubResource("Animation_po3qs")
 }
 
-[node name="PauseWindow" type="PanelContainer" unique_id=2138031366 node_paths=PackedStringArray("_default_focus_button")]
+[node name="PauseWindow" type="PanelContainer" unique_id=2138031366]
 process_mode = 3
 anchors_preset = -1
 anchor_bottom = 0.12200001
@@ -137,7 +137,6 @@ size_flags_vertical = 0
 theme = ExtResource("1_po3qs")
 theme_override_styles/panel = SubResource("StyleBoxFlat_po3qs")
 script = ExtResource("2_4h7rj")
-_default_focus_button = NodePath("OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton")
 
 [node name="WindowAnimations" type="AnimationPlayer" parent="." unique_id=2125014371]
 libraries/ = SubResource("AnimationLibrary_3ecvb")
