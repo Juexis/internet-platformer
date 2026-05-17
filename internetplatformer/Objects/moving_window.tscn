@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cmujh8f7q8u1o"]
+
+[ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_rs5xj"]
+
+[node name="MovingWindow" unique_id=2116232511 instance=ExtResource("1_rs5xj")]

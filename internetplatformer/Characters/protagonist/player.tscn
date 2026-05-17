@@ -388,7 +388,7 @@ size = Vector2(9, 20.5)
 
 [sub_resource type="Resource" id="Resource_jhp7d"]
 script = ExtResource("13_t6gdw")
-amplitude = 4.0
+amplitude = 5.0
 frequency = 10.0
 noise_seed = 936
 positional_multiplier_y = 0.2

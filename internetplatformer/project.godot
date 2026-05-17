@@ -58,6 +58,10 @@ folder_colors={
 "res://Visuals/": "purple"
 }
 
+[global_group]
+
+Tilemaps=""
+
 [gui]
 
 common/snap_controls_to_pixels=false

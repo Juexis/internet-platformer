@@ -10,12 +10,13 @@ var player_died: bool = false
 var player_win: bool = false
 var is_loading: bool = false
 
-# debug
+#region debug
 @export var default_save_file: bool = false:
 	set(v): default_save()
 
 @export var unlock_all_levels: bool = false:
 	set(v): unlock_all()
+#endregion
 
 class GameState:
 	signal game_over
@@ -115,3 +116,5 @@ func default_save():
 	for i in levels_resource.flag_unlocked:
 		levels_resource.flag_unlocked.fill(false)
 	levels_resource.flag_unlocked[0] = true
+
+#endregion

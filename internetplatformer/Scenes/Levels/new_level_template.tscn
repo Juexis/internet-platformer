@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_4g6p2"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_g687g"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_pcufi"]
-[ext_resource type="PackedScene" uid="uid://tg2r1kwwtm5e" path="res://Visuals/Sprites/Tilesets/window_tilemap.tscn" id="6_snm08"]
+[ext_resource type="PackedScene" uid="uid://tg2r1kwwtm5e" path="res://Objects/window_tilemap.tscn" id="6_snm08"]
 [ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="7_epavg"]
 [ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="8_8j0gb"]
 [ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="9_dbpib"]
@@ -117,7 +117,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="LevelElements" type="Node" parent="." unique_id=777770434]
 
-[node name="Windows" parent="LevelElements" unique_id=141754045 instance=ExtResource("6_snm08")]
+[node name="Windows" parent="LevelElements" unique_id=141754045 groups=["Tilemaps"] instance=ExtResource("6_snm08")]
 
 [node name="Objects" type="TileMapLayer" parent="LevelElements" unique_id=1855894398]
 tile_set = SubResource("TileSet_jycte")
