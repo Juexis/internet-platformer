@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bw2dv4plr4qnu" path="res://Objects/paper.tscn" id="11_i4cts"]
 [ext_resource type="Texture2D" uid="uid://bqe2bv3iir6g7" path="res://Visuals/Sprites/Tilesets/decoV1.png" id="12_etx6e"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_etx6e"]
+[ext_resource type="PackedScene" uid="uid://cmujh8f7q8u1o" path="res://Objects/moving_window.tscn" id="14_r158q"]
+[ext_resource type="PackedScene" uid="uid://c1xr8xr83yvxb" path="res://Objects/moving_windowV2.tscn" id="16_abyvx"]
 
 [sub_resource type="Resource" id="Resource_etx6e"]
 script = ExtResource("5_etx6e")
@@ -27,6 +29,7 @@ scenes/2/scene = ExtResource("8_r158q")
 scenes/3/scene = ExtResource("9_abyvx")
 scenes/4/scene = ExtResource("10_27pap")
 scenes/5/scene = ExtResource("11_i4cts")
+scenes/6/scene = ExtResource("14_r158q")
 scenes/10/scene = ExtResource("8_tolk3")
 
 [sub_resource type="TileSet" id="TileSet_jycte"]
@@ -84,6 +87,44 @@ texture = ExtResource("12_etx6e")
 [sub_resource type="TileSet" id="TileSet_ffkd8"]
 tile_size = Vector2i(2, 2)
 sources/0 = SubResource("TileSetAtlasSource_etx6e")
+
+[sub_resource type="Animation" id="Animation_abyvx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-344, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_b125x"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-344, -12), Vector2(-440, -12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjbb8"]
+_data = {
+&"RESET": SubResource("Animation_abyvx"),
+&"move": SubResource("Animation_b125x")
+}
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27pap"]
 distance = -500.0
@@ -149,6 +190,15 @@ z_index = -1
 tile_map_data = PackedByteArray("AADT/wcAAAADAAAAAADL/wcAAAACAAAAAADT/w8AAAADAAEAAADL/w8AAAACAAEAAAA=")
 tile_set = SubResource("TileSet_ffkd8")
 y_sort_origin = -1
+
+[node name="MovingWindows" type="Node" parent="LevelElements" unique_id=964124245]
+
+[node name="MovingWindow" parent="LevelElements/MovingWindows" unique_id=1294838842 instance=ExtResource("16_abyvx")]
+position = Vector2(-344, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelElements/MovingWindows/MovingWindow" unique_id=1730195362]
+libraries/ = SubResource("AnimationLibrary_mjbb8")
+autoplay = &"move"
 
 [node name="Bounds" type="Area2D" parent="LevelElements" unique_id=1413856803]
 collision_mask = 2

@@ -1,5 +1,22 @@
 [gd_scene format=3 uid="uid://cmujh8f7q8u1o"]
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_rs5xj"]
+[ext_resource type="Texture2D" uid="uid://b05fa0te0sqgw" path="res://Visuals/Sprites/Tilesets/tilesetV4.png" id="2_f2lvs"]
+[ext_resource type="PackedScene" uid="uid://c1xr8xr83yvxb" path="res://Objects/moving_windowV2.tscn" id="2_o0aa8"]
 
 [node name="MovingWindow" unique_id=2116232511 instance=ExtResource("1_rs5xj")]
+process_mode = 1
+
+[node name="AnimatableBody2D" parent="." index="0" unique_id=1294838842 instance=ExtResource("2_o0aa8")]
+
+[node name="Sprite" parent="." index="1" unique_id=1644634061]
+position = Vector2(0, -4)
+texture = ExtResource("2_f2lvs")
+region_enabled = true
+region_rect = Rect2(144, 67, 48, 10)
+region_filter_clip_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=546629381]
+
+[node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
+position = Vector2(0, -4.5)

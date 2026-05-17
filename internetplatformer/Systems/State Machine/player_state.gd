@@ -23,7 +23,7 @@ func get_xspeed() -> float:
 func enable_sprite_flip():
 	parent.sprite.flip_h = input_axis < 0
 
-# TODO improve
+# TODO detect whole instance of tiles
 func get_tile_data() -> void:
 	if parent.is_on_floor():
 		var tilemap: TileMapLayer = get_tree().get_first_node_in_group("Tilemaps")
