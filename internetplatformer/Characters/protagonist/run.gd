@@ -17,6 +17,7 @@ func enter() -> void:
 
 func process_physics(delta: float) -> State:
 	input_axis = Input.get_axis("move_left", "move_right")
+	get_tile_data()
 	if input_axis:
 		parent.velocity.x = move_toward(parent.velocity.x, speed * input_axis, acceleration * delta)
 		enable_sprite_flip()

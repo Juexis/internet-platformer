@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bw2dv4plr4qnu" path="res://Objects/paper.tscn" id="10_pcufi"]
 [ext_resource type="PackedScene" uid="uid://d3lqgmd5qe4e1" path="res://Systems/UI/ui.tscn" id="10_u62ps"]
 [ext_resource type="PackedScene" uid="uid://b7o3d78041tni" path="res://Objects/win_disc.tscn" id="11_snm08"]
+[ext_resource type="PackedScene" uid="uid://d3apkrm73uirx" path="res://Objects/platform_window.tscn" id="12_snm08"]
 
 [sub_resource type="Resource" id="Resource_dbpib"]
 script = ExtResource("5_pcufi")
@@ -24,46 +25,69 @@ scenes/1/scene = ExtResource("7_epavg")
 scenes/2/scene = ExtResource("8_8j0gb")
 scenes/3/scene = ExtResource("9_dbpib")
 scenes/4/scene = ExtResource("10_pcufi")
-scenes/5/scene = ExtResource("11_snm08")
+scenes/5/scene = ExtResource("12_snm08")
+scenes/10/scene = ExtResource("11_snm08")
 
 [sub_resource type="TileSet" id="TileSet_jycte"]
 tile_offset_axis = 1
-tile_size = Vector2i(16, 14)
+tile_size = Vector2i(4, 4)
 sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g687g"]
 texture = ExtResource("10_4g6p2")
 0:0/0 = 0
+0:0/0/z_index = -1
 1:0/0 = 0
+1:0/0/z_index = -1
 2:0/0 = 0
+2:0/0/z_index = -1
 3:0/0 = 0
+3:0/0/z_index = -1
 4:0/0 = 0
 4:0/0/modulate = Color(1, 1, 1, 0.72156864)
+4:0/0/z_index = 1
 5:0/0 = 0
 5:0/0/modulate = Color(1, 1, 1, 0.72156864)
+5:0/0/z_index = 1
 6:0/0 = 0
 6:0/0/modulate = Color(1, 1, 1, 0.83137256)
+6:0/0/z_index = 1
 0:1/0 = 0
+0:1/0/z_index = -1
 1:1/0 = 0
+1:1/0/z_index = -1
 2:1/0 = 0
+2:1/0/z_index = -1
 3:1/0 = 0
+3:1/0/z_index = -1
 4:1/0 = 0
 4:1/0/modulate = Color(1, 1, 1, 0.72156864)
+4:1/0/z_index = 1
 5:1/0 = 0
 5:1/0/modulate = Color(1, 1, 1, 0.72156864)
+5:1/0/z_index = 1
 6:1/0 = 0
 6:1/0/modulate = Color(1, 1, 1, 0.72156864)
+6:1/0/z_index = 1
 0:2/0 = 0
+0:2/0/z_index = -1
 1:2/0 = 0
+1:2/0/z_index = -1
 2:2/0 = 0
+2:2/0/z_index = -1
 4:2/0 = 0
 4:2/0/modulate = Color(1, 1, 1, 0.72156864)
+4:2/0/z_index = 1
 5:2/0 = 0
 5:2/0/modulate = Color(1, 1, 1, 0.72156864)
+5:2/0/z_index = 1
 6:2/0 = 0
 6:2/0/modulate = Color(1, 1, 1, 0.72156864)
+6:2/0/z_index = 1
 0:3/0 = 0
+0:3/0/z_index = -1
 1:3/0 = 0
+1:3/0/z_index = -1
 
 [sub_resource type="TileSet" id="TileSet_pcufi"]
 tile_size = Vector2i(4, 4)

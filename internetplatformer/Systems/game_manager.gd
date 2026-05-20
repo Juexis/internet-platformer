@@ -55,15 +55,24 @@ func _process(delta: float) -> void:
 	
 	## PAUSING
 	if Input.is_action_just_pressed("pause") and is_game_active and not player_died:
+		pause()
+	elif Input.is_action_just_pressed("pause") and not is_game_active and not player_died and not player_win:
+		unpause()
+
+func pause():
 		gamestate.paused.emit()
 		is_game_active = false
 		get_node("/root/world").get_tree().paused = true
 		var pause_instance = pause_screen.instantiate()
-		get_node("/root/world/UI").add_child(pause_instance)
-	elif Input.is_action_just_pressed("pause") and not is_game_active and not player_died and not player_win:
-		GameManager.is_game_active = true
-		get_node("/root/world").get_tree().paused = false
-		gamestate.unpaused.emit()
+		if get_node_or_null("/root/world/UI/PauseWindow"): ## TODO unpausing after opening level select requires two "esc" presses
+			return
+		else:
+			get_node("/root/world/UI").add_child(pause_instance)
+
+func unpause():
+	is_game_active = true
+	get_node("/root/world").get_tree().paused = false
+	gamestate.unpaused.emit()
 
 func _exit_tree() -> void:
 	save_game()

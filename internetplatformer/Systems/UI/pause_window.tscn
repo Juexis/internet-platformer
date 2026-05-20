@@ -125,7 +125,7 @@ _data = {
 &"slide_in": SubResource("Animation_po3qs")
 }
 
-[node name="PauseWindow" type="PanelContainer" unique_id=2138031366]
+[node name="PauseWindow" type="PanelContainer" unique_id=2138031366 groups=["UI"]]
 process_mode = 3
 anchors_preset = -1
 anchor_bottom = 0.12200001

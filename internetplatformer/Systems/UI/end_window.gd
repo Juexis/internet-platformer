@@ -30,7 +30,7 @@ func show_endscreen():
 func show_win():
 	_x_icon.hide()
 	
-	_title_box.text = "Victory!"
+	_title_box.text = "Level Complete!"
 	_default_focus_button = _next_button
 	_check_icon.show()
 	_next_button.show()

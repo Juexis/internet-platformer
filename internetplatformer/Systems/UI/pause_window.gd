@@ -23,7 +23,12 @@ func _ready() -> void:
 	GameManager.gamestate.unpaused.connect(unpaused)
 
 func unpaused():
-	_animations.play("fade_out")
-	get_viewport().gui_release_focus() # function to unfocus all gui
-	await _animations.animation_finished
-	queue_free()
+	if get_parent().get_node_or_null("LevelSelectWindow"):
+		GameManager.gamestate.paused.emit()
+		_menu_button.grab_focus()
+		return
+	else:
+		_animations.play("fade_out")
+		get_viewport().gui_release_focus() # function to unfocus all gui
+		await _animations.animation_finished
+		queue_free()

@@ -11,7 +11,6 @@ var gravity_mult: float = 0.7
 func process_physics(delta: float) -> State:
 	parent.move_and_slide()
 	x_speed = get_xspeed()
-	get_tile_data()
 	return null
 
 func apply_gravity(delta):
