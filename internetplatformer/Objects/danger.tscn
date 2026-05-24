@@ -8,7 +8,6 @@
 radius = 7.0
 
 [node name="Danger" unique_id=210674244 instance=ExtResource("1_mpa7b")]
-z_index = -1
 script = ExtResource("2_haub7")
 interaction_path = NodePath("interaction_area")
 

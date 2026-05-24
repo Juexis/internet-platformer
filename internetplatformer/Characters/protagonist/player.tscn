@@ -395,6 +395,7 @@ positional_multiplier_y = 0.2
 metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 
 [node name="Player" type="CharacterBody2D" unique_id=932010332]
+z_index = 1
 collision_layer = 2
 collision_mask = 5
 platform_on_leave = 2

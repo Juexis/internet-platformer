@@ -17,7 +17,6 @@ script = ExtResource("2_hfa6u")
 interaction_path = NodePath("interaction_area")
 
 [node name="Sprite" parent="." index="0" unique_id=1644634061]
-z_index = -1
 position = Vector2(0, -1)
 texture = ExtResource("2_n5p10")
 offset = Vector2(0, -2.35)
