@@ -10,6 +10,7 @@ extends PanelContainer
 
 func _ready() -> void:
 	GameManager.gamestate.game_over.connect(show_endscreen)
+	GameManager.set_end_text.connect(set_text)
 #func _process(delta: float) -> void:
 	#if GameManager.is_game_active and not GameManager.player_died:
 		#hide()
@@ -30,15 +31,14 @@ func show_endscreen():
 func show_win():
 	_x_icon.hide()
 	
-	_title_box.text = "Level Complete!"
+	set_text("Level Complete!")
+	
 	_default_focus_button = _next_button
 	_check_icon.show()
 	_next_button.show()
 
 func show_lose():
 	_check_icon.hide()
-	
-	_title_box.text = "ERR_CHAR_NOT_FOUND"
 	
 	# Only show and focus next button if the next level has been unlocked
 	if GameManager.is_next_level_unlocked():
@@ -48,3 +48,6 @@ func show_lose():
 		_next_button.hide()
 	AudioController.fail_screen()
 	_x_icon.show()
+
+func set_text(text: String):
+	_title_box.text = text

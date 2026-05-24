@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://7k0l8gswqmpp" path="res://Systems/world.gd" id="1_y8ow1"]
 [ext_resource type="PackedScene" uid="uid://c47y71yslrhg2" path="res://Characters/protagonist/player.tscn" id="2_2bnbj"]
-[ext_resource type="PackedScene" uid="uid://csqanqoc8yp0m" path="res://Scenes/Levels/hello_world!.tscn" id="2_ffkd8"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_27pap"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_etx6e"]
 [ext_resource type="PackedScene" uid="uid://tg2r1kwwtm5e" path="res://Objects/window_tilemap.tscn" id="6_tolk3"]
@@ -133,7 +132,6 @@ distance = -500.0
 script = ExtResource("1_y8ow1")
 level_name = "Test.lvl"
 level_index = -1
-next_level = ExtResource("2_ffkd8")
 
 [node name="Player" parent="." unique_id=1333374516 instance=ExtResource("2_2bnbj")]
 position = Vector2(-180, -13)

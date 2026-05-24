@@ -5,5 +5,5 @@ func _physics_process(delta: float) -> void:
 		GameManager.player_died = true
 		GameManager.is_game_active = false
 		GameManager.gamestate.game_over.emit()
-	
+		GameManager.set_end_text.emit("ERR_CHAR_DELETED")
 	super(delta)

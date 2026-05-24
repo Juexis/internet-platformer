@@ -117,7 +117,7 @@ process_physics_priority = 300
 script = ExtResource("3_4g6p2")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1523581241 node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera" type="Node2D" parent="." unique_id=1523581241 node_paths=PackedStringArray("follow_target")]
 top_level = true
 position = Vector2(-170, -14.2)
 script = ExtResource("4_g687g")

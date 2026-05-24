@@ -28,5 +28,9 @@ func process_physics(delta: float) -> State:
 	if parent.velocity.y > 0:
 		return fall_state
 	
+	#if Input.is_action_just_pressed("move_down") and parent.is_on_floor():
+		#get_object_data()
+		#return
+	
 	#endregion
 	return null

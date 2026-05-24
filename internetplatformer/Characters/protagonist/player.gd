@@ -14,6 +14,9 @@ var sprite_animations: AnimationPlayer = $SpriteAnimations
 @onready
 var state_machine = $state_machine
 
+@onready
+var timeout_timer: Timer = $TimeoutTimer
+
 ## death variables
 @onready
 var death_particles: Node = $DeathParticles
@@ -41,6 +44,14 @@ func _unhandled_input(input: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if GameManager.is_game_active:
 		state_machine.process_physics(delta)
+#region knocked timeout death
+		if state_machine.current_state == %knocked and timeout_timer.time_left <= 0:
+			GameManager.is_game_active = false
+			GameManager.player_died = true
+			GameManager.gamestate.game_over.emit()
+			GameManager.set_end_text.emit("ERR_CHAR_IS_DIZZY")
+#endregion
+
 
 func _process(delta: float) -> void:
 	if GameManager.is_game_active:
@@ -57,7 +68,7 @@ func caution_entered(force: Vector2):
 	# multiply force to force consistant knockback values
 	velocity.x -= clampf(force.x * 2200, min_knock, max_knock)
 	velocity.y -= clampf(force.y * 2200, min_knock, max_knock)
-	print(velocity)
+	#print(velocity)
 
 func end_game():
 	if not GameManager.player_win:

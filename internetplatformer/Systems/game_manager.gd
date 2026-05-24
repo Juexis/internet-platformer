@@ -9,6 +9,7 @@ var is_game_active: bool = true
 var player_died: bool = false
 var player_win: bool = false
 var is_loading: bool = false
+signal set_end_text(text: String)
 
 #region debug
 @export var default_save_file: bool = false:
