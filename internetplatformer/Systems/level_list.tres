@@ -9,3 +9,4 @@
 script = ExtResource("1_7b62d")
 levels = Array[PackedScene]([ExtResource("2_d2weq"), ExtResource("2_xj4qu"), ExtResource("3_d2weq"), null, null, null, null, null, null, null])
 flag_unlocked = Array[bool]([true, false, false, false, false, false, false, false, false, false])
+best_times = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])

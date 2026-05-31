@@ -37,6 +37,7 @@ text = "LEVEL NAME GOES HERE"
 script = ExtResource("3_mumph")
 
 [node name="TimeLabel" type="Label" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=498187500]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.14331397, 0.15895447, 0.30267066, 1)

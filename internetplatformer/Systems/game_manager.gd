@@ -10,13 +10,20 @@ var player_died: bool = false
 var player_win: bool = false
 var is_loading: bool = false
 signal set_end_text(text: String)
+signal get_time
 
 #region debug
+@export var full_reset: bool = false:
+	set(v): reset_save_file()
+
 @export var default_save_file: bool = false:
 	set(v): default_save()
 
 @export var unlock_all_levels: bool = false:
 	set(v): unlock_all()
+
+@export var reset_best_times: bool = false:
+	set(v): reset_times()
 #endregion
 
 class GameState:
@@ -101,6 +108,7 @@ func save_game():
 	
 	# sets the current levels unlocked to the file
 	save.levels_unlocked = levels_resource.flag_unlocked
+	save.level_times = levels_resource.best_times
 	
 	# saves the file in "savedata.tres"
 	ResourceSaver.save(save, "user://savedata.tres")
@@ -111,6 +119,7 @@ func load_game():
 	
 	# loads the data from "savedata.tres"
 	levels_resource.flag_unlocked = save.levels_unlocked
+	levels_resource.best_times = save.level_times
 	print("game loaded!")
 
 func game_exit():
@@ -119,12 +128,16 @@ func game_exit():
 
 #region debug functions
 func unlock_all():
-	for i in levels_resource.flag_unlocked:
-		levels_resource.flag_unlocked.fill(true)
+	levels_resource.flag_unlocked.fill(true)
 
 func default_save():
-	for i in levels_resource.flag_unlocked:
-		levels_resource.flag_unlocked.fill(false)
+	levels_resource.flag_unlocked.fill(false)
 	levels_resource.flag_unlocked[0] = true
 
+func reset_times():
+	levels_resource.best_times.fill(0)
+
+func reset_save_file():
+	default_save()
+	reset_times()
 #endregion

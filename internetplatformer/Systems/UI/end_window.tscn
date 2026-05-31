@@ -102,19 +102,21 @@ _data = {
 
 [node name="End_window" type="PanelContainer" unique_id=19765220 node_paths=PackedStringArray("_default_focus_button")]
 visible = false
+custom_minimum_size = Vector2(98, 89)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -49.0
-offset_top = -46.0
+offset_top = -50.0
 offset_right = 49.0
-offset_bottom = 46.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_pjqcs")
 script = ExtResource("2_r0ryy")
 _default_focus_button = NodePath("OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton")
@@ -166,6 +168,7 @@ color = Color(0.57254905, 0.6313726, 0.7254902, 1)
 
 [node name="BodyContainer" type="PanelContainer" parent="OutlineMargin/VBoxContainer" unique_id=1819484783]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("1_pjqcs")
 theme_type_variation = &"WindowBody"
 
@@ -184,14 +187,42 @@ theme_override_constants/separation = 7
 [node name="TimerMargin" type="MarginContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=1142739380]
 layout_mode = 2
 theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = -1
 theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_bottom = 3
 
-[node name="TimerHBox" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin" unique_id=409769960]
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin" unique_id=1938978756]
 layout_mode = 2
-theme_override_constants/separation = -30
+theme_override_constants/separation = -2
 
-[node name="TimeWords" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox" unique_id=1645175760]
+[node name="BestTimeHBox" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer" unique_id=812333139]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BTimeWords" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/BestTimeHBox" unique_id=897596636]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.11764706, 0.43529412, 0.3137255, 1)
+theme_override_font_sizes/font_size = 11
+text = "* Best:"
+horizontal_alignment = 1
+
+[node name="BTimeLabel" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/BestTimeHBox" unique_id=397020411]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.11764706, 0.43529412, 0.3137255, 1)
+theme_override_font_sizes/font_size = 11
+text = "0:00"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerHBox" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer" unique_id=409769960]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TimeWords" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/TimerHBox" unique_id=1645175760]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
@@ -199,9 +230,9 @@ theme_override_colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
 text = "Time:"
 horizontal_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox" unique_id=1849533950]
+[node name="TimeLabel" type="Label" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/TimerHBox" unique_id=1849533950]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
 text = "0:00"
@@ -209,7 +240,7 @@ horizontal_alignment = 1
 script = ExtResource("4_k6wsp")
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" unique_id=1186233727]
+[node name="Timer" type="Timer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/TimerHBox/TimeLabel" unique_id=1186233727]
 autostart = true
 
 [node name="Icons" type="MarginContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=967118346]
@@ -270,7 +301,7 @@ theme_override_font_sizes/font_size = 11
 text = "Menu"
 script = ExtResource("8_uw854")
 
-[connection signal="timeout" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel/Timer" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/TimerHBox/TimeLabel" method="_on_timer_timeout"]
+[connection signal="timeout" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/TimerHBox/TimeLabel/Timer" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/TimerHBox/TimeLabel" method="_on_timer_timeout"]
 [connection signal="pressed" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/NextButton" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/NextButton" method="_on_pressed"]
 [connection signal="pressed" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton" method="_on_pressed"]
 [connection signal="pressed" from="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/MenuButton" to="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/MenuButton" method="_on_pressed"]

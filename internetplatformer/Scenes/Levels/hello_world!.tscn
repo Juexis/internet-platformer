@@ -7,13 +7,13 @@ process_mode = 1
 level_name = "Hello World!"
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
-position = Vector2(-340, -16.8)
+position = Vector2(-320, -11.799999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
-position = Vector2(-340, -18)
+position = Vector2(-320, -12.999999)
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
-position = Vector2(-340, -18)
+position = Vector2(-320, -12.999999)
 
 [node name="Windows" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="0" unique_id=141754045]
 z_index = -1

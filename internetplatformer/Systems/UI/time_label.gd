@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if GameManager.is_game_active:
 		total_seconds += 1
+
+func get_total_seconds() -> int:
+	return total_seconds
