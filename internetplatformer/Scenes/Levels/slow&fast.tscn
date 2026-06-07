@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://btxoaakrp6wr5"]
 
-[ext_resource type="PackedScene" uid="uid://bpg3iymtsn0yx" path="res://Scenes/Levels/new_level_template.tscn" id="1_pcvc2"]
-[ext_resource type="PackedScene" uid="uid://d3apkrm73uirx" path="res://Objects/platform_window.tscn" id="2_jwpnw"]
+[ext_resource type="PackedScene" uid="uid://bpg3iymtsn0yx" path="res://Scenes/Levels/new_level_template.tscn" id="1_vyjph"]
+[ext_resource type="PackedScene" uid="uid://d3apkrm73uirx" path="res://Objects/platform_window.tscn" id="2_6u071"]
 
-[node name="world" unique_id=971698201 instance=ExtResource("1_pcvc2")]
+[node name="world" unique_id=971698201 instance=ExtResource("1_vyjph")]
 level_name = "Stop, GO!"
 level_index = 2
 
@@ -12,6 +12,8 @@ position = Vector2(-166, -12.799999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
 position = Vector2(-166, -13.999999)
+limit_top = -800
+limit_bottom = 350
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
 position = Vector2(-166, -13.999999)
@@ -22,7 +24,7 @@ tile_map_data = PackedByteArray("AAD0/wAAAAAAAAAAAAD1/wAAAAABAAAAAAD2/wAAAAACAAA
 [node name="Objects" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="1" unique_id=1855894398 groups=["Tilemaps"]]
 tile_map_data = PackedByteArray("AADh/wQAAAAAAAAABQDr//H/AAAAAAAABQAx/9X/AAAAAAAAAQBM/9P/AAAAAAAAAgBl/9P/AAAAAAAAAgB//9P/AAAAAAAAAgBa/5X/AAAAAAAAAwBi/5X/AAAAAAAAAwBq/5X/AAAAAAAAAwBy/5X/AAAAAAAAAwDV/6H/AAAAAAAAAwDd/6H/AAAAAAAAAwDl/6H/AAAAAAAAAwDt/6H/AAAAAAAAAwD1/6H/AAAAAAAAAwD9/6H/AAAAAAAAAwAFAKH/AAAAAAAAAwANAKH/AAAAAAAAAwAVAKH/AAAAAAAAAwAdAKH/AAAAAAAAAwDB/43/AAAAAAAAAQD7/3P/AAAAAAAABAADAHP/AAAAAAAABAALAHP/AAAAAAAABAATAHP/AAAAAAAABAAbAHP/AAAAAAAABAAjAHP/AAAAAAAABAArAHP/AAAAAAAABAAzAHP/AAAAAAAABAA7AHP/AAAAAAAABABDAHP/AAAAAAAABABLAHP/AAAAAAAABABTAHP/AAAAAAAABABbAHP/AAAAAAAABABjAHP/AAAAAAAABABrAHP/AAAAAAAABABzAHP/AAAAAAAABAB7AHP/AAAAAAAABACDAHP/AAAAAAAABACLAHP/AAAAAAAABACTAHP/AAAAAAAABACbAHP/AAAAAAAABACjAHP/AAAAAAAABACrAHP/AAAAAAAABACzAHP/AAAAAAAABAC7AHP/AAAAAAAABADDAHP/AAAAAAAABADLAHP/AAAAAAAABADz/3P/AAAAAAAABADr/3P/AAAAAAAABADF/9n/AAAAAAAABQD9/9//AAAAAAAABQD1AHT/AAAAAAAABQD1AFP/AAAAAAAABQD1ADT/AAAAAAAABQAOAWP/AAAAAAAABQAQAUP/AAAAAAAABQDqAA7/AAAAAAAACgBLAGX/AAAAAAAAAwBTAGX/AAAAAAAAAwAjAGr/AAAAAAAAAwBbAGX/AAAAAAAAAwB7AGr/AAAAAAAAAwCzAGX/AAAAAAAAAwCzAGr/AAAAAAAAAwBS/5X/AAAAAAAAAwA=")
 
-[node name="PlatformWindow2" parent="LevelElements/Objects" index="0" unique_id=1294838842 instance=ExtResource("2_jwpnw")]
+[node name="PlatformWindow2" parent="LevelElements/Objects" index="0" unique_id=1294838842 instance=ExtResource("2_6u071")]
 position = Vector2(-410, -183)
 
 [node name="Decorations" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="2" unique_id=1933574536]
