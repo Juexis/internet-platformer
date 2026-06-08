@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://hug07oc5rg2r" path="res://Scenes/Levels/updownaround.tscn" id="2_xj4qu"]
 [ext_resource type="PackedScene" uid="uid://btxoaakrp6wr5" path="res://Scenes/Levels/slow&fast.tscn" id="3_xxwh5"]
 [ext_resource type="PackedScene" uid="uid://co1c2owrdofbu" path="res://Scenes/Levels/crowded.tscn" id="4_8bcod"]
+[ext_resource type="PackedScene" uid="uid://h5rp31q8nk23" path="res://Scenes/Levels/level5.tscn" id="5_8bcod"]
 
 [resource]
 script = ExtResource("1_7b62d")
-levels = Array[PackedScene]([ExtResource("2_d2weq"), ExtResource("2_xj4qu"), ExtResource("3_xxwh5"), ExtResource("4_8bcod"), null, null, null, null, null, null])
+levels = Array[PackedScene]([ExtResource("2_d2weq"), ExtResource("2_xj4qu"), ExtResource("3_xxwh5"), ExtResource("4_8bcod"), ExtResource("5_8bcod"), null, null, null, null, null])
 flag_unlocked = Array[bool]([true, false, false, false, false, false, false, false, false, false])
 best_times = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])

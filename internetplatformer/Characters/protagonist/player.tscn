@@ -477,7 +477,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="TimeoutTimer" type="Timer" parent="." unique_id=998457943]
-wait_time = 4.0
+wait_time = 3.0
 one_shot = true
 
 [node name="DeathAnimTimer" type="Timer" parent="." unique_id=1742714315]

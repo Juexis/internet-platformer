@@ -12,8 +12,6 @@ position = Vector2(-166, -12.799999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
 position = Vector2(-166, -13.999999)
-limit_top = -800
-limit_bottom = 350
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
 position = Vector2(-166, -13.999999)
@@ -28,4 +26,4 @@ tile_map_data = PackedByteArray("AADh/wQAAAAAAAAABQDr//H/AAAAAAAABQAx/9X/AAAAAAA
 position = Vector2(-410, -183)
 
 [node name="Decorations" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="2" unique_id=1933574536]
-tile_map_data = PackedByteArray("AAD1AGr/AAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AABy/8f/AAAEAAMAAABJ/5X/AgAFAAEAAACjAHT/AAADAAYAAAD0APn+AAACAAAAAAD0AAH/AAACAAEAAAD8APn+AAADAAAAAAD8AAH/AAADAAEAAAD1AGf/AAAEAAAAAADG//n/AAAEAAAAAAA=")
