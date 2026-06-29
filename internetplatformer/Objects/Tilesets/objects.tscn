@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://co8i4htox75e1"]
+
+[ext_resource type="PackedScene" uid="uid://cnu0ly4kii26p" path="res://Objects/speaker.tscn" id="1_2mbfu"]
+[ext_resource type="PackedScene" uid="uid://b7o3d78041tni" path="res://Objects/win_disc.tscn" id="2_613dj"]
+[ext_resource type="PackedScene" uid="uid://toamyasb2lad" path="res://Objects/caution.tscn" id="3_b423j"]
+[ext_resource type="PackedScene" uid="uid://dywtet7pb6d8m" path="res://Objects/danger.tscn" id="4_0qip7"]
+[ext_resource type="PackedScene" uid="uid://bw2dv4plr4qnu" path="res://Objects/paper.tscn" id="5_3bg47"]
+[ext_resource type="PackedScene" uid="uid://d3apkrm73uirx" path="res://Objects/platform_window.tscn" id="6_6l8ms"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uda3f"]
+resource_name = "Objects"
+scenes/1/scene = ExtResource("1_2mbfu")
+scenes/2/scene = ExtResource("3_b423j")
+scenes/3/scene = ExtResource("4_0qip7")
+scenes/4/scene = ExtResource("5_3bg47")
+scenes/5/scene = ExtResource("6_6l8ms")
+scenes/10/scene = ExtResource("2_613dj")
+
+[sub_resource type="TileSet" id="TileSet_jycte"]
+tile_offset_axis = 1
+tile_size = Vector2i(2, 2)
+sources/0 = SubResource("TileSetScenesCollectionSource_uda3f")
+
+[node name="Objects" type="TileMapLayer" unique_id=1013541180]
+tile_set = SubResource("TileSet_jycte")

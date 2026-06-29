@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tg2r1kwwtm5e"]
 
 [ext_resource type="Texture2D" uid="uid://dbx54qwwi1px0" path="res://Visuals/Sprites/Tilesets/tilesetV5.png" id="1_dn3q5"]
-[ext_resource type="Script" uid="uid://c3m5pjcc88gf4" path="res://Objects/window_tilemap.gd" id="2_1vsky"]
+[ext_resource type="Script" uid="uid://c3m5pjcc88gf4" path="res://Objects/Tilesets/window_tilemap.gd" id="2_1vsky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0ho4"]
 texture = ExtResource("1_dn3q5")
@@ -861,6 +861,8 @@ terrain_set_0/terrain_4/color = Color(0.9999997, 0.93190575, 0.7011613, 1)
 terrain_set_1/mode = 0
 terrain_set_1/terrain_0/name = "Vanish"
 terrain_set_1/terrain_0/color = Color(1, 1, 1, 1)
+terrain_set_1/terrain_1/name = "BG Windows"
+terrain_set_1/terrain_1/color = Color(0, 0.43673494, 0.8337913, 1)
 custom_data_layer_0/name = "vanishable"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "moving"

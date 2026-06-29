@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cj6ljp5x4p5e0"]
+
+[ext_resource type="TileSet" uid="uid://dodl6sg1m68u5" path="res://Objects/Tilesets/decoration_tileset.tres" id="1_jsk02"]
+
+[node name="Decorations" type="TileMapLayer" unique_id=922465875]
+z_index = -1
+tile_set = ExtResource("1_jsk02")
+y_sort_origin = -1

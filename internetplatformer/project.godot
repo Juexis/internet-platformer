@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Internet Platformer"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://dk6ul1w3s20hg"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://d0x2fcu8po2to"
 
 [audio]
