@@ -22,13 +22,14 @@ func _ready() -> void:
 
 ## change reset animation modulate alpha value to edit 
 func show_endscreen():
-	await get_tree().create_timer(1).timeout
-	show()
 	if GameManager.player_died:
+		await get_tree().create_timer(1).timeout
 		show_lose()
 	
 	elif GameManager.player_win:
+		await get_tree().create_timer(1.55).timeout
 		show_win()
+	show()
 	
 	_animation.play("pop_in")
 	_default_focus_button.grab_focus()

@@ -2,15 +2,59 @@
 
 [ext_resource type="PackedScene" uid="uid://duralolh2mgd6" path="res://Objects/base_object.tscn" id="1_eysqj"]
 [ext_resource type="Script" uid="uid://dv60nx42epc1s" path="res://Objects/caution.gd" id="2_4p7eh"]
-[ext_resource type="Texture2D" uid="uid://kfa8vd4te6il" path="res://Visuals/Sprites/Tilesets/caution.png" id="2_sxs14"]
+[ext_resource type="Texture2D" uid="uid://ct4cw4q2eb0ls" path="res://Visuals/Sprites/Tilesets/cautionv2.png" id="3_4p7eh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_autv8"]
+atlas = ExtResource("3_4p7eh")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p7eh"]
+atlas = ExtResource("3_4p7eh")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujjuw"]
+atlas = ExtResource("3_4p7eh")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81ef6"]
+atlas = ExtResource("3_4p7eh")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14jm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_autv8")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p7eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujjuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81ef6")
+}],
+"loop": 0,
+"name": &"interact",
+"speed": 5.0
+}]
 
 [node name="Caution" unique_id=1876429500 instance=ExtResource("1_eysqj")]
 script = ExtResource("2_4p7eh")
 interaction_path = NodePath("interaction_area")
 
-[node name="Sprite" parent="." index="0" unique_id=1644634061]
-texture = ExtResource("2_sxs14")
-hframes = 2
+[node name="Sprite" parent="." index="0" unique_id=1057885499]
+sprite_frames = SubResource("SpriteFrames_14jm0")
+animation = &"interact"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
 
 [node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
 position = Vector2(0, 0.5)

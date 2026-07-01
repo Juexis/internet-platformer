@@ -75,6 +75,8 @@ func end_game():
 		death()
 	else:
 		GameManager.is_game_active = false
+		sprite.flip_h = false
+		sprite.play("win")
 
 func death():
 	AudioController.hit()

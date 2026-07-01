@@ -5,7 +5,7 @@ size = Vector2(16, 16)
 
 [node name="BaseObject" type="StaticBody2D" unique_id=2116232511]
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1644634061]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1057885499]
 
 [node name="interaction_area" type="Area2D" parent="." unique_id=1279845139]
 collision_layer = 4
