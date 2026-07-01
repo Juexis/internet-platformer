@@ -27,7 +27,7 @@ func show_endscreen():
 		show_lose()
 	
 	elif GameManager.player_win:
-		await get_tree().create_timer(1.55).timeout
+		await get_tree().create_timer(1.75).timeout
 		show_win()
 	show()
 	
