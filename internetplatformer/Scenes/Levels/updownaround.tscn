@@ -5,6 +5,7 @@
 [node name="world" unique_id=971698201 instance=ExtResource("1_1v2s1")]
 level_name = "Afore Loop"
 level_index = 1
+bg_color = Color(0, 0.4117647, 0.6666667, 1)
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-274, -75.8)

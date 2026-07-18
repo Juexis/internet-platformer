@@ -3,6 +3,7 @@ extends Node2D
 @export var level_name: String
 @export var level_index: int
 var best_time: int
+@export var bg_color: Color
 
 @onready var windows: TileMapLayer = $LevelElements/Windows
 @onready var objects: TileMapLayer = $LevelElements/Objects
@@ -12,6 +13,7 @@ func _ready() -> void:
 	GameManager.gamestate.game_over.connect(set_best_time)
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	GameManager.current_level = level_index
+	RenderingServer.set_default_clear_color(bg_color)
 	GameManager.is_game_active = true
 	GameManager.player_win = false
 	GameManager.player_died = false

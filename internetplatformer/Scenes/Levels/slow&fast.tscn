@@ -6,6 +6,7 @@
 [node name="world" unique_id=971698201 instance=ExtResource("1_vyjph")]
 level_name = "Stop, GO!"
 level_index = 2
+bg_color = Color(0, 0.4117647, 0.6666667, 1)
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-166, -12.799999)
