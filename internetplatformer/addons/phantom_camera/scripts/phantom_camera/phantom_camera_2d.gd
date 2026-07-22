@@ -707,7 +707,8 @@ func _enter_tree() -> void:
 	_phantom_camera_manager = Engine.get_singleton(_constants.PCAM_MANAGER_NODE_NAME)
 	_tween_skip = !tween_on_load
 
-	_phantom_camera_manager.pcam_added(self)
+	if is_instance_valid(_phantom_camera_manager):
+		_phantom_camera_manager.pcam_added(self)
 
 	priority_override = false
 
@@ -1080,8 +1081,9 @@ func _draw() -> void:
 
 
 func _camera_frame_rect() -> Rect2:
+	if not is_instance_valid(_phantom_camera_manager):
+		return Rect2()
 	var screen_size_zoom: Vector2 = Vector2(_phantom_camera_manager.screen_size.x / get_zoom().x, _phantom_camera_manager.screen_size.y / get_zoom().y)
-
 	return Rect2(-screen_size_zoom / 2, screen_size_zoom)
 
 
