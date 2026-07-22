@@ -18,7 +18,10 @@ config/name="Internet Platformer"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://dk6ul1w3s20hg"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="uid://d0x2fcu8po2to"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
+boot_splash/image="uid://d0x2fcu8po2to"
+config/icon="uid://bfxkg3pv3ninq"
 
 [audio]
 
