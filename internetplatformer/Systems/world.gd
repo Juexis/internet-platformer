@@ -2,8 +2,9 @@ extends Node2D
 
 @export var level_name: String
 @export var level_index: int
-var best_time: int
 @export var bg_color: Color
+@export var song_index: int
+var best_time: int
 
 @onready var windows: TileMapLayer = $LevelElements/Windows
 @onready var objects: TileMapLayer = $LevelElements/Objects

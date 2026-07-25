@@ -45,6 +45,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_autv8"]
+points = PackedVector2Array(0, -9, 9, 8, -9, 8)
+
 [node name="Caution" unique_id=1876429500 instance=ExtResource("1_eysqj")]
 script = ExtResource("2_4p7eh")
 interaction_path = NodePath("interaction_area")
@@ -57,4 +60,5 @@ frame = 2
 frame_progress = 1.0
 
 [node name="area_of_effect" parent="interaction_area" parent_id_path=PackedInt32Array(1279845139) index="0" unique_id=195230144]
-position = Vector2(0, 0.5)
+position = Vector2(0, 0)
+shape = SubResource("ConvexPolygonShape2D_autv8")

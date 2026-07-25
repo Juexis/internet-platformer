@@ -6,6 +6,7 @@
 level_name = "Afore Loop"
 level_index = 1
 bg_color = Color(0, 0.4117647, 0.6666667, 1)
+song_index = 1
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-274, -75.8)
