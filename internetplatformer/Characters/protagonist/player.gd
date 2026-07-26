@@ -83,6 +83,7 @@ func death():
 	sprite.play("knocked")
 	sprite_animations.play("death")
 	death_anim_timer.start()
+	AudioController.stop_slide()
 
 func _on_death_anim_timer_timeout() -> void:
 	death_shake.emit()
