@@ -67,22 +67,6 @@ theme_override_font_sizes/font_size = 11
 text = "Times"
 script = ExtResource("4_yhxw7")
 
-[node name="CreditsMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=320368080]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 10
-theme_override_constants/margin_left = -33
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 2
-
-[node name="CreditsButton" type="Button" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/CreditsMargin" unique_id=2042424160]
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("3_opfnp")
-theme_type_variation = &"9SliceButton"
-theme_override_font_sizes/font_size = 8
-text = "Credits"
-
 [node name="WindowMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer" unique_id=1029624231]
 layout_mode = 2
 theme_override_constants/margin_right = 32
