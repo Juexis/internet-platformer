@@ -29,5 +29,8 @@ func set_best_time():
 		GameManager.levels_resource.best_times[level_index] = this_time
 		print("new best time saved!")
 
-func get_best_time():
+func get_best_time() -> int:
 	return GameManager.levels_resource.best_times[level_index]
+
+func get_level_name() -> String:
+	return level_name

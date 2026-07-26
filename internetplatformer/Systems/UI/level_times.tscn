@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://ucwjm753bc4s"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_wpm57"]
+[ext_resource type="Script" uid="uid://bk0l3ucu3ukn2" path="res://Systems/UI/level_times.gd" id="2_ih01v"]
+[ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="3_dbafw"]
+
+[sub_resource type="Animation" id="Animation_7qfpv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pjqcs"]
+resource_name = "fade_out"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.6666667),
+"transitions": PackedFloat32Array(0.12940824, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666666, 0.43333334),
+"transitions": PackedFloat32Array(0.094732374, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_ms8do"]
+resource_name = "intro_pop_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.8, 3.7666667),
+"transitions": PackedFloat32Array(0.02915735, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.8, 3.3333333),
+"transitions": PackedFloat32Array(0.07694675, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ecvb"]
+_data = {
+&"RESET": SubResource("Animation_7qfpv"),
+&"fade_out": SubResource("Animation_pjqcs"),
+&"intro_pop_in": SubResource("Animation_ms8do"),
+&"pop_in": ExtResource("3_dbafw")
+}
+
+[node name="LevelTimesWindow" type="Panel" unique_id=506431065 groups=["UI"]]
+process_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -63.0
+offset_right = 111.25
+offset_bottom = 62.98999
+grow_vertical = 2
+pivot_offset = Vector2(62.5, 62.5)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_wpm57")
+script = ExtResource("2_ih01v")
+
+[node name="WindowAnimations" type="AnimationPlayer" parent="." unique_id=2125014371]
+libraries/ = SubResource("AnimationLibrary_3ecvb")
+autoplay = &"pop_in"
+
+[node name="OutlineMargin" type="MarginContainer" parent="." unique_id=1845570605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBox" type="VBoxContainer" parent="OutlineMargin" unique_id=56674526]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HeaderContainer" type="PanelContainer" parent="OutlineMargin/VBox" unique_id=801279200]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_wpm57")
+theme_type_variation = &"WindowHeader"
+
+[node name="TitlebarMargin" type="MarginContainer" parent="OutlineMargin/VBox/HeaderContainer" unique_id=266590853]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OutlineMargin/VBox/HeaderContainer/TitlebarMargin" unique_id=885307716]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HBoxContainer" unique_id=1407769903]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_wpm57")
+text = "LEVEL TIMES"
+
+[node name="MarginContainer" type="MarginContainer" parent="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HBoxContainer" unique_id=1867999788]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = 1
+
+[node name="XButton" type="Button" parent="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HBoxContainer/MarginContainer" unique_id=1159406433]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("1_wpm57")
+theme_type_variation = &"9SliceButton"
+text = "X"
+
+[node name="ColorRect" type="ColorRect" parent="OutlineMargin/VBox" unique_id=1567260077]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.39607844, 0.4509804, 0.57254905, 1)
+
+[node name="BodyContainer" type="PanelContainer" parent="OutlineMargin/VBox" unique_id=1690431037]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_wpm57")
+theme_type_variation = &"WindowBody"
+
+[node name="MarginContainer" type="MarginContainer" parent="OutlineMargin/VBox/BodyContainer" unique_id=293589949]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="TimesText" type="RichTextLabel" parent="OutlineMargin/VBox/BodyContainer/MarginContainer" unique_id=2109850942]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.16470589, 0.18431373, 0.30588236, 1)
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 11
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/italics_font_size = 11
+theme_override_font_sizes/mono_font_size = 11
+
+[connection signal="pressed" from="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HBoxContainer/MarginContainer/XButton" to="." method="_on_x_button_pressed"]

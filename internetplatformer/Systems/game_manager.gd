@@ -30,6 +30,7 @@ class GameState:
 	signal game_over
 	signal paused
 	signal unpaused
+	signal switch_focus
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false

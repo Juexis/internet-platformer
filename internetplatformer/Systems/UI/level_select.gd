@@ -9,6 +9,8 @@ func _ready() -> void:
 	_level_list.grab_focus()
 	_level_list.select(GameManager.current_level)
 	GameManager.gamestate.unpaused.connect(go_back)
+	GameManager.gamestate.switch_focus.connect(default_focus)
+	
 	
 	# sets levels to be enabled based on the levels_resource
 	for i in _level_list.item_count:
@@ -28,3 +30,6 @@ func go_back():
 	animations.play("fade_out")
 	await animations.animation_finished
 	queue_free()
+
+func default_focus():
+	_level_list.grab_focus()

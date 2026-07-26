@@ -3,7 +3,7 @@ extends Resource
 @export var levels: Array[PackedScene]
 @export var flag_unlocked: Array[bool]
 @export var best_times: Array[int]
-
+@export var level_names: Array[String]
 func _init() -> void:
 	flag_unlocked.resize(10)
 	flag_unlocked.fill(false)

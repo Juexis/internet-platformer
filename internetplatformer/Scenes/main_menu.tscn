@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="3_opfnp"]
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dnjgxeishty00" path="res://Systems/UI/portrait.tscn" id="4_n45e2"]
+[ext_resource type="Script" uid="uid://csbmxeylliyqe" path="res://Systems/UI/times_button.gd" id="4_yhxw7"]
 [ext_resource type="Script" uid="uid://bwnhgbic3n6g4" path="res://Systems/UI/skip_anims.gd" id="5_cp0ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
@@ -64,6 +65,7 @@ theme = ExtResource("3_opfnp")
 theme_type_variation = &"9SliceButton"
 theme_override_font_sizes/font_size = 11
 text = "Times"
+script = ExtResource("4_yhxw7")
 
 [node name="CreditsMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=320368080]
 layout_mode = 2
@@ -145,5 +147,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_constants/margin_left = -3
 theme_override_constants/margin_top = -7
+
+[connection signal="pressed" from="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin/TimesButton" to="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin/TimesButton" method="_on_pressed"]
 
 [editable path="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/WindowMargin/Window"]
