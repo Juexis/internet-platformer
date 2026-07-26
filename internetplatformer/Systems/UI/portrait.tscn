@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://m47d0nwpyesj" path="res://Visuals/protag-portrait.png" id="1_pi1e7"]
 [ext_resource type="AudioStream" uid="uid://dhg0une08g370" path="res://Audio/SFX/jump_01.mp3" id="2_bfubh"]
+[ext_resource type="Script" uid="uid://bwnhgbic3n6g4" path="res://Systems/UI/skip_anims.gd" id="2_d3sfi"]
 
 [sub_resource type="Animation" id="Animation_bfubh"]
 length = 0.001
@@ -94,9 +95,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
+offset_left = -49.5
 offset_top = -62.0
-offset_right = 39.5007
+offset_right = 29.500702
 offset_bottom = 62.000015
 grow_horizontal = 2
 grow_vertical = 2
@@ -112,6 +113,8 @@ metadata/_edit_use_anchors_ = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_nc63g")
 autoplay = &"slide_in"
+script = ExtResource("2_d3sfi")
+anim_to_skip = "slide_in"
 
 [node name="Noise" type="AudioStreamPlayer" parent="." unique_id=802376075]
 stream = ExtResource("2_bfubh")

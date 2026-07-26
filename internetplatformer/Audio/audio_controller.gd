@@ -44,5 +44,8 @@ func speaker():
 func startup():
 	_startup.play()
 
+func skip_startup():
+	_startup.stop()
+
 func fail_screen():
 	_fail.play()

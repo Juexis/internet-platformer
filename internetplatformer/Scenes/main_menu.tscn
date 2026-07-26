@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dmiyq43iealqx" path="res://Systems/UI/title.tscn" id="1_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://dha4ix54miqdo" path="res://Systems/UI/level_select.tscn" id="1_28flt"]
 [ext_resource type="Script" uid="uid://q4166smmv38t" path="res://Scenes/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="3_opfnp"]
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="4_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://dnjgxeishty00" path="res://Systems/UI/portrait.tscn" id="4_n45e2"]
+[ext_resource type="Script" uid="uid://bwnhgbic3n6g4" path="res://Systems/UI/skip_anims.gd" id="5_cp0ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
 bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
@@ -36,15 +38,64 @@ theme_override_constants/margin_top = 5
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="TitlePanel" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=566474631 instance=ExtResource("1_1ehe0")]
+[node name="TitlePanel" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=566474631 groups=["AnimatedUI"] instance=ExtResource("1_1ehe0")]
 layout_mode = 2
 
-[node name="Window" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=506431065 instance=ExtResource("1_28flt")]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer" unique_id=1434242811]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_position = Vector2(-18, 0)
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer" unique_id=2072780168]
+layout_mode = 2
+
+[node name="Times Margin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227308715]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_right = 1
+
+[node name="TimesButton" type="Button" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin" unique_id=226251151]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_opfnp")
+theme_type_variation = &"9SliceButton"
+theme_override_font_sizes/font_size = 11
+text = "Times"
+
+[node name="CreditsMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=320368080]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_constants/margin_left = -33
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/CreditsMargin" unique_id=2042424160]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_opfnp")
+theme_type_variation = &"9SliceButton"
+theme_override_font_sizes/font_size = 8
+text = "Credits"
+
+[node name="WindowMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer" unique_id=1029624231]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+
+[node name="Window" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/WindowMargin" unique_id=506431065 instance=ExtResource("1_28flt")]
 custom_minimum_size = Vector2(125, 115)
 layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
 
-[node name="WindowAnimations" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/Window" index="0" unique_id=2125014371]
+[node name="WindowAnimations" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/WindowMargin/Window" index="0" unique_id=2125014371 groups=["AnimatedUI"]]
 autoplay = &"intro_pop_in"
+script = ExtResource("5_cp0ys")
+anim_to_skip = "intro_pop_in"
 
 [node name="BottomBarPanel" type="PanelContainer" parent="CanvasLayer/VBox" unique_id=367782687]
 layout_mode = 2
@@ -95,4 +146,4 @@ layout_mode = 2
 theme_override_constants/margin_left = -3
 theme_override_constants/margin_top = -7
 
-[editable path="CanvasLayer/VBox/TitleMargin/VBoxContainer/Window"]
+[editable path="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/WindowMargin/Window"]

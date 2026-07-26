@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmiyq43iealqx"]
 
 [ext_resource type="Texture2D" uid="uid://ccv7e5i6mfpge" path="res://Visuals/welcometo.png" id="1_6uh5v"]
+[ext_resource type="Script" uid="uid://bwnhgbic3n6g4" path="res://Systems/UI/skip_anims.gd" id="1_oijvx"]
 [ext_resource type="Texture2D" uid="uid://cmrgxyh7b4my2" path="res://Visuals/bluos.png" id="2_oijvx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
@@ -127,9 +128,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
 
-[node name="TitleAnimation" type="AnimationPlayer" parent="." unique_id=1184155744]
+[node name="TitleAnimation" type="AnimationPlayer" parent="." unique_id=1184155744 groups=["AnimatedUI"]]
 libraries/ = SubResource("AnimationLibrary_lad0s")
 autoplay = &"intro"
+script = ExtResource("1_oijvx")
+anim_to_skip = "intro"
 
 [node name="WelcomeMargin" type="MarginContainer" parent="." unique_id=1025020030]
 layout_mode = 2

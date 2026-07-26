@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cswa002qhdmsl"]
 
-[ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Systems/audio_controller.gd" id="1_xoy2a"]
+[ext_resource type="Script" uid="uid://ddtf6a2drlsua" path="res://Audio/audio_controller.gd" id="1_xoy2a"]
 [ext_resource type="AudioStream" uid="uid://v4t2ff8pidud" path="res://Audio/SFX/jump_v2.mp3" id="2_fewgg"]
 [ext_resource type="AudioStream" uid="uid://1w8vq6u5ymtp" path="res://Audio/SFX/startup.mp3" id="3_0gm4s"]
 [ext_resource type="AudioStream" uid="uid://cu25vjyg5rres" path="res://Audio/SFX/knocked.wav" id="3_fuvku"]

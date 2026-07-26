@@ -68,6 +68,8 @@ func _process(delta: float) -> void:
 		unpause()
 
 func pause():
+		if get_node("/root/MainMenu"):
+			return
 		gamestate.paused.emit()
 		is_game_active = false
 		get_node("/root/world").get_tree().paused = true
