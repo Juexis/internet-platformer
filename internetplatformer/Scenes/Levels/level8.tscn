@@ -34,7 +34,7 @@ position = Vector2(-968, -530)
 tile_map_data = PackedByteArray("AAAbAOz+AAAEAAAAAAA=")
 
 [node name="Parallax_Windows" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="4" unique_id=388408742]
-modulate = Color(1, 1, 1, 0.34509805)
+modulate = Color(1, 1, 1, 0.2509804)
 scroll_scale = Vector2(1, 1)
 repeat_size = Vector2(48, 48)
 repeat_times = 50
