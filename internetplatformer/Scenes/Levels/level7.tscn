@@ -7,7 +7,7 @@
 level_name = "!!!"
 level_index = 6
 bg_color = Color(0.27216938, 0.3342869, 0.51192176, 1)
-song_index = 2
+bgm = 2
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-168, -12.8)

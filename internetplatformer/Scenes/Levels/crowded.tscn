@@ -6,7 +6,7 @@
 level_name = "New Window (27)"
 level_index = 3
 bg_color = Color(0, 0.47843137, 0.5176471, 1)
-song_index = 2
+bgm = 2
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-177, -11.799999)

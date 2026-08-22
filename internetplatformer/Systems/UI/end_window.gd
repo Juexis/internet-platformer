@@ -54,7 +54,7 @@ func show_lose():
 	
 	# Only show and focus next button (and best time) if the next level has been unlocked
 	if GameManager.is_next_level_unlocked():
-		_default_focus_button = _next_button
+		_default_focus_button = _retry_button
 		_next_button.show()
 		display_best_time()
 		_best_time_h_box.show()

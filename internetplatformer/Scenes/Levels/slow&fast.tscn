@@ -7,13 +7,15 @@
 level_name = "Stop, GO!"
 level_index = 2
 bg_color = Color(0, 0.4117647, 0.6666667, 1)
-song_index = 1
+bgm = 1
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-166, -12.799999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
 position = Vector2(-166, -13.999999)
+limit_top = -10000000
+limit_bottom = 10000000
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
 position = Vector2(-166, -13.999999)

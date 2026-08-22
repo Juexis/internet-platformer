@@ -10,6 +10,15 @@ extends Node
 @onready var _startup: AudioStreamPlayer = $UISFX/Startup
 @onready var _fail: AudioStreamPlayer = $UISFX/Fail
 
+# songs
+var current_song: GameManager.SongList = GameManager.SongList.FLOATING_POINT
+@onready var ost: Node = $OST
+@onready var _floating_point: AudioStreamPlayer = $"OST/Floating Point"
+@onready var _blu_shop: AudioStreamPlayer = $OST/BluShop
+
+func _ready() -> void:
+	GameManager.gamestate.start_song.connect(song_picker)
+
 func player_jump():
 	_player_jump.pitch_scale = randf_range(0.90, 1.00)
 	_player_jump.play()
@@ -49,3 +58,23 @@ func skip_startup():
 
 func fail_screen():
 	_fail.play()
+
+
+func song_picker(bgm: GameManager.SongList):
+	# stop the current song if the next one is different
+	if bgm != current_song:
+		for i: AudioStreamPlayer in ost.get_children():
+			i.stop()
+	
+	# allows the current song to keep playing if song_start() emits the same song (on restarts and levels with same song)
+	#if current_song == bgm:
+		#return
+	match bgm:
+		GameManager.SongList.FLOATING_POINT:
+			if current_song == GameManager.SongList.FLOATING_POINT:
+				return
+			current_song = GameManager.SongList.FLOATING_POINT
+			_floating_point.play()
+		GameManager.SongList.BLUSHOP:
+			current_song = GameManager.SongList.BLUSHOP
+			_blu_shop.play()

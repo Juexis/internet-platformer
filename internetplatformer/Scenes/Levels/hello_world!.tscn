@@ -6,16 +6,16 @@
 process_mode = 1
 level_name = "Hello World!"
 bg_color = Color(0, 0.4117647, 0.6666667, 1)
-song_index = 1
+bgm = 1
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
-position = Vector2(-322, -11.8)
+position = Vector2(1415, -252.79999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
-position = Vector2(-322, -13)
+position = Vector2(1415, -253.99998)
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
-position = Vector2(-322, -13)
+position = Vector2(1415, -253.99998)
 
 [node name="Windows" parent="LevelElements" parent_id_path=PackedInt32Array(777770434) index="0" unique_id=141754045]
 z_index = -1

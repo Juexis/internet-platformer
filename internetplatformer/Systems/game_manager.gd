@@ -12,6 +12,9 @@ var is_loading: bool = false
 signal set_end_text(text: String)
 signal get_time
 
+## Global Enum for songs
+enum SongList {NONE, FLOATING_POINT, BLUSHOP}
+
 #region debug
 @export var full_reset: bool = false:
 	set(v): reset_save_file()
@@ -30,6 +33,8 @@ class GameState:
 	signal game_over
 	signal paused
 	signal unpaused
+	signal start_song(song: SongList)
+	signal change_song
 	signal switch_focus
 
 func _ready() -> void:

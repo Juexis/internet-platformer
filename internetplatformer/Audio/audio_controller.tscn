@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://ccye3uv5tvx71" path="res://Audio/SFX/bass.wav" id="4_fewgg"]
 [ext_resource type="AudioStream" uid="uid://c8n8kcavefx17" path="res://Audio/SFX/slide.mp3" id="5_qlpi7"]
 [ext_resource type="AudioStream" uid="uid://clt4grkj6jgf3" path="res://Audio/SFX/endfail.wav" id="7_2uuxa"]
+[ext_resource type="AudioStream" uid="uid://bmwfygh6w58qq" path="res://Audio/Music/floatingpointdemo.mp3" id="9_2mam3"]
+[ext_resource type="AudioStream" uid="uid://cfvqhjb6dcn8w" path="res://Audio/Music/BluShopDemo.mp3" id="10_srkke"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
 playback_mode = 1
@@ -59,3 +61,16 @@ stream = ExtResource("7_2uuxa")
 volume_db = -14.149
 pitch_scale = 1.07
 bus = &"SFX"
+
+[node name="OST" type="Node" parent="." unique_id=8045894]
+
+[node name="Floating Point" type="AudioStreamPlayer" parent="OST" unique_id=945636079]
+process_mode = 3
+stream = ExtResource("9_2mam3")
+volume_db = -7.782
+bus = &"Music"
+
+[node name="BluShop" type="AudioStreamPlayer" parent="OST" unique_id=1725306114]
+stream = ExtResource("10_srkke")
+volume_db = -7.72
+bus = &"Music"
