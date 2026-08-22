@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dnjgxeishty00" path="res://Systems/UI/portrait.tscn" id="4_n45e2"]
 [ext_resource type="Script" uid="uid://csbmxeylliyqe" path="res://Systems/UI/times_button.gd" id="4_yhxw7"]
 [ext_resource type="Script" uid="uid://bwnhgbic3n6g4" path="res://Systems/UI/skip_anims.gd" id="5_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://d3d24kca6yi3h" path="res://Systems/UI/quit_button.tscn" id="5_trj04"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
 bg_color = Color(0.78039217, 0.8117647, 0.8666667, 1)
@@ -52,20 +53,32 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer" unique_id=2072780168]
 layout_mode = 2
 
-[node name="Times Margin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227308715]
+[node name="TimesMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227308715]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_right = 1
 
-[node name="TimesButton" type="Button" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin" unique_id=226251151]
+[node name="TimesButton" type="Button" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/TimesMargin" unique_id=226251151]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
+focus_neighbor_bottom = NodePath("../../MarginContainer/QuitButton")
 theme = ExtResource("3_opfnp")
 theme_type_variation = &"9SliceButton"
 theme_override_font_sizes/font_size = 11
 text = "Times"
 script = ExtResource("4_yhxw7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=978376835]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 2
+
+[node name="QuitButton" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=422815786 instance=ExtResource("5_trj04")]
+layout_mode = 2
+size_flags_vertical = 10
+focus_neighbor_top = NodePath("../../TimesMargin/TimesButton")
 
 [node name="WindowMargin" type="MarginContainer" parent="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer" unique_id=1029624231]
 layout_mode = 2
@@ -132,6 +145,6 @@ layout_mode = 2
 theme_override_constants/margin_left = -3
 theme_override_constants/margin_top = -7
 
-[connection signal="pressed" from="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin/TimesButton" to="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/Times Margin/TimesButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/TimesMargin/TimesButton" to="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/VBoxContainer/TimesMargin/TimesButton" method="_on_pressed"]
 
 [editable path="CanvasLayer/VBox/TitleMargin/VBoxContainer/HBoxContainer/WindowMargin/Window"]

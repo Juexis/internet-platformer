@@ -4,6 +4,7 @@ extends Node2D
 @export var level_index: int
 @export var bg_color: Color
 @export var bgm: GameManager.SongList
+@export var difficulty_index: int
 var best_time: int
 
 @onready var windows: TileMapLayer = $LevelElements/Windows
@@ -19,6 +20,7 @@ func _ready() -> void:
 	GameManager.player_win = false
 	GameManager.player_died = false
 	GameManager.gamestate.start_song.emit(bgm)
+	GameManager.set_icon.emit(difficulty_index)
 
 
 ## load best time from save file and set it to the level's best time 

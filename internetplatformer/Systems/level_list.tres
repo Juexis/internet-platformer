@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://brml0qt24rfq8" path="res://Scenes/Levels/level7.tscn" id="7_8q3kj"]
 [ext_resource type="PackedScene" uid="uid://bqvxa8f7a2483" path="res://Scenes/Levels/level8.tscn" id="8_3oudk"]
 [ext_resource type="PackedScene" uid="uid://ylttsr81ar1u" path="res://Scenes/Levels/level9.tscn" id="9_47kuf"]
+[ext_resource type="PackedScene" uid="uid://c14phss7gimlb" path="res://Scenes/Levels/level10.tscn" id="10_psnpq"]
 
 [resource]
 script = ExtResource("1_7b62d")
-levels = Array[PackedScene]([ExtResource("2_d2weq"), ExtResource("2_xj4qu"), ExtResource("3_xxwh5"), ExtResource("4_8bcod"), ExtResource("5_8bcod"), ExtResource("6_8a0gj"), ExtResource("7_8q3kj"), ExtResource("8_3oudk"), ExtResource("9_47kuf"), null])
+levels = Array[PackedScene]([ExtResource("2_d2weq"), ExtResource("2_xj4qu"), ExtResource("3_xxwh5"), ExtResource("4_8bcod"), ExtResource("5_8bcod"), ExtResource("6_8a0gj"), ExtResource("7_8q3kj"), ExtResource("8_3oudk"), ExtResource("9_47kuf"), ExtResource("10_psnpq")])
 flag_unlocked = Array[bool]([true, false, false, false, false, false, false, false, false, false])
 best_times = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-level_names = Array[String](["Hello World!", "Afore Loop", "Stop, GO!", "New Window (27)", "CLICK HERE!!!", "Root Directory", "!!!", "WSOD", "Nightcore", "Level 10"])
+level_names = Array[String](["Hello World!", "Afore Loop", "Red & Green", "New Window (27)", "CLICK HERE!!!", "Root Directory", "!!!", "WSOD", "Nightcore", "Level 10"])

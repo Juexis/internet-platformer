@@ -11,6 +11,7 @@ var player_win: bool = false
 var is_loading: bool = false
 signal set_end_text(text: String)
 signal get_time
+signal set_icon(int)
 
 ## Global Enum for songs
 enum SongList {NONE, FLOATING_POINT, BLUSHOP}
@@ -61,7 +62,8 @@ func _process(delta: float) -> void:
 		load_game()
 		
 	if Input.is_physical_key_pressed(KEY_R):
-		restart_level()
+		if not is_loading:
+			restart_level()
 	
 	#endregion
 	if not is_game_active:
@@ -74,7 +76,7 @@ func _process(delta: float) -> void:
 		unpause()
 
 func pause():
-		if get_node("/root/MainMenu"):
+		if not level_check():
 			return
 		gamestate.paused.emit()
 		is_game_active = false
@@ -86,9 +88,10 @@ func pause():
 			get_node("/root/world/UI").add_child(pause_instance)
 
 func unpause():
-	is_game_active = true
-	get_node("/root/world").get_tree().paused = false
-	gamestate.unpaused.emit()
+	if level_check():
+		is_game_active = true
+		get_node("/root/world").get_tree().paused = false
+		gamestate.unpaused.emit()
 
 func _exit_tree() -> void:
 	save_game()
@@ -104,6 +107,8 @@ func next_level():
 	SceneLoader.load_scene(levels_resource.levels[current_level + 1].resource_path)
 
 func is_next_level_unlocked() -> bool:
+	if current_level == 9:
+		return false
 	return GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1]
 
 func unlock_next_level():
@@ -133,6 +138,13 @@ func load_game():
 func game_exit():
 	save_game()
 	get_tree().quit()
+
+## check for if player is in a level or not
+func level_check() -> bool:
+	if current_level >= 0:
+		return true
+	else:
+		return false
 
 #region debug functions
 func unlock_all():

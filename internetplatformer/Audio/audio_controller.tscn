@@ -63,9 +63,9 @@ pitch_scale = 1.07
 bus = &"SFX"
 
 [node name="OST" type="Node" parent="." unique_id=8045894]
+process_mode = 3
 
 [node name="Floating Point" type="AudioStreamPlayer" parent="OST" unique_id=945636079]
-process_mode = 3
 stream = ExtResource("9_2mam3")
 volume_db = -7.782
 bus = &"Music"

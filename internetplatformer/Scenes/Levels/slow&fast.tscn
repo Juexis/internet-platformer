@@ -4,18 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://d3apkrm73uirx" path="res://Objects/platform_window.tscn" id="2_6u071"]
 
 [node name="world" unique_id=971698201 instance=ExtResource("1_vyjph")]
-level_name = "Stop, GO!"
+level_name = "Red & Green"
 level_index = 2
 bg_color = Color(0, 0.4117647, 0.6666667, 1)
 bgm = 1
+difficulty_index = 1
 
 [node name="Player" parent="." index="0" unique_id=1333374516]
 position = Vector2(-166, -12.799999)
 
 [node name="Camera2D" parent="." index="1" unique_id=1482318228]
 position = Vector2(-166, -13.999999)
-limit_top = -10000000
-limit_bottom = 10000000
 
 [node name="PhantomCamera" parent="." index="2" unique_id=1523581241]
 position = Vector2(-166, -13.999999)

@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://c8b67kqcothmw" path="res://Systems/UI/level_select.gd" id="2_pptw7"]
 [ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="2_spig8"]
 [ext_resource type="Texture2D" uid="uid://bo45hpp2f62l2" path="res://Visuals/UI/easy.png" id="3_2rub3"]
+[ext_resource type="Theme" uid="uid://brqova8kpckmg" path="res://Visuals/Themes/titlebar.tres" id="4_ms8do"]
 [ext_resource type="Texture2D" uid="uid://cq0xsapwkyqv2" path="res://Visuals/UI/normal.png" id="4_pptw7"]
 [ext_resource type="Texture2D" uid="uid://bto2nvyuo4fxa" path="res://Visuals/UI/hard.png" id="5_ms8do"]
+[ext_resource type="Script" uid="uid://cahdaw1mys7ld" path="res://Systems/UI/home_button.gd" id="5_walhu"]
 
 [sub_resource type="Animation" id="Animation_7qfpv"]
 length = 0.001
@@ -153,6 +155,14 @@ size_flags_vertical = 1
 theme = ExtResource("1_nii1e")
 text = "LEVEL SELECT"
 
+[node name="HomeButton" type="Button" parent="OutlineMargin/VBox/HeaderContainer/TitlebarMargin" unique_id=147409095]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_ms8do")
+theme_type_variation = &"9SliceButton"
+text = "Home"
+script = ExtResource("5_walhu")
+
 [node name="ColorRect" type="ColorRect" parent="OutlineMargin/VBox" unique_id=1567260077]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
@@ -182,7 +192,7 @@ item_0/icon = ExtResource("3_2rub3")
 item_1/text = "Afore Loop"
 item_1/icon = ExtResource("3_2rub3")
 item_1/disabled = true
-item_2/text = "Stop, GO!"
+item_2/text = "Red & Green"
 item_2/icon = ExtResource("3_2rub3")
 item_2/disabled = true
 item_3/text = "New Window (27)"
@@ -207,4 +217,5 @@ item_9/text = "Level 10"
 item_9/icon = ExtResource("5_ms8do")
 item_9/disabled = true
 
+[connection signal="pressed" from="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HomeButton" to="OutlineMargin/VBox/HeaderContainer/TitlebarMargin/HomeButton" method="_on_pressed"]
 [connection signal="item_activated" from="OutlineMargin/VBox/BodyContainer/LevelsMargin/LevelList" to="." method="_on_level_selected"]

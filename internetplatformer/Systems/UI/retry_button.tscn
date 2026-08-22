@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ckqbjhi02pefp"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_cnk72"]
+[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="2_xo3g6"]
+[ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="3_mtwqj"]
+
+[node name="RetryButton" type="Button" unique_id=1108889224]
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_right = NodePath("../MenuButton")
+theme = ExtResource("1_cnk72")
+theme_type_variation = &"9SliceButton"
+theme_override_fonts/font = ExtResource("2_xo3g6")
+theme_override_font_sizes/font_size = 11
+text = "Retry"
+script = ExtResource("3_mtwqj")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

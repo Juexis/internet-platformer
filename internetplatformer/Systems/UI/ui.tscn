@@ -3,7 +3,9 @@
 [ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="1_31fyy"]
 [ext_resource type="Theme" uid="uid://brqova8kpckmg" path="res://Visuals/Themes/titlebar.tres" id="1_g01m3"]
 [ext_resource type="Script" uid="uid://dvjb1fri6weqx" path="res://Systems/UI/time_label.gd" id="2_0275g"]
+[ext_resource type="Texture2D" uid="uid://bo45hpp2f62l2" path="res://Visuals/UI/easy.png" id="2_o4wqe"]
 [ext_resource type="Script" uid="uid://btom1m2jr4vhr" path="res://Systems/UI/level_name_label.gd" id="3_mumph"]
+[ext_resource type="Script" uid="uid://c7qheylflpgwj" path="res://Systems/UI/difficulty_icon.gd" id="3_vovoe"]
 [ext_resource type="PackedScene" uid="uid://bv16i4ec2ff6n" path="res://Systems/UI/end_window.tscn" id="5_o4wqe"]
 
 [node name="UI" type="CanvasLayer" unique_id=1468181501 groups=["UI"]]
@@ -25,6 +27,20 @@ theme_override_constants/margin_bottom = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TitleBarPanel/TitleBar Margin" unique_id=256439510]
 layout_mode = 2
+
+[node name="IconMargin" type="MarginContainer" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=381012409]
+layout_mode = 2
+theme_override_constants/margin_left = -1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = -2
+theme_override_constants/margin_bottom = 0
+
+[node name="DifficultyIcon" type="TextureRect" parent="TitleBarPanel/TitleBar Margin/HBoxContainer/IconMargin" unique_id=422339765]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_o4wqe")
+script = ExtResource("3_vovoe")
 
 [node name="LevelLabel" type="Label" parent="TitleBarPanel/TitleBar Margin/HBoxContainer" unique_id=989269689]
 layout_mode = 2

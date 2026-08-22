@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c600p4qoauy3g"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_5tvtd"]
+[ext_resource type="Script" uid="uid://1md0xfojrh55" path="res://Systems/UI/menu_button.gd" id="2_xu17x"]
+
+[node name="MenuButton" type="Button" unique_id=527708014]
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme = ExtResource("1_5tvtd")
+theme_type_variation = &"9SliceButton"
+theme_override_font_sizes/font_size = 11
+text = "Menu"
+script = ExtResource("2_xu17x")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

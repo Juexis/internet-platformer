@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_po3qs"]
 [ext_resource type="Script" uid="uid://bwxa8h2xk8kqm" path="res://Systems/UI/pause_window.gd" id="2_4h7rj"]
 [ext_resource type="Animation" uid="uid://c28t0k0u0130g" path="res://Visuals/Animations/fade_in.res" id="2_bvbjm"]
-[ext_resource type="FontFile" uid="uid://ck864o2wnt8bf" path="res://Visuals/Sprites/monogram.ttf" id="3_gfej6"]
-[ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="4_4h7rj"]
-[ext_resource type="Script" uid="uid://e1n0vb071nv0" path="res://Systems/UI/next_button.gd" id="4_hl41l"]
-[ext_resource type="Script" uid="uid://1md0xfojrh55" path="res://Systems/UI/menu_button.gd" id="5_hl41l"]
+[ext_resource type="PackedScene" uid="uid://xetbnlbceb3p" path="res://Systems/UI/next_button.tscn" id="4_hl41l"]
+[ext_resource type="PackedScene" uid="uid://ckqbjhi02pefp" path="res://Systems/UI/retry_button.tscn" id="5_nac6u"]
+[ext_resource type="PackedScene" uid="uid://c600p4qoauy3g" path="res://Systems/UI/menu_button.tscn" id="6_vbpnr"]
+[ext_resource type="PackedScene" uid="uid://d3d24kca6yi3h" path="res://Systems/UI/quit_button.tscn" id="7_djtmp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po3qs"]
 bg_color = Color(0.39607844, 0.4509804, 0.57254905, 1)
@@ -130,7 +130,7 @@ process_mode = 3
 anchors_preset = -1
 anchor_bottom = 0.12200001
 offset_right = 60.0
-offset_bottom = 34.04
+offset_bottom = 72.04
 pivot_offset = Vector2(30, 35)
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -187,38 +187,14 @@ theme_override_constants/margin_bottom = 6
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="NextButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1393635122]
-visible = false
+[node name="NextButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=211913284 instance=ExtResource("4_hl41l")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme = ExtResource("1_po3qs")
-theme_type_variation = &"9SliceButton"
-text = "Next"
-script = ExtResource("4_hl41l")
 
-[node name="RetryButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=822113353]
+[node name="RetryButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1108889224 instance=ExtResource("5_nac6u")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-focus_neighbor_right = NodePath("../MenuButton")
-theme = ExtResource("1_po3qs")
-theme_type_variation = &"9SliceButton"
-theme_override_fonts/font = ExtResource("3_gfej6")
-theme_override_font_sizes/font_size = 11
-text = "Retry"
-script = ExtResource("4_4h7rj")
 
-[node name="MenuButton" type="Button" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1935149769]
+[node name="MenuButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=527708014 instance=ExtResource("6_vbpnr")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 8
-theme = ExtResource("1_po3qs")
-theme_type_variation = &"9SliceButton"
-theme_override_font_sizes/font_size = 11
-text = "Menu"
-script = ExtResource("5_hl41l")
 
-[connection signal="pressed" from="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/NextButton" to="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/NextButton" method="_on_pressed"]
-[connection signal="pressed" from="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton" to="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/RetryButton" method="_on_pressed"]
-[connection signal="pressed" from="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/MenuButton" to="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer/MenuButton" method="_on_pressed"]
+[node name="QuitButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=422815786 instance=ExtResource("7_djtmp")]
+layout_mode = 2

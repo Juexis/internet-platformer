@@ -11,6 +11,7 @@ func enter() -> void:
 	knocked_timer.start()
 	parent.sprite.play("knocked")
 	parent.sprite_animations.play("hit")
+	parent.collision_box.play("normal")
 
 func process_physics(delta: float) -> State:
 	print(timeout_timer.time_left)

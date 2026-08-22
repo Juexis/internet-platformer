@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://xetbnlbceb3p"]
+
+[ext_resource type="Theme" uid="uid://dc67giobqnoxl" path="res://Visuals/Themes/windows.tres" id="1_1rhur"]
+[ext_resource type="Script" uid="uid://e1n0vb071nv0" path="res://Systems/UI/next_button.gd" id="2_n3kn7"]
+
+[node name="NextButton" type="Button" unique_id=211913284]
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("1_1rhur")
+theme_type_variation = &"9SliceButton"
+text = "Next"
+script = ExtResource("2_n3kn7")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
