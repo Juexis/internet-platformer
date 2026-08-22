@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckqbjhi02pefp" path="res://Systems/UI/retry_button.tscn" id="5_nac6u"]
 [ext_resource type="PackedScene" uid="uid://c600p4qoauy3g" path="res://Systems/UI/menu_button.tscn" id="6_vbpnr"]
 [ext_resource type="PackedScene" uid="uid://d3d24kca6yi3h" path="res://Systems/UI/quit_button.tscn" id="7_djtmp"]
+[ext_resource type="Script" uid="uid://dm8cyebsd45ef" path="res://Systems/UI/quit_button.gd" id="8_nac6u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po3qs"]
 bg_color = Color(0.39607844, 0.4509804, 0.57254905, 1)
@@ -198,3 +199,4 @@ layout_mode = 2
 
 [node name="QuitButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=422815786 instance=ExtResource("7_djtmp")]
 layout_mode = 2
+script = ExtResource("8_nac6u")
