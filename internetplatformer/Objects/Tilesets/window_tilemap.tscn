@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cvnnsg3j4o2il" path="res://Visuals/Sprites/Tilesets/tilesetV6.png" id="1_xn0hp"]
 [ext_resource type="Script" uid="uid://c3m5pjcc88gf4" path="res://Objects/Tilesets/window_tilemap.gd" id="2_1vsky"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_xn0hp"]
+tile_data = PackedInt32Array(196608, 589824, 10, 262144, 589824, 12, 65537, 589824, 10, 131073, 589824, 11, 196609, 655360, 11, 262145, 655360, 12, 2, 786432, 10, 65538, 655360, 11, 131074, 655360, 11, 196610, 655360, 11, 262146, 655360, 12, 65539, 720896, 10, 131075, 720896, 11, 196611, 655360, 11, 262147, 655360, 12, 196612, 720896, 10, 262148, 720896, 12)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0ho4"]
 texture = ExtResource("1_xn0hp")
 1:2/0 = 0
@@ -1020,6 +1023,7 @@ custom_data_layer_0/type = 1
 custom_data_layer_1/name = "moving"
 custom_data_layer_1/type = 6
 sources/0 = SubResource("TileSetAtlasSource_t0ho4")
+pattern_0 = SubResource("TileMapPattern_xn0hp")
 
 [node name="Windows" type="TileMapLayer" unique_id=1626221925]
 tile_set = SubResource("TileSet_erp7n")

@@ -8,7 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://ccye3uv5tvx71" path="res://Audio/SFX/bass.wav" id="4_fewgg"]
 [ext_resource type="AudioStream" uid="uid://c8n8kcavefx17" path="res://Audio/SFX/slide.mp3" id="5_qlpi7"]
 [ext_resource type="AudioStream" uid="uid://clt4grkj6jgf3" path="res://Audio/SFX/endfail.wav" id="7_2uuxa"]
+[ext_resource type="AudioStream" uid="uid://dryuglwylfi63" path="res://Audio/SFX/papers.mp3" id="7_nrmxn"]
 [ext_resource type="AudioStream" uid="uid://bmwfygh6w58qq" path="res://Audio/Music/floatingpointdemo.mp3" id="9_2mam3"]
+[ext_resource type="AudioStream" uid="uid://bsmqy2lxnf4x6" path="res://Audio/SFX/win.mp3" id="9_srkke"]
 [ext_resource type="AudioStream" uid="uid://cfvqhjb6dcn8w" path="res://Audio/Music/BluShopDemo.mp3" id="10_srkke"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
@@ -49,6 +51,12 @@ volume_db = -9.904
 pitch_scale = 0.9
 bus = &"SFX"
 
+[node name="Paper" type="AudioStreamPlayer" parent="ObjectSFX" unique_id=690746874]
+stream = ExtResource("7_nrmxn")
+volume_db = -4.952
+max_polyphony = 6
+bus = &"SFX"
+
 [node name="UISFX" type="Node" parent="." unique_id=1922860144]
 
 [node name="Startup" type="AudioStreamPlayer" parent="UISFX" unique_id=1764944235]
@@ -60,6 +68,12 @@ bus = &"Music"
 stream = ExtResource("7_2uuxa")
 volume_db = -14.149
 pitch_scale = 1.07
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer" parent="UISFX" unique_id=867861849]
+stream = ExtResource("9_srkke")
+volume_db = -19.48
+pitch_scale = 1.1
 bus = &"SFX"
 
 [node name="OST" type="Node" parent="." unique_id=8045894]

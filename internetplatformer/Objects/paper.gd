@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if is_inside and was_inside and not logic_triggered:
+		AudioController.paper()
 		paper_anims.play("crumple")
 		logic_triggered = true # flags crumple as done, wont activate anymore
 		interaction_area.monitoring = false # turns off monitoring so it wont get retriggered upon re-entry
