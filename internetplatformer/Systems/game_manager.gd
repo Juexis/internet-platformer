@@ -14,7 +14,7 @@ signal get_time
 signal set_icon(int)
 
 ## Global Enum for songs
-enum SongList {NONE, FLOATING_POINT, BLUSHOP}
+enum SongList {NONE, FLOATING_POINT, BLUSHOP, LOGGINGOUT}
 
 #region debug
 @export var full_reset: bool = false:
@@ -112,7 +112,7 @@ func is_next_level_unlocked() -> bool:
 	return GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1]
 
 func unlock_next_level():
-	if current_level <= 9 and not is_next_level_unlocked():
+	if current_level <= 8 and not is_next_level_unlocked():
 		GameManager.levels_resource.flag_unlocked[GameManager.current_level + 1] = true
 
 func save_game():

@@ -19,6 +19,7 @@ var current_song: GameManager.SongList = GameManager.SongList.NONE
 @onready var ost: Node = $OST
 @onready var _floating_point: AudioStreamPlayer = $"OST/Floating Point"
 @onready var _blu_shop: AudioStreamPlayer = $OST/BluShop
+@onready var _logging_out: AudioStreamPlayer = $"OST/Logging Out"
 
 func _ready() -> void:
 	GameManager.gamestate.start_song.connect(song_picker)
@@ -46,7 +47,7 @@ func hit():
 	_hit.play()
 
 func paper():
-	_paper.pitch_scale = randf_range(0.8, 1)
+	_paper.pitch_scale = randf_range(0.7, 1)
 	_paper.play()
 	
 
@@ -84,11 +85,17 @@ func song_picker(bgm: GameManager.SongList):
 		GameManager.SongList.BLUSHOP:
 			current_song = GameManager.SongList.BLUSHOP
 			_blu_shop.play()
+		GameManager.SongList.LOGGINGOUT:
+			current_song = GameManager.SongList.LOGGINGOUT
+			_logging_out.play()
 
 ## -- STOP functions --
 
 func skip_startup():
 	_startup.stop()
+
+func stop_paper():
+	_paper.stop()
 
 func stop_bgm():
 	for i: AudioStreamPlayer in ost.get_children():

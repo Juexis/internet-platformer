@@ -15,13 +15,17 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Internet Platformer"
+config/version="1.0"
 config/tags=PackedStringArray("project")
-run/main_scene="uid://dk6ul1w3s20hg"
+run/main_scene="uid://c25ktv7xd8ocs"
 config/features=PackedStringArray("4.7", "Forward Plus")
+run/max_fps=240
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/show_image=false
 boot_splash/image="uid://d0x2fcu8po2to"
 config/icon="uid://bfxkg3pv3ninq"
+config/macos_native_icon="uid://bfxkg3pv3ninq"
+config/windows_native_icon="uid://bfxkg3pv3ninq"
 
 [audio]
 
@@ -48,7 +52,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons/gdmaim/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [file_customization]
 
@@ -190,4 +194,6 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0.4117647, 0.6666667, 1)

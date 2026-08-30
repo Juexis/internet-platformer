@@ -12,6 +12,7 @@ extends PanelContainer
 @onready var _check_icon: TextureRect = %CheckIcon
 @onready var _next_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/NextButton
 @onready var _retry_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton
+@onready var _menu_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/MenuButton
 
 func _ready() -> void:
 	GameManager.gamestate.game_over.connect(show_endscreen)
@@ -28,26 +29,36 @@ func show_endscreen():
 	
 	elif GameManager.player_win:
 		await get_tree().create_timer(1.75).timeout
-		show_win()
+		if GameManager.current_level < 9:
+			show_win("Level Complete!")
+		else:
+			show_win("Thank you for Playing!!!")
 	show()
 	
 	_animation.play("pop_in")
 	_default_focus_button.grab_focus()
 
-func show_win():
+func show_win(win_text: String):
 	_x_icon.hide()
 	
-	set_text("Level Complete!")
+	set_text(win_text)
 	
 	if GameManager.levels_resource.best_times[world.level_index] > 0: ## TODO make best time hide when beating level first time
 		display_best_time()
 		_best_time_h_box.show()
 	else:
 		_best_time_h_box.hide()
-		
-	_default_focus_button = _next_button
+	
+	
+	if GameManager.current_level < 9: # changes if on last level
+		_default_focus_button = _next_button
+		_next_button.show()
+	else:
+		_default_focus_button = _menu_button
+		_next_button.hide()
+	
 	_check_icon.show()
-	_next_button.show()
+	
 
 func show_lose():
 	_check_icon.hide()

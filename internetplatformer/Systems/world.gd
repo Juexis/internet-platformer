@@ -22,7 +22,7 @@ func _ready() -> void:
 	GameManager.gamestate.start_song.emit(bgm)
 	GameManager.set_icon.emit(difficulty_index)
 
-
+ 
 ## load best time from save file and set it to the level's best time 
 func set_best_time():
 	if not GameManager.player_win:

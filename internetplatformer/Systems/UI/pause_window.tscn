@@ -131,7 +131,7 @@ process_mode = 3
 anchors_preset = -1
 anchor_bottom = 0.12200001
 offset_right = 60.0
-offset_bottom = 72.04
+offset_bottom = 53.04
 pivot_offset = Vector2(30, 35)
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -189,6 +189,7 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="NextButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=211913284 instance=ExtResource("4_hl41l")]
+visible = false
 layout_mode = 2
 
 [node name="RetryButton" parent="OutlineMargin/VBox/BodyContainer/MarginContainer/VBoxContainer" unique_id=1108889224 instance=ExtResource("5_nac6u")]

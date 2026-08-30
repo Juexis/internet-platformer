@@ -213,7 +213,7 @@ item_7/disabled = true
 item_8/text = "Nightcore"
 item_8/icon = ExtResource("5_ms8do")
 item_8/disabled = true
-item_9/text = "Level 10"
+item_9/text = "Complete Compile"
 item_9/icon = ExtResource("5_ms8do")
 item_9/disabled = true
 
