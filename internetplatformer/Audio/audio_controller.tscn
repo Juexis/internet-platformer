@@ -89,4 +89,5 @@ bus = &"Music"
 
 [node name="Logging Out" type="AudioStreamPlayer" parent="OST" unique_id=1646971608]
 stream = ExtResource("13_d3vne")
+volume_db = -1.415
 bus = &"Music"

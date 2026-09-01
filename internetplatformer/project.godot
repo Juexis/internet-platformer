@@ -14,7 +14,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Internet Platformer"
+config/name="Welcome To BluOS"
+config/description="a small platformer set in a computer"
 config/version="1.0"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://c25ktv7xd8ocs"
@@ -44,6 +45,7 @@ AudioController="*uid://cswa002qhdmsl"
 
 window/size/viewport_width=260
 window/size/viewport_height=180
+window/size/mode=3
 window/size/always_on_top=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
@@ -52,7 +54,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons/gdmaim/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/color-palette/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [file_customization]
 

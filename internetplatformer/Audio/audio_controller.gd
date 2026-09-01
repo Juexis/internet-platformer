@@ -101,3 +101,4 @@ func stop_bgm():
 	for i: AudioStreamPlayer in ost.get_children():
 		i.stop()
 	current_song = GameManager.SongList.NONE
+	

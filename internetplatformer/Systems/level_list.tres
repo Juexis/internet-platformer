@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://dplxnb1brgi11"]
+[gd_resource type="Resource" script_class="LevelList" format=3 uid="uid://dvi1yhlwmbc57"]
 
 [ext_resource type="Script" uid="uid://buxv6vxv6h200" path="res://Systems/level_list.gd" id="1_7b62d"]
 [ext_resource type="PackedScene" uid="uid://csqanqoc8yp0m" path="res://Scenes/Levels/hello_world!.tscn" id="2_d2weq"]

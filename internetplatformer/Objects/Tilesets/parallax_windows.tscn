@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpe0aeclg68wi"]
 
 [ext_resource type="Texture2D" uid="uid://c6003ckdvbab5" path="res://Visuals/Sprites/Tilesets/decoV2.png" id="1_adgn5"]
-[ext_resource type="Texture2D" uid="uid://f3vtwo4kmehx" path="res://Visuals/Sprites/Tilesets/ads.png" id="2_xqt44"]
+[ext_resource type="Texture2D" uid="uid://cmnoxgrodwt0u" path="res://Visuals/Sprites/Tilesets/adsV2.png" id="2_adgn5"]
 [ext_resource type="Texture2D" uid="uid://cja5guf0mlru4" path="res://Visuals/Sprites/Tilesets/prompts.png" id="3_bu0l8"]
 [ext_resource type="Texture2D" uid="uid://cvnnsg3j4o2il" path="res://Visuals/Sprites/Tilesets/tilesetV6.png" id="4_adgn5"]
 
@@ -117,7 +117,7 @@ texture = ExtResource("1_adgn5")
 3:7/0/z_index = -10
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru2e1"]
-texture = ExtResource("2_xqt44")
+texture = ExtResource("2_adgn5")
 0:0/0 = 0
 0:0/0/z_index = -10
 1:0/0 = 0

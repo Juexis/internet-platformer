@@ -1,8 +1,8 @@
 extends Node
 var gamestate = GameState.new()
-var levels_resource = preload("res://Systems/level_list.tres")
+var levels_resource: Resource
 var current_level: int
-var pause_screen: PackedScene = preload("res://Systems/UI/pause_window.tscn")
+var pause_screen: PackedScene
 
 ## when not active, player movement and timer is paused/disabled
 var is_game_active: bool = true
@@ -39,6 +39,8 @@ class GameState:
 	signal switch_focus
 
 func _ready() -> void:
+	levels_resource = load("uid://dvi1yhlwmbc57")
+	pause_screen = load("uid://cg05yh2gk5dn6")
 	get_tree().auto_accept_quit = false
 	
 	process_mode = Node.PROCESS_MODE_ALWAYS
