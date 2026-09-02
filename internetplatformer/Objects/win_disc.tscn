@@ -162,8 +162,10 @@ interaction_path = NodePath("interaction_area")
 [node name="Sprite" parent="." index="0" unique_id=1057885499]
 position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_wfa5t")
+animation = &"interact"
 autoplay = "default"
-frame_progress = 0.5251897
+frame = 14
+frame_progress = 1.0
 offset = Vector2(0, -2.35)
 
 [node name="Collision" type="CollisionShape2D" parent="." index="1" unique_id=356509669]

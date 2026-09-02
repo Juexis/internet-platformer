@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bsmqy2lxnf4x6" path="res://Audio/SFX/win.mp3" id="9_srkke"]
 [ext_resource type="AudioStream" uid="uid://diwt8f4a37ha3" path="res://Audio/Music/FloatingPointFINAL.wav" id="11_nrmxn"]
 [ext_resource type="AudioStream" uid="uid://dldoguplr1qx7" path="res://Audio/Music/BluShopFINAL.wav" id="12_nrmxn"]
-[ext_resource type="AudioStream" uid="uid://crq13xmpgi5ou" path="res://Audio/Music/LoggingOutFINAL.wav" id="13_d3vne"]
+[ext_resource type="AudioStream" uid="uid://bmdv11j3twsd0" path="res://Audio/Music/LoggingOutFINAL2.wav" id="13_d3vne"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fuvku"]
 playback_mode = 1
@@ -89,5 +89,4 @@ bus = &"Music"
 
 [node name="Logging Out" type="AudioStreamPlayer" parent="OST" unique_id=1646971608]
 stream = ExtResource("13_d3vne")
-volume_db = -1.415
 bus = &"Music"

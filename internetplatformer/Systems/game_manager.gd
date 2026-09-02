@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_load"):
 		load_game()
 		
-	if Input.is_physical_key_pressed(KEY_R):
+	if Input.is_physical_key_pressed(KEY_R) and level_check():
 		if not is_loading:
 			restart_level()
 	

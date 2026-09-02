@@ -8,8 +8,11 @@ extends PanelContainer
 @onready var _best_time_h_box: HBoxContainer = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/TimerMargin/VBoxContainer/BestTimeHBox
 @onready var _b_time_num: Label = %BTimeLabel
 @onready var _title_box: Label = %TitleBox
+
 @onready var _x_icon: TextureRect = %XIcon
 @onready var _check_icon: TextureRect = %CheckIcon
+@onready var _heart_icon: TextureRect = %HeartIcon
+
 @onready var _next_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/NextButton
 @onready var _retry_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/RetryButton
 @onready var _menu_button: Button = $OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/ButtonHBoxes/MenuButton
@@ -50,14 +53,16 @@ func show_win(win_text: String):
 		_best_time_h_box.hide()
 	
 	
-	if GameManager.current_level < 9: # changes if on last level
+	if GameManager.current_level < 9: 
 		_default_focus_button = _next_button
 		_next_button.show()
-	else:
+		_check_icon.show()
+	else: # changes if on last level
 		_default_focus_button = _menu_button
 		_next_button.hide()
+		_heart_icon.show()
 	
-	_check_icon.show()
+	
 	
 
 func show_lose():

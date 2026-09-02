@@ -2,7 +2,7 @@ extends Panel
 @onready var _level_list: ItemList = %LevelList
 @onready var animations: AnimationPlayer = $WindowAnimations
 # from game_manager.gd -> levels_resource.tres -> levels array in levels_resource.tres
-var levels: Array[PackedScene] = GameManager.levels_resource.levels
+@onready var levels: Array[PackedScene] = GameManager.levels_resource.levels
 
 func _ready() -> void:
 	#automatically grabs focus of the first level

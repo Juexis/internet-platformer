@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://05gjad20od4k" path="res://Visuals/UI/check.png" id="6_k6wsp"]
 [ext_resource type="Script" uid="uid://u16fllx76tk6" path="res://Systems/UI/retry_button.gd" id="6_m8rdo"]
 [ext_resource type="Script" uid="uid://e1n0vb071nv0" path="res://Systems/UI/next_button.gd" id="7_jvs6u"]
+[ext_resource type="Texture2D" uid="uid://cmwh0pi0h2wch" path="res://Visuals/UI/final_heart.png" id="7_m8rdo"]
 [ext_resource type="Script" uid="uid://1md0xfojrh55" path="res://Systems/UI/menu_button.gd" id="8_uw854"]
 
 [sub_resource type="Animation" id="Animation_7qfpv"]
@@ -252,15 +253,25 @@ theme_override_constants/margin_bottom = 6
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 3
 texture = ExtResource("5_k6wsp")
 stretch_mode = 3
 
 [node name="CheckIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/Icons" unique_id=911818747]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("6_k6wsp")
 stretch_mode = 3
+
+[node name="HeartIcon" type="TextureRect" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer/Icons" unique_id=1645404621]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_m8rdo")
 
 [node name="ButtonHBoxes" type="HBoxContainer" parent="OutlineMargin/VBoxContainer/BodyContainer/BodyMargin/VBoxContainer" unique_id=250411936]
 layout_mode = 2
