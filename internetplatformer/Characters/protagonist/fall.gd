@@ -40,9 +40,11 @@ func process_physics(delta: float) -> State:
 		AudioController.player_jump()
 		return jump_state
 	
+	print(coyote_timer.time_left)
 	# coyote time implementation
 	if coyote_timer.time_left > 0 and Input.is_action_just_pressed("jump"):
-		#print(coyote_timer.time_left)
+		parent.velocity.y = 0
+		print("coyote jump!")
 		return jump_state
 	
 	if parent.is_on_floor():

@@ -6,7 +6,7 @@ var current_jump_vel
 var standard_jump_vel = -240
 var air_speed = 125
 var air_accel = 500
-var air_res = 250
+var air_res = 225
 var is_speaker_jump: bool = false
 
 # TODO fix player's jump being added when jumping simutaneously while entering the speaker's range
@@ -17,6 +17,7 @@ func enter() -> void:
 		AudioController.player_jump()
 	
 	elif is_speaker_jump:
+		parent.velocity.y = 0
 		AudioController.speaker()
 	
 	clamp(parent.velocity.y, 0, current_jump_vel)

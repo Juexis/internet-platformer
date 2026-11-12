@@ -23,6 +23,8 @@ expand_margin_bottom = 2.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 region_rect = Rect2(0, 16, 16, 16)
+modulate_color = Color(0, 0, 0, 1)
+draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dh6n4"]
 texture = ExtResource("10_8njp5")
@@ -36,6 +38,7 @@ expand_margin_bottom = 2.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 region_rect = Rect2(0, 16, 16, 16)
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmffa"]
 texture = ExtResource("10_8njp5")
@@ -142,8 +145,8 @@ default_font_size = 14
 9SliceButton/base_type = &"Button"
 9SliceButton/colors/font_color = Color(0, 0, 0, 1)
 9SliceButton/colors/font_disabled_color = Color(0, 0, 0, 1)
-9SliceButton/colors/font_focus_color = Color(0.25882354, 0.29803923, 0.43137255, 1)
-9SliceButton/colors/font_hover_color = Color(0.25882354, 0.29803923, 0.43137255, 1)
+9SliceButton/colors/font_focus_color = Color(0.07058824, 0.039215688, 0.21176471, 1)
+9SliceButton/colors/font_hover_color = Color(0.07058824, 0.039215688, 0.21176471, 1)
 9SliceButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 9SliceButton/colors/font_outline_color = Color(0, 0, 0, 1)
 9SliceButton/colors/font_pressed_color = Color(1, 1, 1, 1)
