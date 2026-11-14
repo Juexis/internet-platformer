@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Welcome To BluOS"
 config/description="a small platformer set in a computer"
-config/version="1.0"
+config/version="1.1"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://c25ktv7xd8ocs"
 config/features=PackedStringArray("4.7", "Forward Plus")
